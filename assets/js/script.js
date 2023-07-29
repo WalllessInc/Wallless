@@ -1,16 +1,24 @@
 /* --------------------------------
 *  JavaScript Document
 * -------------------------------- */
-import { createApp } from "https://unpkg.com/vue@3.2.4/dist/vue.esm-browser.prod.js";
-const app = createApp({
+const app = new Vue({
   el: '#app',
 
   components: {
     'the-header': httpVueLoader('assets/components/the-header.vue'),
     'the-footer': httpVueLoader('assets/components/the-footer.vue'),
   },
+
+  data() {
+    return {
+      //連想配列を定義
+      items: [
+        { title: "リンゴ", price: "200円" },
+        { title: "メロン", price: "500円" }
+      ],
+    }
+  },
 });
-app.mount("#app");
 
 /* --------------------------------
 *  Decrease Display Magnification

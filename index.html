@@ -45,7 +45,13 @@
 
 		<!-- main -->
 		<main class="main">
-			<img src="https://source.unsplash.com/640x420/?animal" alt="">
+			<ul>
+				<li v-for="item in items">
+					{{ item.title }}-{{ item.price }}
+				</li>
+			</ul>
+			フルーツ: <input v-model="additem"><br>
+			値段: <input v-model="addprice"><br>
 		</main>
 		<!-- /main -->
 
@@ -58,6 +64,7 @@
 
 	<!-- script -->
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 	<script src="https://unpkg.com/http-vue-loader"></script>
 	<script src="assets/js/script.js" type="module"></script>
 	<!-- /script -->
