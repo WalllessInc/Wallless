@@ -1,24 +1,22 @@
 /* --------------------------------
 *  JavaScript Document
 * -------------------------------- */
-const app = new Vue({
-  el: '#app',
+import { createApp } from 'https://unpkg.com/vue@3.2.4/dist/vue.esm-browser.prod.js';
+import Header from './assets/components/the-header.vue';
 
-  components: {
-    'the-header': httpVueLoader('assets/components/the-header.vue'),
-    'the-footer': httpVueLoader('assets/components/the-footer.vue'),
-  },
-
-  data() {
-    return {
-      //連想配列を定義
-      items: [
-        { title: "リンゴ", price: "200円" },
-        { title: "メロン", price: "500円" }
-      ],
-    }
-  },
+const app = createApp({
+  // data() {
+  //   return {
+  //     //連想配列を定義
+  //     items: [
+  //       { title: "リンゴ", price: "200円" },
+  //       { title: "メロン", price: "500円" }
+  //     ],
+  //   }
+  // },
 });
+app.component('the-header', Header); // Testコンポーネントを'the-test'という名前で登録
+app.mount('#app'); // アプリケーションをマウント
 
 /* --------------------------------
 *  Decrease Display Magnification
