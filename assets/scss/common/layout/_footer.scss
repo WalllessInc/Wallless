@@ -1,0 +1,49 @@
+@charset "UTF-8";
+@use "../../global/" as *;
+
+.footer {
+  display: grid;
+  grid-template-areas:
+    "logo nav"
+    "sns copyright";
+  justify-content: space-between;
+  padding: rem(72) rem(140) rem(84);
+  font-family: $en;
+
+  &__logo {
+    grid-area: logo;
+    width: rem(140);
+  }
+
+  &__sns {
+    grid-area: sns;
+    margin-top: rem(32);
+    width: rem(24);
+  }
+
+  &__nav {
+    grid-area: nav;
+    align-self: center;
+
+    &__list {
+      display: flex;
+      column-gap: rem(52);
+
+      a {
+        font-size: rem(14);
+        transition: all 0.3s $ease1;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    justify-self: end;
+    margin-top: rem(40);
+    font-size: rem(12);
+  }
+}

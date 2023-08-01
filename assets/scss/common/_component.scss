@@ -1,0 +1,64 @@
+@charset "UTF-8";
+@use "../global/" as *;
+
+//////////////////////////////
+// button
+//////////////////////////////
+@mixin btn {
+  position: relative;
+  color: $white;
+  width: fit-content;
+  padding: rem(16) rem(36);
+  border-radius: 6px;
+  background-color: $black;
+  font-family: rem(14);
+  font-weight: 500;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    background-color: $green;
+    scale: 1 0;
+    transform-origin: top left;
+    transition: scale 0.3s $ease1;
+  }
+
+  &:hover::before {
+    scale: 1 1;
+    transform-origin: bottom left;
+  }
+
+  span {
+    position: relative;
+  }
+}
+
+//////////////////////////////
+// title
+//////////////////////////////
+@mixin title {
+  display: flex;
+  flex-direction: column;
+
+  &__jp {
+    font-family: $jp;
+    font-size: rem(12);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__en {
+    font-family: $en;
+    font-size: rem(64);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    text-transform: capitalize;
+
+    &::first-letter {
+      color: $green;
+    }
+  }
+}

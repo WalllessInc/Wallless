@@ -1,0 +1,49 @@
+@charset "UTF-8";
+@use "../../global/" as *;
+@use "../component" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: rem(48) rem(64);
+  z-index: 999;
+
+  &__logo a {
+    display: block;
+    width: rem(140);
+  }
+
+  &__nav {
+    &__list {
+      display: flex;
+      column-gap: rem(56);
+
+      li:not(.header__nav__list__btn) {
+        a {
+          padding: rem(4) 0;
+          font-family: $en;
+          font-size: rem(16);
+          background-image: linear-gradient(to bottom, $green, $green 50%, $black 50%);
+          background-size: 100% 200%;
+          background-position: 0 -100%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: all 0.5s $ease1;
+
+          &:hover {
+            background-position: 0 0%;
+          }
+        }
+      }
+
+      &__btn a {
+        @include btn;
+        font-weight: 400;
+      }
+    }
+  }
+}

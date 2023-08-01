@@ -5,21 +5,21 @@
 	<meta charset="utf-8">
 	<meta name="format-detection" content="telephone=no,address=no,email=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="ページ説明文">
-	<link rel="canonical" href="正規ページのURL">
+	<meta name="description" content="岐阜市に拠点を置くクリエイティブ集団Wallless">
+	<link rel="canonical" href="https://wallless-inc.com/">
 
-	<title>ページタイトル</title>
+	<title>Wallless | 岐阜のデザイン事務所</title>
 
 	<!-- ogp -->
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="SNS用タイトル">
-	<meta property="og:description" content="SNS用ページ説明文">
-	<meta property="og:url" content="SNS用URL">
-	<meta property="og:image" content="SNS用サムネイル画像URL">
-	<meta property="og:site_name" content="SNS用サイト名">
+	<meta property="og:title" content="Wallless | 岐阜のデザイン事務所">
+	<meta property="og:description" content="岐阜市に拠点を置くクリエイティブ集団Wallless">
+	<meta property="og:url" content="https://wallless-inc.com/">
+	<meta property="og:image" content="https://wallless-inc.com/assets/images/ogp.webp">
+	<meta property="og:site_name" content="Wallless | 岐阜のデザイン事務所">
 	<meta property="og:locale" content="ja_JP">
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@twitter id">
+	<meta name="twitter:site" content="@wallless_yuki">
 	<!-- /ogp -->
 
 	<!-- favicon -->
@@ -30,7 +30,7 @@
 	<!-- /favicon -->
 
 	<!-- css -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@4.0.0/destyle.css">
 	<link rel="stylesheet" href="assets/scss/style.css">
 	<!-- /css -->
 </head>
@@ -38,27 +38,109 @@
 <body>
 	<div id="app">
 		<!-- header -->
-		<header class="header">
-			<h1>TITLE</h1>
-		</header>
+		<the-header></the-header>
 		<!-- /header -->
 
 		<!-- main -->
-		<main class="main">
-			<the-header></the-header>
-			<the-news></the-news>
+		<main id="main">
+			<div class="hero">
+				<div class="hero__content">
+					<p class="hero__content__copy">
+						つくろう。<br>
+						自由な世界を。
+					</p>
+
+					<div class="hero__content__text js-trigger">
+						<p>
+							<span class="js-hero">
+								Walllessは、場所・時間・会社に縛られずに動く
+							</span>
+							<span class="js-hero">
+								クリエイティブチームです。
+							</span>
+							<span class="js-hero">
+								メンバーは日本から世界まで場所を選ばずに
+							</span>
+							<span class="js-hero">
+								活動しているメンバーばかりです。
+							</span>
+						</p>
+
+						<p>
+							<span class="js-hero">
+								そんなチームで大丈夫？とよくお話をいただきますが…
+							</span>
+							<span class="js-hero">
+								世界に散らばっているからこそ様々な観点から、
+							</span>
+							<span class="js-hero">
+								クライアントにコミットするツールを制作しております。
+							</span>
+						</p>
+
+						<p>
+							<span class="js-hero">
+								世界を見据えているクリエイティブチームに
+							</span>
+							<span class="js-hero">
+								是非お任せください。
+							</span>
+						</p>
+					</div>
+
+					<a href="#" class="hero__content__btn js-hero">
+						<span>Read More</span>
+					</a>
+				</div>
+
+				<div class="hero__scroll js-scroll">
+					SCROLL
+				</div>
+			</div>
+
+			<section class="service">
+				<h2 class="service__title">
+					<span class="service__title__jp">提供サービス</span>
+					<span class="service__title__en">Service</span>
+					<p class="service__title__text">
+						Wallless専属デザイナーがクライアントに<br>
+						フィットしたデザインを提供しております。
+					</p>
+				</h2>
+
+				<ul class="service__nav">
+					<li class="js-serviceNav view" data-target="graphic">Graphic</li>
+					<li class="js-serviceNav" data-target="web">Web</li>
+					<li class="js-serviceNav" data-target="movie">Movie</li>
+					<li class="js-serviceNav" data-target="photograph">Photograph</li>
+					<a href="service.html">
+						<span>Read More</span>
+					</a>
+				</ul>
+
+				<div class="service__content">
+					<the-service></the-service>
+					<the-service></the-service>
+					<the-service></the-service>
+					<the-service></the-service>
+				</div>
+			</section>
+
+
+			<the-contact></the-contact>
 		</main>
 		<!-- /main -->
 
 		<!-- footer -->
-		<footer class="footer">
-			<p class="copyright"><small>&copy;copyright</small></p>
-		</footer>
+		<the-footer></the-footer>
 		<!-- /footer -->
 	</div>
 
 	<!-- script -->
-	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+	<script src="assets/js/jquery.inview.min.js"></script>
 	<script src="assets/js/script.js" type="module"></script>
 	<!-- /script -->
 </body>
