@@ -45,9 +45,9 @@
 		<main id="main">
 			<div class="hero">
 				<div class="hero__content">
-					<p class="hero__content__copy">
-						つくろう。<br>
-						自由な世界を。
+					<p class="hero__content__copy js-fadeIn">
+						<span>つくろう。</span>
+						<span>自由な世界を。</span>
 					</p>
 
 					<div class="hero__content__text js-trigger">
@@ -88,7 +88,7 @@
 						</p>
 					</div>
 
-					<a href="#" class="hero__content__btn js-hero">
+					<a class="hero__content__btn js-hero" href="about.html">
 						<span>Read More</span>
 					</a>
 				</div>
@@ -109,23 +109,43 @@
 				</h2>
 
 				<ul class="service__nav">
-					<li class="js-serviceNav view" data-target="graphic">Graphic</li>
+					<li class="js-serviceNav active" data-target="graphic">Graphic</li>
 					<li class="js-serviceNav" data-target="web">Web</li>
 					<li class="js-serviceNav" data-target="movie">Movie</li>
 					<li class="js-serviceNav" data-target="photograph">Photograph</li>
-					<a href="service.html">
+					<a class="js-serviceNav" href="service.html">
 						<span>Read More</span>
 					</a>
 				</ul>
 
-				<div class="service__content">
-					<the-service></the-service>
-					<the-service></the-service>
-					<the-service></the-service>
-					<the-service></the-service>
-				</div>
+				<app-service></app-service>
 			</section>
 
+			<section class="works">
+				<h2 class="works__title">
+					<span class="works__title__jp">制作実績</span>
+					<span class="works__title__en">Works</span>
+				</h2>
+
+				<app-works></app-works>
+
+				<a class="works__btn" href="works.html">
+					<span>View More</span>
+				</a>
+			</section>
+
+			<section class="news">
+				<h2 class="news__title">
+					<span class="news__title__jp">お知らせ</span>
+					<span class="news__title__en">News</span>
+				</h2>
+
+				<app-news></app-news>
+
+				<a class="news__btn js-news" href="news.html">
+					<span>Read More</span>
+				</a>
+			</section>
 
 			<the-contact></the-contact>
 		</main>

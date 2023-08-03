@@ -6,19 +6,21 @@
 //////////////////////////////
 @mixin btn {
   position: relative;
+  display: block;
   color: $white;
   width: fit-content;
-  padding: rem(16) rem(36);
-  border-radius: 6px;
+  padding: rem(16) rem(40);
+  border-radius: 4px;
   background-color: $black;
-  font-family: rem(14);
+  font-size: rem(14);
   font-weight: 500;
+  overflow: hidden;
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 6px;
+    border-radius: 4px;
     background-color: $green;
     scale: 1 0;
     transform-origin: top left;

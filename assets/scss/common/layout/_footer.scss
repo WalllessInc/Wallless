@@ -7,18 +7,23 @@
     "logo nav"
     "sns copyright";
   justify-content: space-between;
-  padding: rem(72) rem(140) rem(84);
+  padding: rem(72) rem(144) rem(80);
   font-family: $en;
 
   &__logo {
     grid-area: logo;
-    width: rem(140);
+    width: rem(144);
   }
 
   &__sns {
     grid-area: sns;
     margin-top: rem(32);
     width: rem(24);
+    transition: all 0.3s $ease1;
+
+    &:hover {
+      opacity: 0.6;
+    }
   }
 
   &__nav {
@@ -27,7 +32,7 @@
 
     &__list {
       display: flex;
-      column-gap: rem(52);
+      column-gap: rem(48);
 
       a {
         font-size: rem(14);

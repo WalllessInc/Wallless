@@ -9,7 +9,7 @@
   display: flex;
   justify-content: flex-end;
   margin-bottom: rem(200);
-  padding: rem(180) rem(180) 0;
+  padding: rem(160) rem(184) 0;
 
   &__content {
     position: relative;
@@ -17,17 +17,43 @@
     flex-direction: column;
 
     &__copy {
+      display: flex;
+      flex-direction: column;
       font-size: rem(68);
       font-weight: 600;
       line-height: 1.5;
       letter-spacing: 0.1em;
+      opacity: 0;
+      transition: all 0.7s 0.3s $ease1;
+
+      span:nth-child(1) {
+        translate: -5% 0;
+        transition: all 0.4s 0.6s $ease1;
+      }
+
+      span:nth-child(2) {
+        translate: 5% 0;
+        transition: all 0.4s 0.6s $ease1;
+      }
+
+      &.view {
+        opacity: 1;
+
+        span:nth-child(1) {
+          translate: 0 0;
+        }
+
+        span:nth-child(2) {
+          translate: 0 0;
+        }
+      }
     }
 
     &__text {
       display: flex;
       flex-direction: column;
       row-gap: rem(40);
-      margin-top: rem(188);
+      margin-top: rem(184);
       line-height: 2.5;
 
       p {
@@ -38,7 +64,7 @@
 
     &__btn {
       @include btn;
-      margin-top: rem(36);
+      margin-top: rem(32);
     }
   }
 
@@ -59,7 +85,7 @@
       left: 50%;
       bottom: 0;
       width: 1px;
-      height: rem(60);
+      height: rem(56);
       background-color: $black;
       opacity: 0.4;
     }
@@ -70,7 +96,7 @@
       left: 50%;
       bottom: 0;
       width: 1px;
-      height: rem(60);
+      height: rem(56);
       background-color: $black;
       animation: scroll 2s cubic-bezier(1, 0, 0, 1) infinite;
 
@@ -108,9 +134,9 @@
     "title title"
     "nav content"
   ;
-  row-gap: rem(84);
+  row-gap: rem(88);
   margin-bottom: rem(200);
-  padding: 0 rem(160);
+  padding: 0 rem(144);
 
   &__title {
     @include title;
@@ -129,7 +155,7 @@
     display: flex;
     flex-direction: column;
     row-gap: rem(20);
-    padding-left: rem(60);
+    padding-left: rem(64);
     z-index: 2;
 
     li {
@@ -156,7 +182,7 @@
         transition: scale 0.5s $ease1;
       }
 
-      &.view {
+      &.active {
         color: $green;
 
         &::before {
@@ -168,7 +194,8 @@
 
     a {
       @include btn;
-      translate: rem(-60) rem(24);
+      margin-top: rem(32);
+      translate: rem(-64) 0;
     }
   }
 
@@ -176,6 +203,14 @@
     grid-area: content;
     justify-self: end;
     position: relative;
+    translate: 0 50%;
+    opacity: 0;
+    transition: all 0.8s $ease1;
+
+    &.view {
+      translate: 0 0;
+      opacity: 1;
+    }
 
     &__inner {
       display: flex;
@@ -183,7 +218,7 @@
       opacity: 0;
       transition: all 0.5s $ease1;
 
-      &.view {
+      &.active {
         opacity: 1;
       }
 
@@ -225,5 +260,163 @@
         font-size: rem(14);
       }
     }
+  }
+}
+
+/* --------------------------------
+* works
+* -------------------------------- */
+.works {
+  margin-bottom: rem(200);
+  padding: 0 rem(144);
+
+  &__title {
+    @include title;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(48);
+    margin-top: rem(32);
+
+    &__content {
+      &__img {
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-color: $offWhite;
+          scale: 1 1;
+          transform-origin: top left;
+          transition: all 0.5s $ease1;
+          z-index: 2;
+        }
+
+        &.view {
+          &::before {
+            scale: 1 0;
+          }
+        }
+
+        img {
+          transition: all 0.5s $ease1;
+        }
+      }
+
+      &:hover {
+        .works__grid__content__img img {
+          scale: 1.1;
+        }
+      }
+
+      &__title {
+        margin: rem(20) 0 0 rem(8);
+        font-family: $jp;
+        font-size: rem(16);
+        font-weight: 500;
+        line-height: 1.5;
+      }
+
+      &__category {
+        margin: rem(8) 0 0 rem(8);
+        font-family: $en;
+        font-size: rem(12);
+        line-height: 1.5;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__btn {
+    @include btn;
+    margin: rem(72) auto 0;
+  }
+}
+
+/* --------------------------------
+* news
+* -------------------------------- */
+.news {
+  display: grid;
+  grid-template-areas:
+    "title list"
+    "title btn";
+  grid-template-columns: max-content 1fr;
+  gap: rem(40) rem(56);
+  margin-bottom: rem(200);
+  padding: 0 rem(144);
+
+  &__title {
+    @include title;
+    grid-area: title;
+  }
+
+  &__list {
+    grid-area: list;
+    width: 100%;
+    margin-top: rem(40);
+
+    &__item {
+      position: relative;
+      display: flex;
+      padding: rem(40) 0;
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: 1.5;
+      translate: 0 50%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: $black;
+        opacity: 0.2;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: $black;
+        scale: 0 1;
+        transform-origin: top right;
+        transition: scale 0.5s $ease1;
+      }
+
+      &:hover::after {
+        scale: 1 1;
+        transform-origin: top left;
+      }
+
+      &__date {
+        font-family: $en;
+      }
+
+      &__category {
+        margin-left: rem(56);
+        font-family: $en;
+      }
+
+      &__title {
+        margin-left: rem(136);
+        font-family: $jp;
+      }
+    }
+  }
+
+  &__btn {
+    @include btn;
+    grid-area: btn;
   }
 }
