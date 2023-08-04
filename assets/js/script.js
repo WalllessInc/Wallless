@@ -179,40 +179,58 @@ const Works = defineComponent({
 		return {
 			items: [
 				{
-					href: "works.html#works01",
-					imageSrc: "assets/images/works_ensupport.webp",
-					title: "せしゅらく ブランディングツール",
-					category: "Graphic / Movie"
-				},
-				{
-					href: "works.html#works02",
-					imageSrc: "assets/images/works_ensupport.webp",
+					href: "works/kinjo.html",
+					imageSrc: "assets/images/works/works_kinjo-01.webp",
 					title: "金城学院大学 入学資料",
 					category: "Graphic"
 				},
 				{
-					href: "works.html#works03",
-					imageSrc: "assets/images/works_ensupport.webp",
+					href: "works/rohto.html",
+					imageSrc: "assets/images/works/works_rohto.webp",
 					title: "ロート製薬 新卒採用ポスター",
 					category: "Graphic"
 				},
 				{
-					href: "works.html#works03",
-					imageSrc: "assets/images/works_ensupport.webp",
+					href: "works/ensupport.html",
+					imageSrc: "assets/images/works/works_ensupport-01.webp",
+					title: "せしゅらく ブランディングツール",
+					category: "Graphic / Movie"
+				},
+				{
+					href: "works/tesla.html",
+					imageSrc: "assets/images/works/works_tesla-01.webp",
 					title: "ふれあいテスラ コーポレートツール",
 					category: "Graphic / Web / Movie / Photograph"
 				},
 				{
-					href: "works.html#works03",
-					imageSrc: "assets/images/works_ensupport.webp",
+					href: "works/polaris.html",
+					imageSrc: "assets/images/works/works_polaris-01.webp",
 					title: "ポラリスエクスポート ブランディングツール",
 					category: "Graphic / Web"
 				},
 				{
-					href: "works.html#works03",
-					imageSrc: "assets/images/works_ensupport.webp",
+					href: "works/sarrouel.html",
+					imageSrc: "assets/images/works/works_sarrouel-01.webp",
+					title: "積分サークル さるえる様 名刺",
+					category: "Graphic"
+				},
+				{
+					href: "works/cooonworks.html",
+					imageSrc: "assets/images/works/works_cooonworks-01.webp",
 					title: "COOON WORKS CFクリエイティブサポート",
 					category: "Graphic"
+				},
+				{
+					href: "works/trike.html",
+					imageSrc: "assets/images/works/works_trike-01.webp",
+					title: "EV-TRIKE",
+					category: "Web"
+				},
+				{
+					href: "works/photograph.html",
+					imageSrc: "assets/images/works/works_photograph-01.webp",
+					title: "写真・動画撮影",
+					category: "Photograph"
 				},
 			],
 		}

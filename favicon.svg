@@ -1,1 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>fill:#000;</style></defs><rect x="20.62" y="16.41" width="3.19" height="8.13"/><rect x="20.62" y="28.4" width="3.19" height=".8"/><rect x="20.62" y="25.64" width="3.19" height="1.66"/><rect x="14.38" y="28.25" width="3.19" height=".95"/><rect x="14.38" y="11.36" width="3.19" height="15.94"/><rect x="8.19" y="2.8" width="3.19" height="26.39"/></svg>
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>
+    rect {
+      fill: #222;
+    }
+    @media (prefers-color-scheme: dark) {
+      rect {
+        fill: #fff;
+      }
+    }</style></defs><rect x="20.62" y="16.41" width="3.19" height="8.13"/><rect x="20.62" y="28.4" width="3.19" height=".8"/><rect x="20.62" y="25.64" width="3.19" height="1.66"/><rect x="14.38" y="28.25" width="3.19" height=".95"/><rect x="14.38" y="11.36" width="3.19" height="15.94"/><rect x="8.19" y="2.8" width="3.19" height="26.39"/></svg>

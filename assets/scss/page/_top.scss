@@ -230,8 +230,9 @@
 
       &__img {
         width: rem(800);
-        height: rem(280);
+        height: rem(296);
         object-fit: cover;
+        border-radius: 4px;
       }
 
       &__title {
@@ -281,8 +282,15 @@
     margin-top: rem(32);
 
     &__content {
+
+      &:nth-child(n+7) {
+        display: none;
+      }
+
       &__img {
         position: relative;
+        width: 100%;
+        height: rem(248);
         border-radius: 4px;
         overflow: hidden;
 
@@ -304,6 +312,9 @@
         }
 
         img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
           transition: all 0.5s $ease1;
         }
       }
