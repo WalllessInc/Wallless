@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@use "../global/" as *;
+
+#news {
+  .news {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: rem(104) rem(144) 0;
+
+    &__list {
+      li:nth-child(n+4) {
+        display: block;
+      }
+
+      &__item {
+        &__category {
+          margin-left: rem(96);
+        }
+      }
+    }
+  }
+}

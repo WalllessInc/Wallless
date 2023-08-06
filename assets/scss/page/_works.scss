@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@use "../global/" as *;
+
+#works {
+  .works {
+    padding: rem(104) rem(144) 0;
+
+    &__title {
+      margin-bottom: rem(72);
+    }
+
+    &__grid {
+      gap: rem(72) rem(48);
+
+      &__content {
+        &:nth-child(n+7) {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+@charset "UTF-8";
+@use "../global/" as *;
+@use "../common/component" as *;
+
+.newsArticle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: rem(104) rem(144) rem(200);
+  font-family: $jp;
+
+  &__title {
+    font-size: rem(40);
+    font-weight: 700;
+  }
+
+  &__detail {
+    display: flex;
+    column-gap: rem(42);
+    margin: rem(16) 0 rem(64);
+    font-family: $en;
+    font-size: rem(14);
+    font-weight: 500;
+  }
+
+  &__subheading {
+    margin: rem(48) 0 rem(16);
+    font-size: rem(32);
+    font-weight: 700;
+  }
+
+  &__text {
+    margin-bottom: rem(48);
+    font-size: rem(14);
+  }
+
+  &__content {
+    margin-bottom: rem(48);
+
+    &__title {
+      margin-bottom: rem(12);
+      font-size: rem(24);
+      font-weight: 500;
+    }
+
+    &__text {
+      margin-top: rem(8);
+      font-size: rem(14);
+    }
+
+    &__list {
+      margin-left: rem(20);
+      font-size: rem(16);
+      font-weight: 500;
+      list-style: disc;
+    }
+
+    &__teacher {
+      font-size: rem(16);
+    }
+
+    &__detail {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(4);
+      margin-top: rem(24);
+      font-size: rem(16);
+
+      div {
+        display: flex;
+
+        dt {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  &__hold {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(16);
+    font-size: rem(14);
+
+    dt {
+      font-weight: 500;
+    }
+  }
+
+  &__btn {
+    @include btn;
+    margin: rem(48) 0;
+    padding: rem(24) rem(104);
+    border-radius: 8px;
+    font-size: rem(24);
+  }
+
+  &__share {
+    width: fit-content;
+
+    dt {
+      margin-bottom: rem(16);
+      font-size: rem(14);
+      font-weight: 500;
+    }
+
+    dd {
+      display: flex;
+      justify-content: center;
+      column-gap: rem(32);
+
+      a {
+        width: rem(24);
+        height: rem(24);
+        transition: all 0.3s $ease1;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  &__breadcrumbs {
+    @include breadcrumbs;
+    top: auto;
+    right: rem(144);
+    bottom: rem(24);
+    rotate: 0deg;
+  }
+}

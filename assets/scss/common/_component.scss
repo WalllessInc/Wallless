@@ -64,3 +64,41 @@
     }
   }
 }
+
+//////////////////////////////
+// breadcrumbs
+//////////////////////////////
+@mixin breadcrumbs {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  column-gap: rem(16);
+  top: rem(104);
+  right: rem(32);
+  font-family: $en;
+  font-size: rem(14);
+  line-height: 1.5;
+  rotate: 90deg;
+
+  a {
+    position: relative;
+    display: block;
+    transition: all 0.5s $ease1;
+
+    &::before {
+      content: "/";
+      position: absolute;
+      right: rem(-12);
+      bottom: rem(-1);
+      font-size: rem(14);
+    }
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &__current {
+    color: $green;
+  }
+}

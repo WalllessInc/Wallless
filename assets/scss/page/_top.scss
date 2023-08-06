@@ -268,11 +268,16 @@
 * works
 * -------------------------------- */
 .works {
+  position: relative;
   margin-bottom: rem(200);
   padding: 0 rem(144);
 
   &__title {
     @include title;
+  }
+
+  &__breadcrumbs {
+    @include breadcrumbs;
   }
 
   &__grid {
@@ -282,7 +287,6 @@
     margin-top: rem(32);
 
     &__content {
-
       &:nth-child(n+7) {
         display: none;
       }
@@ -353,6 +357,7 @@
 * news
 * -------------------------------- */
 .news {
+  position: relative;
   display: grid;
   grid-template-areas:
     "title list"
@@ -367,14 +372,23 @@
     grid-area: title;
   }
 
+  &__breadcrumbs {
+    @include breadcrumbs;
+  }
+
   &__list {
     grid-area: list;
     width: 100%;
     margin-top: rem(40);
 
+    li:nth-child(n+4) {
+      display: none;
+    }
+
     &__item {
       position: relative;
       display: flex;
+      align-items: center;
       padding: rem(40) 0;
       font-size: rem(14);
       font-weight: 500;
