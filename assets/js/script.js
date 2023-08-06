@@ -231,7 +231,7 @@ const Service = defineComponent({
 				},
 				{
 					id: "web",
-					imageSrc: "assets/images/service_web.jpg",
+					imageSrc: "assets/images/service_web.webp",
 					titleJp: "Web制作",
 					titleEn: "Web",
 					text: "クライアントに合わせたオーダーメイドのWebサイトを制作いたします。<br>ウェブアクセシビリティやSEOに配慮したサイトづくりを心がけています。"
@@ -245,7 +245,7 @@ const Service = defineComponent({
 				},
 				{
 					id: "photograph",
-					imageSrc: "assets/images/service_photograph.jpg",
+					imageSrc: "assets/images/service_photograph.webp",
 					titleJp: "写真・動画撮影",
 					titleEn: "Photograph",
 					text: "物撮り・イベント撮影などオールジャンル撮影可能。<br>カメラジンバル・ドローン等もございますので、空撮からシネマティック撮影までお任せください。"
