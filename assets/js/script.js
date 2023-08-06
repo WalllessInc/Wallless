@@ -85,7 +85,7 @@ const LowerHeader = defineComponent({
 	template: `
 					<header class="header" id="header">
 						<h1 class="header__logo">
-							<a href="index.html">
+							<a href="../index.html">
 								<img src="../assets/images/logo.svg" alt="logo">
 							</a>
 						</h1>
@@ -231,7 +231,7 @@ const Service = defineComponent({
 				},
 				{
 					id: "web",
-					imageSrc: "assets/images/service_web.webp",
+					imageSrc: "assets/images/service_web.jpg",
 					titleJp: "Web制作",
 					titleEn: "Web",
 					text: "クライアントに合わせたオーダーメイドのWebサイトを制作いたします。<br>ウェブアクセシビリティやSEOに配慮したサイトづくりを心がけています。"
@@ -245,7 +245,7 @@ const Service = defineComponent({
 				},
 				{
 					id: "photograph",
-					imageSrc: "assets/images/service_photograph.webp",
+					imageSrc: "assets/images/service_photograph.jpg",
 					titleJp: "写真・動画撮影",
 					titleEn: "Photograph",
 					text: "物撮り・イベント撮影などオールジャンル撮影可能。<br>カメラジンバル・ドローン等もございますので、空撮からシネマティック撮影までお任せください。"
@@ -387,7 +387,7 @@ const News = defineComponent({
 					dateTime: "2023-02-03",
 					date: "2023.02.03",
 					category: "News",
-					title: "HPを公開しました。"
+					title: "HPを公開しました"
 				},
 			],
 		}
@@ -414,7 +414,7 @@ const NewsSession01 = defineComponent({
 	template: `
 					<div>
 						<h3 class="newsArticle__subheading">岐阜市初のクリエイティブスクールついに開校！</h3>
-						<p class="newsArticle__text">
+						<p class="newsArticle__promotion">
 							皆さんがよく使っている「YouTube」や「Instagram」などの起業は、創業期にデザイナーがいました。<br>
 							また、会社全体でもデザイナーを迎え入れたいという会社は多く全体の55％にまで登ります。<br>
 							そんな大デザイン時代で、デザインの基礎を知らなくても大丈夫ですか？<br>
@@ -487,6 +487,24 @@ const NewsSession02 = defineComponent({
       `
 });
 
+const NewsShare = defineComponent({
+	template: `
+					<div>
+						<dl class="newsArticle__share">
+							<dt>この記事をシェアする</dt>
+							<dd>
+								<a href="#" target="_blank">
+									<img src="../assets/images/icon_line.svg" alt="">
+								</a>
+								<a href="#" target="_blank">
+									<img src="../assets/images/icon_twitter.svg" alt="">
+								</a>
+							</dd>
+						</dl>
+					</div>
+      `
+});
+
 const app = createApp({});
 app.component('the-header', Header);
 app.component('the-footer', Footer);
@@ -496,8 +514,9 @@ app.component('the-contact', Contact);
 app.component('app-service', Service);
 app.component('app-works', Works);
 app.component('app-news', News);
-app.component('app-news_session-01', NewsSession01);
-app.component('app-news_session-02', NewsSession02);
+app.component('the-news_session-01', NewsSession01);
+app.component('the-news_session-02', NewsSession02);
+app.component('the-news_share', NewsShare);
 app.mount('#app');
 
 /* --------------------------------
