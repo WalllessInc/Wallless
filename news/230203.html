@@ -15,8 +15,8 @@
 	<meta property="og:title" content="HPを公開しました | Wallless">
 	<meta property="og:description" content="岐阜市に拠点を置くクリエイティブ集団Wallless">
 	<meta property="og:url" content="https://wallless-inc.com/news/230203.html">
-	<meta property="og:image" content="https://wallless-inc.com/assets/images/og.webp">
-	<meta property="og:site_name" content="HPを公開しました | Wallless">
+	<meta property="og:image" content="https://wallless-inc.com/assets/images/ogp.webp">
+	<meta property="og:site_name" content="Wallless">
 	<meta property="og:locale" content="ja_JP">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@wallless_yuki">
@@ -37,6 +37,16 @@
 
 <body>
 	<div id="app">
+		<!-- blindfold -->
+		<div class="blindfold">
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+		</div>
+		<!-- /blindfold -->
+
 		<!-- header -->
 		<the-lower_header></the-lower_header>
 		<!-- /header -->
@@ -51,15 +61,15 @@
 					<p>News</p>
 				</div>
 
-				<img class="newsArticle__img" src="../assets/images/news/230203.webp" alt="">
+				<img class="newsArticle__img" src="../assets/images/news/230203.webp" alt="" width="1152" height="384">
 
 				<p class="newsArticle__text">当社HPを新規公開いたしました。</p>
 
 				<the-news_share></the-news_share>
 
 				<div class="newsArticle__breadcrumbs">
-					<a href="../index.html">Top</a>
-					<a href="../news.html">News</a>
+					<a class="js-pageSwitch" href="../index.html">Top</a>
+					<a class="js-pageSwitch" href="../news.html">News</a>
 					<p class="newsArticle__breadcrumbs__current">HPを公開しました</p>
 				</div>
 			</section>

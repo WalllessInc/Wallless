@@ -5,33 +5,33 @@ import { createApp, defineComponent } from 'https://unpkg.com/vue@3.2.4/dist/vue
 
 const Header = defineComponent({
 	template: `
-					<header class="header" id="header">
+					<header class="header js-header">
 						<h1 class="header__logo">
-							<a href="index.html">
-								<img src="assets/images/logo.svg" alt="logo">
+							<a class="js-pageSwitch" href="index.html">
+								<img src="assets/images/logo.svg" alt="Wallless" width="144" height="32">
 							</a>
 						</h1>
 
 						<nav class="header__nav">
 							<ul class="header__nav__list">
 								<li>
-									<a href="about.html">About</a>
+									<a class="js-pageSwitch" href="about.html">About</a>
 								</li>
 
 								<li>
-									<a href="service.html">Service</a>
+									<a class="js-pageSwitch" href="service.html">Service</a>
 								</li>
 
 								<li>
-									<a href="works.html">Works</a>
+									<a class="js-pageSwitch" href="works.html">Works</a>
 								</li>
 
 								<li>
-									<a href="news.html">News</a>
+									<a class="js-pageSwitch" href="news.html">News</a>
 								</li>
 
 								<li class="header__nav__list__btn">
-									<a href="#">
+									<a href="">
 										<span>Contact</span>
 									</a>
 								</li>
@@ -44,34 +44,34 @@ const Header = defineComponent({
 const Footer = defineComponent({
 	template: `
 					<footer class="footer">
-						<a href="index.html" class="footer__logo">
-							<img src="assets/images/logo.svg" alt="ロゴ">
+						<a class="footer__logo js-pageSwitch" href="index.html">
+							<img src="assets/images/logo.svg" alt="Wallless" width="144" height="32">
 						</a>
 
 						<a class="footer__sns" href="https://twitter.com/wallless_yuki" target="_blank">
-							<img src="assets/images/icon_twitter.svg" alt="twitter">
+							<img src="assets/images/icon_twitter.svg" alt="twitter" width="24" height="24">
 						</a>
 
 						<nav class="footer__nav">
 							<ul class="footer__nav__list">
 								<li>
-									<a href="about.html">About</a>
+									<a class="js-pageSwitch" href="about.html">About</a>
 								</li>
 
 								<li>
-									<a href="service.html">Service</a>
+									<a class="js-pageSwitch" href="service.html">Service</a>
 								</li>
 
 								<li>
-									<a href="works.html">Works</a>
+									<a class="js-pageSwitch" href="works.html">Works</a>
 								</li>
 
 								<li>
-									<a href="news.html">News</a>
+									<a class="js-pageSwitch" href="news.html">News</a>
 								</li>
 
 								<li>
-									<a href="#">Contact</a>
+									<a href="">Contact</a>
 								</li>
 							</ul>
 						</nav>
@@ -83,33 +83,33 @@ const Footer = defineComponent({
 
 const LowerHeader = defineComponent({
 	template: `
-					<header class="header" id="header">
+					<header class="header js-header">
 						<h1 class="header__logo">
-							<a href="../index.html">
-								<img src="../assets/images/logo.svg" alt="logo">
+							<a class="js-pageSwitch" href="../index.html">
+								<img src="../assets/images/logo.svg" alt="Wallless" width="144" height="32">
 							</a>
 						</h1>
 
 						<nav class="header__nav">
 							<ul class="header__nav__list">
 								<li>
-									<a href="../about.html">About</a>
+									<a class="js-pageSwitch" href="../about.html">About</a>
 								</li>
 
 								<li>
-									<a href="../service.html">Service</a>
+									<a class="js-pageSwitch" href="../service.html">Service</a>
 								</li>
 
 								<li>
-									<a href="../works.html">Works</a>
+									<a class="js-pageSwitch" href="../works.html">Works</a>
 								</li>
 
 								<li>
-									<a href="../news.html">News</a>
+									<a class="js-pageSwitch" href="../news.html">News</a>
 								</li>
 
 								<li class="header__nav__list__btn">
-									<a href="#">
+									<a href="">
 										<span>Contact</span>
 									</a>
 								</li>
@@ -122,34 +122,34 @@ const LowerHeader = defineComponent({
 const LowerFooter = defineComponent({
 	template: `
 					<footer class="footer">
-						<a href="index.html" class="footer__logo">
-							<img src="../assets/images/logo.svg" alt="ロゴ">
+						<a class="footer__logo js-pageSwitch" href="../index.html">
+							<img src="../assets/images/logo.svg" alt="Wallless" width="144" height="32">
 						</a>
 
 						<a class="footer__sns" href="https://twitter.com/wallless_yuki" target="_blank">
-							<img src="../assets/images/icon_twitter.svg" alt="twitter">
+							<img src="../assets/images/icon_twitter.svg" alt="twitter" width="24" height="24">
 						</a>
 
 						<nav class="footer__nav">
 							<ul class="footer__nav__list">
 								<li>
-									<a href="../about.html">About</a>
+									<a class="js-pageSwitch" href="../about.html">About</a>
 								</li>
 
 								<li>
-									<a href="../service.html">Service</a>
+									<a class="js-pageSwitch" href="../service.html">Service</a>
 								</li>
 
 								<li>
-									<a href="../works.html">Works</a>
+									<a class="js-pageSwitch" href="../works.html">Works</a>
 								</li>
 
 								<li>
-									<a href="../news.html">News</a>
+									<a class="js-pageSwitch" href="../news.html">News</a>
 								</li>
 
 								<li>
-									<a href="#">Contact</a>
+									<a href="">Contact</a>
 								</li>
 							</ul>
 						</nav>
@@ -163,7 +163,7 @@ const Contact = defineComponent({
 	template: `
 					<section>
 						<div class="stalker"></div>
-						<a class="contact" href="#">
+						<a class="contact" href="">
 							<h2 class="contact__title">
 								<span class="contact__title__jp">
 									お問い合わせ
@@ -205,7 +205,9 @@ const Service = defineComponent({
 					<div class="service__content js-fadeIn">
 						<div class="service__content__inner js-serviceContent"
 						v-for="(item, index) in items" :key="index" :id="item.id" :class="item.class">
-							<img class="service__content__inner__img" :src="item.imageSrc" :alt="item.titleEn">
+							<a class="service__content__inner__img js-pageSwitch" :href="item.href">
+								<img :src="item.imageSrc" :alt="item.titleEn" width="800" height="296">
+							</a>
 							<h3 class="service__content__inner__title">
 								<span class="service__content__inner__title__jp">
 									{{ item.titleJp }}
@@ -214,7 +216,7 @@ const Service = defineComponent({
 									{{ item.titleEn }}
 								</span>
 							</h3>
-							<p class="service__content__inner__text"  v-html="item.text"></p>
+							<p class="service__content__inner__text" v-html="item.text"></p>
 						</div>
 					</div>
       `,
@@ -224,6 +226,7 @@ const Service = defineComponent({
 				{
 					id: "graphic",
 					class: "active",
+					href: "service.html#graphic",
 					imageSrc: "assets/images/service_graphic.webp",
 					titleJp: "グラフィック制作",
 					titleEn: "Graphic",
@@ -231,6 +234,7 @@ const Service = defineComponent({
 				},
 				{
 					id: "web",
+					href: "service.html#web",
 					imageSrc: "assets/images/service_web.webp",
 					titleJp: "Web制作",
 					titleEn: "Web",
@@ -238,6 +242,7 @@ const Service = defineComponent({
 				},
 				{
 					id: "movie",
+					href: "service.html#movie",
 					imageSrc: "assets/images/service_movie.webp",
 					titleJp: "動画制作",
 					titleEn: "Movie",
@@ -245,6 +250,7 @@ const Service = defineComponent({
 				},
 				{
 					id: "photograph",
+					href: "service.html#photograph",
 					imageSrc: "assets/images/service_photograph.webp",
 					titleJp: "写真・動画撮影",
 					titleEn: "Photograph",
@@ -258,9 +264,9 @@ const Service = defineComponent({
 const Works = defineComponent({
 	template: `
 					<div class="works__grid">
-						<a class="works__grid__content" v-for="(item, index) in items" :key="index" :href="item.href">
+						<a class="works__grid__content js-pageSwitch" v-for="(item, index) in items" :key="index" :href="item.href">
 							<div class="works__grid__content__img js-fadeIn">
-								<img :src="item.imageSrc" alt="">
+								<img :src="item.imageSrc" alt="" width="352" height="248">
 							</div>
 							<h3 class="works__grid__content__title">
 								{{ item.title }}
@@ -276,55 +282,55 @@ const Works = defineComponent({
 			items: [
 				{
 					href: "works/kinjo.html",
-					imageSrc: "assets/images/works/works_kinjo-01.webp",
+					imageSrc: "assets/images/works/kinjo_pamphlet-01.webp",
 					title: "金城学院大学 入学資料",
 					category: "Graphic"
 				},
 				{
 					href: "works/rohto.html",
-					imageSrc: "assets/images/works/works_rohto.webp",
+					imageSrc: "assets/images/works/rohto_poster-01.webp",
 					title: "ロート製薬 新卒採用ポスター",
 					category: "Graphic"
 				},
 				{
 					href: "works/ensupport.html",
-					imageSrc: "assets/images/works/works_ensupport-01.webp",
+					imageSrc: "assets/images/works/seshuraku_branding-01.webp",
 					title: "せしゅらく ブランディングツール",
 					category: "Graphic / Movie"
 				},
 				{
-					href: "works/tesla.html",
-					imageSrc: "assets/images/works/works_tesla-01.webp",
-					title: "ふれあいテスラ コーポレートツール",
+					href: "works/tesla_event.html",
+					imageSrc: "assets/images/works/tesla_event-01.webp",
+					title: "ふれあいテスラ イベントツール",
 					category: "Graphic / Web / Movie / Photograph"
 				},
 				{
 					href: "works/polaris.html",
-					imageSrc: "assets/images/works/works_polaris-01.webp",
+					imageSrc: "assets/images/works/polaris_branding-01.webp",
 					title: "ポラリスエクスポート ブランディングツール",
 					category: "Graphic / Web"
 				},
 				{
 					href: "works/sarrouel.html",
-					imageSrc: "assets/images/works/works_sarrouel-01.webp",
+					imageSrc: "assets/images/works/integral_card-01.webp",
 					title: "積分サークル さるえる様 名刺",
 					category: "Graphic"
 				},
 				{
 					href: "works/cooonworks.html",
-					imageSrc: "assets/images/works/works_cooonworks-01.webp",
+					imageSrc: "assets/images/works/cooonworks_support-01.webp",
 					title: "COOON WORKS CFクリエイティブサポート",
 					category: "Graphic"
 				},
 				{
 					href: "works/trike.html",
-					imageSrc: "assets/images/works/works_trike-01.webp",
+					imageSrc: "assets/images/works/trike_web-01.webp",
 					title: "EV-TRIKE ランディングページ",
 					category: "Web"
 				},
 				{
 					href: "works/photograph.html",
-					imageSrc: "assets/images/works/works_photograph-01.webp",
+					imageSrc: "assets/images/works/photograph-01.webp",
 					title: "写真・動画撮影",
 					category: "Photograph"
 				},
@@ -337,7 +343,7 @@ const News = defineComponent({
 	template: `
 					<ul class="news__list">
 						<li v-for="(item, index) in items" :key="index">
-							<a class="news__list__item js-news" :href="item.href">
+							<a class="news__list__item js-news js-pageSwitch" :href="item.href">
 								<time class="news__list__item__date" :datetime="item.dateTime" :style="{ width: calculateTimeWidth(item.date) + 'px' }">
 									{{ item.date }}
 								</time>
@@ -468,21 +474,11 @@ const NewsSession02 = defineComponent({
 							</div>
 						</dl>
 
-						<a class="newsArticle__btn" href="#" target="_blank">
+						<a class="newsArticle__btn" href="" target="_blank">
 							<span>Entry</span>
 						</a>
 
-						<dl class="newsArticle__share">
-							<dt>この記事をシェアする</dt>
-							<dd>
-								<a href="#" target="_blank">
-									<img src="../assets/images/icon_line.svg" alt="">
-								</a>
-								<a href="#" target="_blank">
-									<img src="../assets/images/icon_twitter.svg" alt="">
-								</a>
-							</dd>
-						</dl>
+						<the-news_share></the-news_share>
 					</div>
       `
 });
@@ -493,11 +489,11 @@ const NewsShare = defineComponent({
 						<dl class="newsArticle__share">
 							<dt>この記事をシェアする</dt>
 							<dd>
-								<a href="#" target="_blank">
-									<img src="../assets/images/icon_line.svg" alt="">
+								<a href="" target="_blank">
+									<img src="../assets/images/icon_line.svg" alt="line"  width="24" height="24">
 								</a>
-								<a href="#" target="_blank">
-									<img src="../assets/images/icon_twitter.svg" alt="">
+								<a href="" target="_blank">
+									<img src="../assets/images/icon_twitter.svg" alt="twitter" width="24" height="24">
 								</a>
 							</dd>
 						</dl>
@@ -536,26 +532,38 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------
+*  Disable Empty a Tags
+* -------------------------------- */
+$(function () {
+	$('a[href=""]').each((i, e) => {
+		$(e).on('click', (a) => {
+			a.preventDefault();
+			alert('リンク先がありません');
+		});
+	});
+});
+
+/* --------------------------------
 *  Lower Content
 * -------------------------------- */
 $(function () {
-	const headerHeight = $('#header').innerHeight()
+	const headerHeight = $('.js-header').innerHeight();
 	$('.js-main').css('margin-top', headerHeight);
 });
 
 /* --------------------------------
-*  Scroll Header
+*  Hide Header
 * -------------------------------- */
 $(function () {
 	let pastPos = $(window).scrollTop();
-	let headerHeight = $('#header').innerHeight()
+	let headerHeight = $('.js-header').innerHeight();
 
 	$(window).on('scroll', function () {
 		const scroll = $(window).scrollTop();
 		if (scroll > pastPos && scroll > headerHeight) {
-			$("#header").addClass('hide');
+			$('.js-header').addClass('hide');
 		} else {
-			$("#header").removeClass('hide');
+			$('.js-header').removeClass('hide');
 		}
 
 		pastPos = scroll;
@@ -563,89 +571,146 @@ $(function () {
 });
 
 /* --------------------------------
+*  Page Transition
+* -------------------------------- */
+$(function () {
+	const blindfoldContainer = $('.blindfold');
+	const blindfoldItem = $('.blindfold__item');
+	gsap.set(blindfoldContainer, { yPercent: 0 });
+	gsap.set(blindfoldItem, { scaleY: 0 });
+
+	// 画面遷移 前のアニメーション
+	const pageTransitionBefore = () => {
+		const tl = gsap.timeline({});
+		tl.fromTo(blindfoldContainer, {
+			yPercent: 0,
+		}, {
+			yPercent: 0,
+			duration: 0.4,
+		}).fromTo(blindfoldItem, {
+			scaleY: 0
+		}, {
+			scaleY: 1,
+			duration: 0.4,
+			transformOrigin: 'bottom left',
+			ease: 'expo.inOut',
+			stagger: { each: 0.1 }
+		});
+	};
+
+	// 画面遷移 後のアニメーション
+	const pageTransitionAfter = () => {
+		const tl = gsap.timeline({});
+		tl.fromTo(blindfoldContainer, {
+			yPercent: 0,
+		}, {
+			yPercent: -100,
+			duration: 1,
+			ease: "expo.inOut",
+		}).fromTo(blindfoldItem, {
+			scaleY: 1,
+		}, {
+			scaleY: 1,
+			duration: 1,
+		});
+	};
+
+	$('.js-pageSwitch').each((i, e) => {
+		$(e).on('click', (a) => {
+			a.preventDefault();
+			const href = $(e).attr('href');
+			pageTransitionBefore();
+			setTimeout(() => {
+				window.location.href = href;
+			}, 1200);
+		});
+	});
+
+	if ($('.js-main').length) {
+		pageTransitionAfter();
+	}
+});
+
+/* --------------------------------
 *  Scroll Animation
 * -------------------------------- */
 $(function () {
-	$(".js-fadeIn").on("inview", function () {
-		$(this).addClass("view");
+	$('.js-fadeIn').on('inview', function () {
+		$(this).addClass('view');
 	});
 });
 
-$(function () {
-	gsap.set('.js-hero', {
-		opacity: 0,
-		y: 10,
-	});
-	const fadeInTimeline = gsap.to('.js-hero', {
-		opacity: 1,
-		y: 0,
-		stagger: {
-			each: 0.1,
+gsap.set('.js-hero', {
+	y: 10,
+	opacity: 0,
+});
+const fadeInTimeline = gsap.to('.js-hero', {
+	y: 0,
+	opacity: 1,
+	stagger: { each: 0.1 },
+	scrollTrigger: {
+		trigger: '.js-trigger',
+		start: 'top center+=200',
+		// markers: true,
+		// 上スクロールで逆再生
+		onLeaveBack: function () {
+			fadeInTimeline.reverse();
 		},
-		scrollTrigger: {
-			trigger: '.js-trigger',
-			start: 'top center+=200',
-			// markers: true,
-			onLeaveBack: function () {
-				fadeInTimeline.reverse();
-			},
-		},
-	});
+	},
+});
 
-	gsap.set('.js-scroll', {
-		opacity: 1,
-		y: 0,
-	});
-	const fadeOutScroll = gsap.to('.js-scroll', {
-		opacity: 0,
-		y: 20,
-		scrollTrigger: {
-			trigger: '.js-trigger',
-			start: 'top center+=200',
-			onLeaveBack: function () {
-				fadeOutScroll.reverse();
-			},
+gsap.set('.js-scroll', {
+	y: 0,
+	opacity: 1,
+});
+const fadeOutScroll = gsap.to('.js-scroll', {
+	y: 20,
+	opacity: 0,
+	scrollTrigger: {
+		trigger: '.js-trigger',
+		start: 'top center+=200',
+		// 上スクロールで逆再生
+		onLeaveBack: function () {
+			fadeOutScroll.reverse();
 		},
-	});
+	},
+});
 
-	gsap.fromTo(".js-serviceNav", {
-		y: 50,
-		opacity: 0,
-	}, {
-		scrollTrigger: {
-			trigger: ".service__nav",
-			start: "top center+=100",
-		},
-		y: 0,
-		opacity: 1,
-		stagger: {
-			each: 0.1,
-		},
-	});
+gsap.fromTo('.js-serviceNav', {
+	y: 50,
+	opacity: 0,
+}, {
+	y: 0,
+	opacity: 1,
+	stagger: { each: 0.1 },
+	scrollTrigger: {
+		trigger: '.service__nav',
+		start: 'top center+=100',
+	}
+});
 
-	gsap.fromTo(".js-news", {
-		y: 50,
-		opacity: 0,
-	}, {
-		scrollTrigger: {
-			trigger: ".news__list",
-			start: "top center+=100",
-		},
-		y: 0,
-		opacity: 1,
-		stagger: {
-			each: 0.1,
-		},
-	});
-})
+gsap.fromTo('.js-news', {
+	y: 50,
+	opacity: 0,
+}, {
+	y: 0,
+	opacity: 1,
+	stagger: { each: 0.1 },
+	scrollTrigger: {
+		trigger: '.news__list',
+		start: 'top center+=100',
+	},
+});
 
 /* --------------------------------
 *  Service Toggle
 * -------------------------------- */
-$('.js-serviceNav').on('click', function () {
-	const target = $(this).data('target');
+$(function () {
+	$('.js-serviceNav').on('click', function () {
+		const target = $(this).data('target');
 
-	$('.js-serviceNav, .js-serviceContent').removeClass('active');
-	$(this).addClass('active');
-	$('#' + target).addClass('active');
+		$('.js-serviceNav, .js-serviceContent').removeClass('active');
+		$(this).addClass('active');
+		$('#' + target).addClass('active');
+	});
 });

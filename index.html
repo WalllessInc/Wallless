@@ -15,8 +15,8 @@
 	<meta property="og:title" content="Wallless | 岐阜のデザイン事務所">
 	<meta property="og:description" content="岐阜市に拠点を置くクリエイティブ集団Wallless">
 	<meta property="og:url" content="https://wallless-inc.com/">
-	<meta property="og:image" content="https://wallless-inc.com/assets/images/og.webp">
-	<meta property="og:site_name" content="Wallless | 岐阜のデザイン事務所">
+	<meta property="og:image" content="https://wallless-inc.com/assets/images/ogp.webp">
+	<meta property="og:site_name" content="Wallless">
 	<meta property="og:locale" content="ja_JP">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@wallless_yuki">
@@ -37,6 +37,16 @@
 
 <body>
 	<div id="app">
+		<!-- blindfold -->
+		<div class="blindfold">
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+		</div>
+		<!-- /blindfold -->
+
 		<!-- header -->
 		<the-header></the-header>
 		<!-- /header -->
@@ -88,7 +98,7 @@
 						</p>
 					</div>
 
-					<a class="hero__content__btn js-hero" href="about.html">
+					<a class="hero__content__btn js-hero js-pageSwitch" href="about.html">
 						<span>Read More</span>
 					</a>
 				</div>
@@ -113,7 +123,7 @@
 					<li class="js-serviceNav" data-target="web">Web</li>
 					<li class="js-serviceNav" data-target="movie">Movie</li>
 					<li class="js-serviceNav" data-target="photograph">Photograph</li>
-					<a class="js-serviceNav" href="service.html">
+					<a class="js-serviceNav js-pageSwitch" href="service.html">
 						<span>Read More</span>
 					</a>
 				</ul>
@@ -129,7 +139,7 @@
 
 				<app-works></app-works>
 
-				<a class="works__btn" href="works.html">
+				<a class="works__btn js-pageSwitch" href="works.html">
 					<span>View More</span>
 				</a>
 			</section>
@@ -142,7 +152,7 @@
 
 				<app-news></app-news>
 
-				<a class="news__btn js-news" href="news.html">
+				<a class="news__btn js-news js-pageSwitch" href="news.html">
 					<span>Read More</span>
 				</a>
 			</section>

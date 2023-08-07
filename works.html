@@ -15,8 +15,8 @@
 	<meta property="og:title" content="Works | Wallless">
 	<meta property="og:description" content="岐阜市に拠点を置くクリエイティブ集団Wallless">
 	<meta property="og:url" content="https://wallless-inc.com/works.html">
-	<meta property="og:image" content="https://wallless-inc.com/assets/images/og.webp">
-	<meta property="og:site_name" content="Works | Wallless">
+	<meta property="og:image" content="https://wallless-inc.com/assets/images/ogp.webp">
+	<meta property="og:site_name" content="Wallless">
 	<meta property="og:locale" content="ja_JP">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@wallless_yuki">
@@ -35,14 +35,24 @@
 	<!-- /css -->
 </head>
 
-<body>
+<body data-page="works">
 	<div id="app">
+		<!-- blindfold -->
+		<div class="blindfold">
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+		</div>
+		<!-- /blindfold -->
+
 		<!-- header -->
 		<the-header></the-header>
 		<!-- /header -->
 
 		<!-- main -->
-		<main class="js-main" id="works">
+		<main class="js-main">
 			<section class="works">
 				<h2 class="works__title">
 					<span class="works__title__jp">制作実績</span>
@@ -50,7 +60,7 @@
 				</h2>
 
 				<div class="works__breadcrumbs">
-					<a href="index.html">Top</a>
+					<a class="js-pageSwitch" href="index.html">Top</a>
 					<p class="works__breadcrumbs__current">Works</p>
 				</div>
 
