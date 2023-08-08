@@ -12,8 +12,10 @@
   padding: rem(16) rem(40);
   border-radius: 4px;
   background-color: $black;
+  font-family: $en;
   font-size: rem(14);
   font-weight: 500;
+  line-height: 1.5;
   overflow: hidden;
 
   &::before {
@@ -69,16 +71,15 @@
 // breadcrumbs
 //////////////////////////////
 @mixin breadcrumbs {
-  position: absolute;
+  align-self: end;
+  position: relative;
   display: flex;
   align-items: center;
   column-gap: rem(16);
-  top: rem(104);
-  right: rem(32);
+  margin: 0 rem(144) rem(24) 0;
   font-family: $en;
   font-size: rem(14);
   line-height: 1.5;
-  rotate: 90deg;
 
   a {
     position: relative;

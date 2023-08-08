@@ -6,7 +6,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: rem(104) rem(144) rem(200);
+  margin-bottom: rem(200);
+  padding: rem(104) rem(144) 0;
   font-family: $jp;
 
   &__title {
@@ -98,8 +99,7 @@
 
   &__btn {
     @include btn;
-    padding: rem(24) rem(104);
-    border-radius: 8px;
+    padding: rem(24) rem(120);
     font-size: rem(24);
   }
 
@@ -132,9 +132,5 @@
 
   &__breadcrumbs {
     @include breadcrumbs;
-    top: auto;
-    right: rem(144);
-    bottom: rem(24);
-    rotate: 0deg;
   }
 }

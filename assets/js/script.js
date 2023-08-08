@@ -31,7 +31,7 @@ const Header = defineComponent({
 								</li>
 
 								<li class="header__nav__list__btn">
-									<a href="">
+									<a href="mailto:info@wallless-inc.com">
 										<span>Contact</span>
 									</a>
 								</li>
@@ -49,7 +49,7 @@ const Footer = defineComponent({
 						</a>
 
 						<a class="footer__sns" href="https://twitter.com/wallless_yuki" target="_blank">
-							<img src="assets/images/icon_twitter.svg" alt="twitter" width="24" height="24">
+							<img src="assets/images/icon_x.svg" alt="twitter" width="24" height="24">
 						</a>
 
 						<nav class="footer__nav">
@@ -71,7 +71,7 @@ const Footer = defineComponent({
 								</li>
 
 								<li>
-									<a href="">Contact</a>
+									<a href="mailto:info@wallless-inc.comm">Contact</a>
 								</li>
 							</ul>
 						</nav>
@@ -109,7 +109,7 @@ const LowerHeader = defineComponent({
 								</li>
 
 								<li class="header__nav__list__btn">
-									<a href="">
+									<a href="mailto:info@wallless-inc.com">
 										<span>Contact</span>
 									</a>
 								</li>
@@ -127,7 +127,7 @@ const LowerFooter = defineComponent({
 						</a>
 
 						<a class="footer__sns" href="https://twitter.com/wallless_yuki" target="_blank">
-							<img src="../assets/images/icon_twitter.svg" alt="twitter" width="24" height="24">
+							<img src="../assets/images/icon_x.svg" alt="X" width="24" height="24">
 						</a>
 
 						<nav class="footer__nav">
@@ -149,7 +149,7 @@ const LowerFooter = defineComponent({
 								</li>
 
 								<li>
-									<a href="">Contact</a>
+									<a href="mailto:info@wallless-inc.com">Contact</a>
 								</li>
 							</ul>
 						</nav>
@@ -163,7 +163,7 @@ const Contact = defineComponent({
 	template: `
 					<section>
 						<div class="stalker"></div>
-						<a class="contact" href="">
+						<a class="contact" href="mailto:info@wallless-inc.com">
 							<h2 class="contact__title">
 								<span class="contact__title__jp">
 									お問い合わせ
@@ -181,21 +181,21 @@ const Contact = defineComponent({
 					</section>
       `,
 	mounted() {
-		const mouse = $(".stalker");
-		$(document).on("mousemove", (e) => {
+		const mouse = document.querySelector(".stalker");
+		const contact = document.querySelector(".contact");
+
+		document.addEventListener("mousemove", (e) => {
 			const x = e.clientX;
 			const y = e.clientY;
-			mouse.css({
-				"transform": `translate(${x}px, ${y}px)`,
-			});
-			$(".contact").on({
-				"mouseenter": () => {
-					mouse.addClass("js-hover");
-				},
-				"mouseleave": () => {
-					mouse.removeClass("js-hover");
-				}
-			});
+			mouse.style.transform = `translate(${x}px, ${y}px)`;
+		});
+
+		contact.addEventListener("mouseenter", () => {
+			mouse.classList.add("js-hover");
+		});
+
+		contact.addEventListener("mouseleave", () => {
+			mouse.classList.remove("js-hover");
 		});
 	}
 });
@@ -259,6 +259,22 @@ const Service = defineComponent({
 			],
 		}
 	},
+	mounted() {
+		const serviceNav = document.querySelectorAll('.js-serviceNav');
+		const serviceContents = document.querySelectorAll('.js-serviceContent');
+
+		serviceNav.forEach((nav) => {
+			nav.addEventListener('click', function () {
+				const target = this.getAttribute('data-target');
+
+				serviceNav.forEach((nav) => nav.classList.remove('active'));
+				serviceContents.forEach((content) => content.classList.remove('active'));
+
+				this.classList.add('active');
+				document.getElementById(target).classList.add('active');
+			});
+		});
+	}
 });
 
 const Works = defineComponent({
@@ -344,10 +360,10 @@ const News = defineComponent({
 					<ul class="news__list">
 						<li v-for="(item, index) in items" :key="index">
 							<a class="news__list__item js-news js-pageSwitch" :href="item.href">
-								<time class="news__list__item__date" :datetime="item.dateTime" :style="{ width: calculateTimeWidth(item.date) + 'px' }">
+								<time class="news__list__item__date" :datetime="item.dateTime" >
 									{{ item.date }}
 								</time>
-								<p class="news__list__item__category" :style="{ width: calculateCategoryWidth(item.category) + 'px' }">
+								<p class="news__list__item__category js-unify" >
 									{{ item.category }}
 								</p>
 								<h3 class="news__list__item__title">
@@ -397,23 +413,7 @@ const News = defineComponent({
 				},
 			],
 		}
-	},
-	methods: {
-		calculateTimeWidth(date) {
-			return this.calculateElementWidth(date);
-		},
-		calculateCategoryWidth(category) {
-			return this.calculateElementWidth(category);
-		},
-		calculateElementWidth(text) {
-			const dummyElement = document.createElement('span');
-			dummyElement.innerText = text;
-			document.body.appendChild(dummyElement);
-			const width = dummyElement.offsetWidth;
-			document.body.removeChild(dummyElement);
-			return width;
-		},
-	},
+	}
 });
 
 const NewsSession01 = defineComponent({
@@ -489,16 +489,47 @@ const NewsShare = defineComponent({
 						<dl class="newsArticle__share">
 							<dt>この記事をシェアする</dt>
 							<dd>
-								<a href="" target="_blank">
-									<img src="../assets/images/icon_line.svg" alt="line"  width="24" height="24">
+								<a :href="twitterShareLink"  target="_blank">
+									<img src="../assets/images/icon_x.svg" alt="X"  width="24" height="24">
 								</a>
-								<a href="" target="_blank">
-									<img src="../assets/images/icon_twitter.svg" alt="twitter" width="24" height="24">
+								<a :href="lineShareLink" target="_blank">
+									<img src="../assets/images/icon_line.svg" alt="liner" width="24" height="24">
 								</a>
 							</dd>
 						</dl>
 					</div>
-      `
+      `,
+	data() {
+		return {
+			canonicalUrl: '',
+			h2Content: '',
+		};
+	},
+	computed: {
+		twitterShareLink() {
+			const encodedUrl = encodeURIComponent(this.canonicalUrl);
+			const encodedTitle = encodeURIComponent(this.h2Content);
+			return `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}%0a`;
+		},
+		lineShareLink() {
+			const encodedUrl = encodeURIComponent(this.canonicalUrl);
+			const encodedTitle = encodeURIComponent(this.h2Content);
+			return `https://social-plugins.line.me/lineit/share?url=${encodedUrl}&text=${encodedTitle}`;
+		},
+	},
+	mounted() {
+		// rel="canonical"の取得
+		const canonicalElement = document.querySelector('link[rel="canonical"]');
+		if (canonicalElement) {
+			this.canonicalUrl = canonicalElement.getAttribute('href');
+		}
+
+		// h2タグの中身の取得
+		const h2Element = document.querySelector('h2');
+		if (h2Element) {
+			this.h2Content = h2Element.textContent.trim();
+		}
+	},
 });
 
 const app = createApp({});
@@ -532,113 +563,117 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------
-*  Disable Empty a Tags
-* -------------------------------- */
-$(function () {
-	$('a[href=""]').each((i, e) => {
-		$(e).on('click', (a) => {
-			a.preventDefault();
-			alert('リンク先がありません');
-		});
-	});
-});
-
-/* --------------------------------
 *  Lower Content
 * -------------------------------- */
-$(function () {
-	const headerHeight = $('.js-header').innerHeight();
-	$('.js-main').css('margin-top', headerHeight);
-});
+const header = document.querySelector('.js-header');
+const headerHeight = header.offsetHeight;
+const main = document.querySelector('.js-main');
+
+main.style.marginTop = `${headerHeight}px`;
 
 /* --------------------------------
 *  Hide Header
 * -------------------------------- */
-$(function () {
-	let pastPos = $(window).scrollTop();
-	let headerHeight = $('.js-header').innerHeight();
+let pastPos = window.pageYOffset;
 
-	$(window).on('scroll', function () {
-		const scroll = $(window).scrollTop();
-		if (scroll > pastPos && scroll > headerHeight) {
-			$('.js-header').addClass('hide');
-		} else {
-			$('.js-header').removeClass('hide');
-		}
+window.addEventListener('scroll', function () {
+	const scroll = window.pageYOffset;
+	if (scroll > pastPos && scroll > headerHeight) {
+		header.classList.add('hide');
+	} else {
+		header.classList.remove('hide');
+	}
 
-		pastPos = scroll;
-	});
+	pastPos = scroll;
 });
 
 /* --------------------------------
 *  Page Transition
 * -------------------------------- */
-$(function () {
-	const blindfoldContainer = $('.blindfold');
-	const blindfoldItem = $('.blindfold__item');
-	gsap.set(blindfoldContainer, { yPercent: 0 });
-	gsap.set(blindfoldItem, { scaleY: 0 });
+const blindfoldContainer = document.querySelector('.blindfold');
+const blindfoldItem = document.querySelectorAll('.blindfold__item');
+gsap.set(blindfoldContainer, { yPercent: 0 });
+gsap.set(blindfoldItem, { scaleY: 0 });
 
-	// 画面遷移 前のアニメーション
-	const pageTransitionBefore = () => {
-		const tl = gsap.timeline({});
-		tl.fromTo(blindfoldContainer, {
-			yPercent: 0,
-		}, {
-			yPercent: 0,
-			duration: 0.4,
-		}).fromTo(blindfoldItem, {
-			scaleY: 0
-		}, {
-			scaleY: 1,
-			duration: 0.4,
-			transformOrigin: 'bottom left',
-			ease: 'expo.inOut',
-			stagger: { each: 0.1 }
-		});
-	};
-
-	// 画面遷移 後のアニメーション
-	const pageTransitionAfter = () => {
-		const tl = gsap.timeline({});
-		tl.fromTo(blindfoldContainer, {
-			yPercent: 0,
-		}, {
-			yPercent: -100,
-			duration: 1,
-			ease: "expo.inOut",
-		}).fromTo(blindfoldItem, {
-			scaleY: 1,
-		}, {
-			scaleY: 1,
-			duration: 1,
-		});
-	};
-
-	$('.js-pageSwitch').each((i, e) => {
-		$(e).on('click', (a) => {
-			a.preventDefault();
-			const href = $(e).attr('href');
-			pageTransitionBefore();
-			setTimeout(() => {
-				window.location.href = href;
-			}, 1200);
-		});
+// 画面遷移 前のアニメーション
+const pageTransitionBefore = () => {
+	const tl = gsap.timeline({});
+	tl.fromTo(blindfoldContainer, {
+		yPercent: 0,
+	}, {
+		yPercent: 0,
+		duration: 0.4,
+	}).fromTo(blindfoldItem, {
+		scaleY: 0
+	}, {
+		scaleY: 1,
+		duration: 0.4,
+		transformOrigin: 'bottom left',
+		ease: 'expo.inOut',
+		stagger: { each: 0.1 }
 	});
+};
 
-	if ($('.js-main').length) {
-		pageTransitionAfter();
-	}
+// 画面遷移 後のアニメーション
+const pageTransitionAfter = () => {
+	const tl = gsap.timeline({});
+	tl.fromTo(blindfoldContainer, {
+		yPercent: 0,
+	}, {
+		yPercent: -100,
+		duration: 1,
+		ease: "expo.inOut",
+	}).fromTo(blindfoldItem, {
+		scaleY: 1,
+	}, {
+		scaleY: 1,
+		duration: 1,
+	});
+};
+
+const pageSwitchElements = document.querySelectorAll('.js-pageSwitch');
+
+pageSwitchElements.forEach((element) => {
+	element.addEventListener('click', (event) => {
+		event.preventDefault();
+		const href = element.getAttribute('href');
+		pageTransitionBefore();
+		setTimeout(() => {
+			window.location.href = href;
+		}, 1200);
+	});
 });
+
+if (document.querySelector('.js-main')) {
+	pageTransitionAfter();
+};
 
 /* --------------------------------
 *  Scroll Animation
 * -------------------------------- */
-$(function () {
-	$('.js-fadeIn').on('inview', function () {
-		$(this).addClass('view');
+window.addEventListener('load', function () {
+	// IntersectionObserverの作成
+	const observer = new IntersectionObserver(function (entries) {
+		for (let i = 0; i < entries.length; i++) {
+			// 領域内なら処理を実行
+			if (entries[i].intersectionRatio <= 0) continue;
+			showElm(entries[i].target);
+		}
+	}, {
+		// オプション
+		rootMargin: '-10% 0% -10% 0%'
 	});
-});
+	// 監視対象の追加
+	const elements = document.querySelectorAll('.js-fadeIn');
+	for (let i = 0; i < elements.length; i++) {
+		observer.observe(elements[i]);
+	}
+	// 領域内に入ったとき実行する処理
+	function showElm(e) {
+		e.classList.add('view');
+		observer.unobserve(e);
+	}
+}, false);
 
 gsap.set('.js-hero', {
 	y: 10,
@@ -703,14 +738,26 @@ gsap.fromTo('.js-news', {
 });
 
 /* --------------------------------
-*  Service Toggle
+*  Unify Width
 * -------------------------------- */
-$(function () {
-	$('.js-serviceNav').on('click', function () {
-		const target = $(this).data('target');
-
-		$('.js-serviceNav, .js-serviceContent').removeClass('active');
-		$(this).addClass('active');
-		$('#' + target).addClass('active');
+function unifyWidth(elements) {
+	let maxWidth = 0;
+	elements.forEach(function (element) {
+		const width = element.offsetWidth;
+		if (width > maxWidth) {
+			maxWidth = width;
+		}
 	});
+
+	elements.forEach(function (element) {
+		element.style.width = `${maxWidth}px`;
+	});
+}
+
+window.addEventListener('load', function () {
+	const unifyElements = document.querySelectorAll('.js-unify');
+	unifyWidth(unifyElements);
+
+	const timeElements = document.querySelectorAll('time');
+	unifyWidth(timeElements);
 });

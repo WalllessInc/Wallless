@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @use "../global/" as *;
+@use "../common/component" as *;
 
 [data-page="works"] {
   .works {
@@ -17,6 +18,15 @@
           display: block;
         }
       }
+    }
+
+    &__breadcrumbs {
+      @include breadcrumbs;
+      position: absolute;
+      top: rem(104);
+      right: rem(32);
+      margin: 0;
+      rotate: 90deg;
     }
   }
 }
