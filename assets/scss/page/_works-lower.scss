@@ -9,12 +9,15 @@
 
   >img:first-child {
     width: 100%;
-    height: rem(600);
     object-fit: cover;
+
+    &.short {
+      height: rem(600);
+    }
   }
 
   &__head {
-    margin: rem(40) 0 rem(72) rem(64);
+    margin: rem(64) 0 rem(72) rem(64);
     line-height: 1.5;
 
     &__client {
@@ -91,16 +94,27 @@
     flex-direction: column;
     row-gap: rem(64);
     margin-top: rem(80);
+    padding: 0 rem(64);
 
     iframe {
       width: 100%;
       height: rem(672);
     }
+
+    div {
+      display: flex;
+      column-gap: rem(24);
+
+      img {
+        width: calc(100%/2);
+        object-fit: cover
+      }
+    }
   }
 
   &__btn {
     @include btn;
-    margin: rem(60) auto 0;
+    margin: rem(64) auto 0;
     padding: rem(24) rem(120);
     font-size: rem(24);
   }

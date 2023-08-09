@@ -297,19 +297,19 @@ const Works = defineComponent({
 		return {
 			items: [
 				{
-					href: "works/kinjo.html",
+					href: "works/kinjo_pamphlet.html",
 					imageSrc: "assets/images/works/kinjo_pamphlet-01.webp",
 					title: "金城学院大学 入学資料",
 					category: "Graphic"
 				},
 				{
-					href: "works/rohto.html",
+					href: "works/rohto_poster.html",
 					imageSrc: "assets/images/works/rohto_poster-01.webp",
 					title: "ロート製薬 新卒採用ポスター",
 					category: "Graphic"
 				},
 				{
-					href: "works/ensupport.html",
+					href: "works/seshuraku_branding.html",
 					imageSrc: "assets/images/works/seshuraku_branding-01.webp",
 					title: "せしゅらく ブランディングツール",
 					category: "Graphic / Movie"
@@ -321,25 +321,25 @@ const Works = defineComponent({
 					category: "Graphic / Web / Movie / Photograph"
 				},
 				{
-					href: "works/polaris.html",
+					href: "works/polaris_branding.html",
 					imageSrc: "assets/images/works/polaris_branding-01.webp",
 					title: "ポラリスエクスポート ブランディングツール",
 					category: "Graphic / Web"
 				},
 				{
-					href: "works/sarrouel.html",
+					href: "works/integral_card.html",
 					imageSrc: "assets/images/works/integral_card-01.webp",
 					title: "積分サークル さるえる様 名刺",
 					category: "Graphic"
 				},
 				{
-					href: "works/cooonworks.html",
+					href: "works/cooonworks_support.html",
 					imageSrc: "assets/images/works/cooonworks_support-01.webp",
 					title: "COOON WORKS CFクリエイティブサポート",
 					category: "Graphic"
 				},
 				{
-					href: "works/trike.html",
+					href: "works/trike_web.html",
 					imageSrc: "assets/images/works/trike_web-01.webp",
 					title: "EV-TRIKE ランディングページ",
 					category: "Web"
