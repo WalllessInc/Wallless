@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no,address=no,email=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="岐阜市に拠点を置くクリエイティブ集団Wallless">
+	<link rel="canonical" href="https://wallless-inc.com/news.html">
+
+	<title>News | Wallless</title>
+
+	<!-- ogp -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="News | Wallless">
+	<meta property="og:description" content="岐阜市に拠点を置くクリエイティブ集団Wallless">
+	<meta property="og:url" content="https://wallless-inc.comn/news.html">
+	<meta property="og:image" content="https://wallless-inc.com/assets/images/ogp.webp">
+	<meta property="og:site_name" content="Wallless">
+	<meta property="og:locale" content="ja_JP">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@wallless_yuki">
+	<!-- /ogp -->
+
+	<!-- favicon -->
+	<link rel="icon" href="/favicon.ico" sizes="any">
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="manifest" href="/manifest.webmanifest">
+	<!-- /favicon -->
+
+	<!-- css -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@4.0.0/destyle.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- /css -->
+</head>
+
+<body data-page="news">
+	<div id="app">
+		<!-- blindfold -->
+		<div class="blindfold">
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+			<div class="blindfold__item"></div>
+		</div>
+		<!-- /blindfold -->
+
+		<!-- header -->
+		<the-header></the-header>
+		<!-- /header -->
+
+		<!-- main -->
+		<main class="js-main">
+			<section class="news">
+				<h2 class="news__title">
+					<span class="news__title__jp">お知らせ</span>
+					<span class="news__title__en">News</span>
+				</h2>
+
+				<div class="news__breadcrumbs">
+					<a class="js-pageSwitch" href="index.html">Top</a>
+					<p class="news__breadcrumbs__current">News</p>
+				</div>
+
+				<app-news></app-news>
+			</section>
+
+			<the-contact></the-contact>
+		</main>
+		<!-- /main -->
+
+		<!-- footer -->
+		<the-footer></the-footer>
+		<!-- /footer -->
+	</div>
+
+	<!-- script -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+	<script src="assets/js/script.js" type="module"></script>
+	<!-- /script -->
+</body>
+
+</html>

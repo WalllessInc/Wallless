@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@use "../global/" as *;
+@use "../common/component" as *;
+
+[data-page="works"] {
+  .works {
+    padding: rem(104) rem(144) 0;
+
+    &__title {
+      margin-bottom: rem(72);
+    }
+
+    &__grid {
+      gap: rem(72) rem(48);
+
+      &__content {
+        &:nth-child(n+7) {
+          display: block;
+        }
+      }
+    }
+
+    &__breadcrumbs {
+      @include breadcrumbs;
+      position: absolute;
+      top: rem(104);
+      right: rem(32);
+      margin: 0;
+      rotate: 90deg;
+    }
+  }
+}

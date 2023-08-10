@@ -347,7 +347,7 @@ const Works = defineComponent({
 				{
 					href: "works/photograph.html",
 					imageSrc: "assets/images/works/photograph-01.webp",
-					title: "写真・動画撮影",
+					title: "写真撮影・動画撮影",
 					category: "Photograph"
 				},
 			],
