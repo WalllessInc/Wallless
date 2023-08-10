@@ -4,7 +4,7 @@
 
 [data-page="works"] {
   .works {
-    padding: rem(104) rem(144) 0;
+    padding: rem(152) rem(144) 0;
 
     &__title {
       margin-bottom: rem(72);
@@ -23,7 +23,7 @@
     &__breadcrumbs {
       @include breadcrumbs;
       position: absolute;
-      top: rem(104);
+      top: rem(152);
       right: rem(32);
       margin: 0;
       rotate: 90deg;

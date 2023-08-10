@@ -2,20 +2,232 @@
 @use "../global/" as *;
 @use "../common/component" as *;
 
-[data-page="works"] {
-  .works {
-    padding: rem(104) rem(144) 0;
+[data-page="about"] {
+  .about {
+    position: relative;
+    padding: rem(152) rem(144) rem(200);
 
-    &__title {
-      margin-bottom: rem(72);
+    &__back {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: $gray;
+      z-index: -1;
     }
 
-    &__grid {
-      gap: rem(72) rem(48);
+    &__title {
+      @include title;
+      margin-bottom: rem(40);
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: flex-start;
+      column-gap: rem(280);
+
+      &__nav {
+        padding: rem(32) 0 0 rem(64);
+        height: 100%;
+
+        &__list {
+          position: sticky;
+          display: flex;
+          flex-direction: column;
+          row-gap: rem(24);
+          top: rem(240);
+
+          a {
+            position: relative;
+            font-family: $jp;
+            font-size: rem(16);
+            font-weight: 500;
+            transition: all 0.3s $ease1;
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: rem(-2);
+              width: 100%;
+              height: 1px;
+              background-color: $green;
+              scale: 0 1;
+              transform-origin: right top;
+              transition: scale 0.3s $ease1;
+            }
+
+            &:hover {
+              color: $green;
+
+              &::before {
+                scale: 1 1;
+                transform-origin: left top;
+              }
+            }
+          }
+        }
+      }
 
       &__content {
-        &:nth-child(n+7) {
-          display: block;
+        &__hero {
+          margin-bottom: rem(200);
+
+          &__en {
+            font-family: $en;
+            font-size: rem(16);
+            font-weight: 500;
+            line-height: 1.5;
+          }
+
+          &__copy {
+            margin-bottom: rem(64);
+            font-family: $jp;
+            font-size: rem(64);
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 0.08em;
+          }
+
+          &__text {
+            font-family: $jp;
+            font-size: rem(16);
+            line-height: 2.25;
+          }
+        }
+
+        &__philosophy {
+          scroll-margin-top: rem(100);
+          margin-bottom: rem(100);
+
+          &__title {
+            @include smallTitle;
+          }
+
+          &__container {
+            &__en {
+              margin-bottom: rem(8);
+              font-family: $en;
+              font-size: rem(12);
+              font-weight: 500;
+            }
+
+            &__inner {
+              margin: 0 0 rem(56) rem(56);
+
+              &__number {
+                color: $green;
+                font-family: $en;
+                font-size: rem(12);
+                font-weight: 600;
+                line-height: 1;
+              }
+
+              &__copy {
+                margin-bottom: rem(16);
+                font-family: $jp;
+                font-size: rem(28);
+                font-weight: 500;
+              }
+
+              &__text {
+                margin-left: rem(4);
+                font-family: $jp;
+                font-size: rem(14);
+              }
+            }
+
+            &.vision {
+              margin-bottom: rem(80);
+            }
+
+            &.value {
+              .about__wrapper__content__philosophy__container__inner__copy {
+                margin-bottom: rem(8);
+                line-height: 1.5;
+              }
+            }
+          }
+
+
+        }
+
+        &__member {
+          padding: rem(100) 0;
+
+          &__title {
+            @include smallTitle;
+
+            &__jp {
+              letter-spacing: 0.1em;
+            }
+          }
+
+          &__container {
+            display: flex;
+            flex-direction: row-reverse;
+            column-gap: rem(48);
+            width: 100%;
+
+            &:not(:last-child) {
+              margin-bottom: rem(120);
+            }
+
+            &__img {
+              width: calc(100%/2);
+              height: rem(432);
+              object-fit: cover;
+            }
+
+            &__inner {
+              width: calc(100%/2);
+              padding-top: rem(24);
+
+              &__post {
+                font-family: $jp;
+                font-size: rem(14);
+                font-weight: 500;
+              }
+
+              &__name {
+                display: flex;
+                flex-direction: column;
+                margin: rem(40) 0 rem(24);
+
+                &__en {
+                  font-family: $en;
+                  font-size: rem(12);
+                  font-weight: 500;
+                  line-height: 1.5;
+                }
+
+                &__jp {
+                  font-family: $jp;
+                  font-size: rem(32);
+                  font-weight: 500;
+                  line-height: 1.5;
+                }
+              }
+
+              &__text {
+                width: 100%;
+                font-family: $jp;
+                font-size: rem(14);
+                white-space: wrap;
+                text-align: justify;
+              }
+
+            }
+          }
+        }
+
+        &__profile {
+          // scroll-margin-top: rem(100);
+          padding-top: rem(100);
+
+          &__title {
+            @include smallTitle;
+          }
         }
       }
     }
@@ -23,7 +235,7 @@
     &__breadcrumbs {
       @include breadcrumbs;
       position: absolute;
-      top: rem(104);
+      top: rem(152);
       right: rem(32);
       margin: 0;
       rotate: 90deg;

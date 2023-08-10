@@ -67,6 +67,25 @@
   }
 }
 
+@mixin smallTitle {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: rem(64);
+
+  &__en {
+    font-family: $en;
+    font-size: rem(12);
+    font-weight: 500;
+  }
+
+  &__jp {
+    font-family: $jp;
+    font-size: rem(32);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+}
+
 //////////////////////////////
 // breadcrumbs
 //////////////////////////////

@@ -738,6 +738,17 @@ gsap.fromTo('.js-news', {
 });
 
 /* --------------------------------
+*  About Background
+* -------------------------------- */
+const memberElement = document.getElementById("member");
+const memberHeight = memberElement.clientHeight;
+const memberTop = memberElement.getBoundingClientRect().top;
+const aboutBackElement = document.querySelector(".about__back");
+
+aboutBackElement.style.height = memberHeight + "px";
+aboutBackElement.style.top = (memberTop - 100) + "px";
+
+/* --------------------------------
 *  Unify Width
 * -------------------------------- */
 function unifyWidth(elements) {
