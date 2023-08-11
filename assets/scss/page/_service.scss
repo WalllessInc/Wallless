@@ -4,6 +4,10 @@
 
 [data-page="service"] {
   .service {
+    display: block;
+    gap: 0;
+    margin: 0;
+
     position: relative;
     padding: rem(152) rem(144) rem(200);
 
@@ -30,9 +34,10 @@
 
           a {
             position: relative;
-            font-family: $jp;
+            font-family: $en;
             font-size: rem(16);
             font-weight: 500;
+            text-transform: capitalize;
             transition: all 0.3s $ease1;
 
             &::before {
@@ -60,191 +65,82 @@
         }
       }
 
-      &__content {
-        &__hero {
-          margin-bottom: rem(200);
+      &__hero {
+        margin-bottom: rem(200);
 
-          &__en {
-            font-family: $en;
-            font-size: rem(16);
-            font-weight: 500;
-            line-height: 1.5;
-          }
-
-          &__copy {
-            margin-bottom: rem(64);
-            font-family: $jp;
-            font-size: rem(64);
-            font-weight: 500;
-            line-height: 1.5;
-            letter-spacing: 0.08em;
-          }
-
-          &__text {
-            font-family: $jp;
-            font-size: rem(16);
-            line-height: 2.25;
-          }
+        &__copy {
+          margin-bottom: rem(64);
+          font-family: $jp;
+          font-size: rem(48);
+          font-weight: 500;
+          line-height: 1.5;
+          letter-spacing: 0.08em;
         }
 
-        &__philosophy {
-          scroll-margin-top: rem(100);
-          margin-bottom: rem(100);
+        &__text {
+          font-family: $jp;
+          font-size: rem(15);
+          line-height: 2.25;
+        }
+      }
 
-          &__title {
-            @include smallTitle;
+      &__container {
+        scroll-margin-top: rem(100);
+        margin-bottom: rem(200);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &__title {
+          @include smallTitle;
+          margin-bottom: rem(24);
+        }
+
+        &__text {
+          margin-bottom: rem(48);
+          font-family: $jp;
+          font-size: rem(14);
+        }
+
+        &__subheading {
+          margin-bottom: rem(14);
+          font-family: $jp;
+          font-size: rem(20);
+          font-weight: 500;
+          line-height: 1.5;
+        }
+
+        &__example {
+          display: flex;
+          column-gap: rem(32);
+
+          &__img {
+            height: rem(240);
+            margin-bottom: rem(16);
+            border-radius: 4px;
+            overflow: hidden;
+
+            img {
+              height: 100%;
+              object-fit: cover;
+              transition: all 0.5s $ease1;
+            }
+
+            &:hover img {
+              scale: 1.1;
+            }
           }
 
-          &__container {
-            &__en {
-              margin-bottom: rem(8);
-              font-family: $en;
-              font-size: rem(12);
+          a {
+            width: calc(100%/2);
+
+            h5 {
+              margin-left: rem(8);
+              font-family: $jp;
+              font-size: rem(16);
               font-weight: 500;
             }
-
-            &__inner {
-              margin: 0 0 rem(56) rem(56);
-
-              &__number {
-                color: $green;
-                font-family: $en;
-                font-size: rem(12);
-                font-weight: 600;
-                line-height: 1;
-              }
-
-              &__copy {
-                margin-bottom: rem(16);
-                font-family: $jp;
-                font-size: rem(28);
-                font-weight: 500;
-              }
-
-              &__text {
-                margin-left: rem(4);
-                font-family: $jp;
-                font-size: rem(14);
-              }
-            }
-
-            &.vision {
-              margin-bottom: rem(80);
-            }
-
-            &.value {
-              .about__wrapper__content__philosophy__container__inner__copy {
-                margin-bottom: rem(8);
-                line-height: 1.5;
-              }
-            }
-          }
-
-
-        }
-
-        &__member {
-          padding: rem(100) 0;
-
-          &__title {
-            @include smallTitle;
-
-            &__jp {
-              letter-spacing: 0.1em;
-            }
-          }
-
-          &__container {
-            display: flex;
-            flex-direction: row-reverse;
-            column-gap: rem(48);
-            width: 100%;
-
-            &:not(:last-child) {
-              margin-bottom: rem(120);
-            }
-
-            &__img {
-              width: calc(100%/2);
-              height: rem(432);
-              object-fit: cover;
-            }
-
-            &__inner {
-              width: calc(100%/2);
-              padding-top: rem(24);
-
-              &__post {
-                font-family: $jp;
-                font-size: rem(14);
-                font-weight: 500;
-              }
-
-              &__name {
-                display: flex;
-                flex-direction: column;
-                margin: rem(40) 0 rem(24);
-
-                &__en {
-                  font-family: $en;
-                  font-size: rem(12);
-                  font-weight: 500;
-                  line-height: 1.5;
-                }
-
-                &__jp {
-                  font-family: $jp;
-                  font-size: rem(32);
-                  font-weight: 500;
-                  line-height: 1.5;
-                }
-              }
-
-              &__text {
-                width: 100%;
-                font-family: $jp;
-                font-size: rem(14);
-                white-space: wrap;
-                text-align: justify;
-              }
-
-            }
-          }
-        }
-
-        &__profile {
-          // scroll-margin-top: rem(100);
-          padding-top: rem(100);
-
-          &__title {
-            @include smallTitle;
-          }
-
-          &__list {
-            display: flex;
-            flex-direction: column;
-            row-gap: rem(24);
-
-            &__item {
-              display: flex;
-              column-gap: rem(136);
-              padding-bottom: rem(24);
-              border-bottom: 1px rgba($color: $black, $alpha: 0.2) solid;
-              font-family: $jp;
-              font-size: rem(14);
-
-              dt {
-                font-weight: 400;
-                opacity: 0.5;
-              }
-            }
-          }
-
-          iframe {
-            width: rem(712);
-            height: rem(352);
-            margin-top: rem(72);
-            filter: grayscale(1);
           }
         }
       }

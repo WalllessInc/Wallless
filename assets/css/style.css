@@ -971,17 +971,17 @@ main {
   scale: 1 1;
   transform-origin: left top;
 }
-[data-page=about] .about__wrapper__content__hero {
+[data-page=about] .about__wrapper__hero {
   margin-bottom: 12.5rem;
 }
-[data-page=about] .about__wrapper__content__hero__en {
+[data-page=about] .about__wrapper__hero__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
   text-transform: capitalize;
 }
-[data-page=about] .about__wrapper__content__hero__copy {
+[data-page=about] .about__wrapper__hero__copy {
   margin-bottom: 4rem;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 4rem;
@@ -989,162 +989,162 @@ main {
   line-height: 1.5;
   letter-spacing: 0.08em;
 }
-[data-page=about] .about__wrapper__content__hero__text {
+[data-page=about] .about__wrapper__hero__text {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 1rem;
   line-height: 2.25;
 }
-[data-page=about] .about__wrapper__content__philosophy {
+[data-page=about] .about__wrapper__philosophy {
   scroll-margin-top: 6.25rem;
   margin-bottom: 6.25rem;
 }
-[data-page=about] .about__wrapper__content__philosophy__title {
+[data-page=about] .about__wrapper__philosophy__title {
   display: flex;
   flex-direction: column;
   margin-bottom: 4rem;
 }
-[data-page=about] .about__wrapper__content__philosophy__title__en {
+[data-page=about] .about__wrapper__philosophy__title__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
 }
-[data-page=about] .about__wrapper__content__philosophy__title__jp {
+[data-page=about] .about__wrapper__philosophy__title__jp {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.5;
+  letter-spacing: 0.1em;
 }
-[data-page=about] .about__wrapper__content__philosophy__container__en {
+[data-page=about] .about__wrapper__philosophy__container__en {
   margin-bottom: 0.5rem;
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   text-transform: capitalize;
 }
-[data-page=about] .about__wrapper__content__philosophy__container__inner {
+[data-page=about] .about__wrapper__philosophy__container__inner {
   margin: 0 0 3.5rem 3.5rem;
 }
-[data-page=about] .about__wrapper__content__philosophy__container__inner__number {
+[data-page=about] .about__wrapper__philosophy__container__inner__number {
   color: #3eb497;
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 1;
 }
-[data-page=about] .about__wrapper__content__philosophy__container__inner__copy {
+[data-page=about] .about__wrapper__philosophy__container__inner__copy {
   margin-bottom: 1rem;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 1.75rem;
   font-weight: 500;
 }
-[data-page=about] .about__wrapper__content__philosophy__container__inner__text {
+[data-page=about] .about__wrapper__philosophy__container__inner__text {
   margin-left: 0.25rem;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 0.875rem;
 }
-[data-page=about] .about__wrapper__content__philosophy__container.vision {
+[data-page=about] .about__wrapper__philosophy__container.vision {
   margin-bottom: 5rem;
 }
-[data-page=about] .about__wrapper__content__philosophy__container.value .about__wrapper__content__philosophy__container__inner__copy {
+[data-page=about] .about__wrapper__philosophy__container.value .about__wrapper__philosophy__container__inner__copy {
   margin-bottom: 0.5rem;
   line-height: 1.5;
 }
-[data-page=about] .about__wrapper__content__member {
+[data-page=about] .about__wrapper__member {
   padding: 6.25rem 0;
 }
-[data-page=about] .about__wrapper__content__member__title {
+[data-page=about] .about__wrapper__member__title {
   display: flex;
   flex-direction: column;
   margin-bottom: 4rem;
 }
-[data-page=about] .about__wrapper__content__member__title__en {
+[data-page=about] .about__wrapper__member__title__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
 }
-[data-page=about] .about__wrapper__content__member__title__jp {
+[data-page=about] .about__wrapper__member__title__jp {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.5;
-}
-[data-page=about] .about__wrapper__content__member__title__jp {
   letter-spacing: 0.1em;
 }
-[data-page=about] .about__wrapper__content__member__container {
+[data-page=about] .about__wrapper__member__container {
   display: flex;
   flex-direction: row-reverse;
   -moz-column-gap: 3rem;
        column-gap: 3rem;
   width: 100%;
 }
-[data-page=about] .about__wrapper__content__member__container:not(:last-child) {
+[data-page=about] .about__wrapper__member__container:not(:last-child) {
   margin-bottom: 7.5rem;
 }
-[data-page=about] .about__wrapper__content__member__container__img {
+[data-page=about] .about__wrapper__member__container__img {
   width: 50%;
   height: 27rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
-[data-page=about] .about__wrapper__content__member__container__inner {
+[data-page=about] .about__wrapper__member__container__inner {
   width: 50%;
   padding-top: 1.5rem;
 }
-[data-page=about] .about__wrapper__content__member__container__inner__post {
+[data-page=about] .about__wrapper__member__container__inner__post {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 0.875rem;
   font-weight: 500;
 }
-[data-page=about] .about__wrapper__content__member__container__inner__name {
+[data-page=about] .about__wrapper__member__container__inner__name {
   display: flex;
   flex-direction: column;
   margin: 2.5rem 0 1.5rem;
 }
-[data-page=about] .about__wrapper__content__member__container__inner__name__en {
+[data-page=about] .about__wrapper__member__container__inner__name__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 1.5;
 }
-[data-page=about] .about__wrapper__content__member__container__inner__name__jp {
+[data-page=about] .about__wrapper__member__container__inner__name__jp {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 2rem;
   font-weight: 500;
   line-height: 1.5;
 }
-[data-page=about] .about__wrapper__content__member__container__inner__text {
+[data-page=about] .about__wrapper__member__container__inner__text {
   width: 100%;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 0.875rem;
   white-space: wrap;
   text-align: justify;
 }
-[data-page=about] .about__wrapper__content__profile {
+[data-page=about] .about__wrapper__profile {
   padding-top: 6.25rem;
 }
-[data-page=about] .about__wrapper__content__profile__title {
+[data-page=about] .about__wrapper__profile__title {
   display: flex;
   flex-direction: column;
   margin-bottom: 4rem;
 }
-[data-page=about] .about__wrapper__content__profile__title__en {
+[data-page=about] .about__wrapper__profile__title__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
 }
-[data-page=about] .about__wrapper__content__profile__title__jp {
+[data-page=about] .about__wrapper__profile__title__jp {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.5;
+  letter-spacing: 0.1em;
 }
-[data-page=about] .about__wrapper__content__profile__list {
+[data-page=about] .about__wrapper__profile__list {
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
 }
-[data-page=about] .about__wrapper__content__profile__list__item {
+[data-page=about] .about__wrapper__profile__list__item {
   display: flex;
   -moz-column-gap: 8.5rem;
        column-gap: 8.5rem;
@@ -1153,11 +1153,11 @@ main {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 0.875rem;
 }
-[data-page=about] .about__wrapper__content__profile__list__item dt {
+[data-page=about] .about__wrapper__profile__list__item dt {
   font-weight: 400;
   opacity: 0.5;
 }
-[data-page=about] .about__wrapper__content__profile iframe {
+[data-page=about] .about__wrapper__profile iframe {
   width: 44.5rem;
   height: 22rem;
   margin-top: 4.5rem;
@@ -1204,6 +1204,9 @@ main {
 }
 
 [data-page=service] .service {
+  display: block;
+  gap: 0;
+  margin: 0;
   position: relative;
   padding: 9.5rem 9rem 12.5rem;
 }
@@ -1248,9 +1251,10 @@ main {
 }
 [data-page=service] .service__wrapper__nav__list a {
   position: relative;
-  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 1rem;
   font-weight: 500;
+  text-transform: capitalize;
   transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
 }
 [data-page=service] .service__wrapper__nav__list a::before {
@@ -1272,195 +1276,87 @@ main {
   scale: 1 1;
   transform-origin: left top;
 }
-[data-page=service] .service__wrapper__content__hero {
+[data-page=service] .service__wrapper__hero {
   margin-bottom: 12.5rem;
 }
-[data-page=service] .service__wrapper__content__hero__en {
-  font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
-[data-page=service] .service__wrapper__content__hero__copy {
+[data-page=service] .service__wrapper__hero__copy {
   margin-bottom: 4rem;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.08em;
 }
-[data-page=service] .service__wrapper__content__hero__text {
+[data-page=service] .service__wrapper__hero__text {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   line-height: 2.25;
 }
-[data-page=service] .service__wrapper__content__philosophy {
+[data-page=service] .service__wrapper__container {
   scroll-margin-top: 6.25rem;
-  margin-bottom: 6.25rem;
+  margin-bottom: 12.5rem;
 }
-[data-page=service] .service__wrapper__content__philosophy__title {
+[data-page=service] .service__wrapper__container:last-child {
+  margin-bottom: 0;
+}
+[data-page=service] .service__wrapper__container__title {
   display: flex;
   flex-direction: column;
   margin-bottom: 4rem;
+  margin-bottom: 1.5rem;
 }
-[data-page=service] .service__wrapper__content__philosophy__title__en {
+[data-page=service] .service__wrapper__container__title__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
 }
-[data-page=service] .service__wrapper__content__philosophy__title__jp {
+[data-page=service] .service__wrapper__container__title__jp {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.5;
-}
-[data-page=service] .service__wrapper__content__philosophy__container__en {
-  margin-bottom: 0.5rem;
-  font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-[data-page=service] .service__wrapper__content__philosophy__container__inner {
-  margin: 0 0 3.5rem 3.5rem;
-}
-[data-page=service] .service__wrapper__content__philosophy__container__inner__number {
-  color: #3eb497;
-  font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1;
-}
-[data-page=service] .service__wrapper__content__philosophy__container__inner__copy {
-  margin-bottom: 1rem;
-  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 1.75rem;
-  font-weight: 500;
-}
-[data-page=service] .service__wrapper__content__philosophy__container__inner__text {
-  margin-left: 0.25rem;
-  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.875rem;
-}
-[data-page=service] .service__wrapper__content__philosophy__container.vision {
-  margin-bottom: 5rem;
-}
-[data-page=service] .service__wrapper__content__philosophy__container.value .about__wrapper__content__philosophy__container__inner__copy {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
-}
-[data-page=service] .service__wrapper__content__member {
-  padding: 6.25rem 0;
-}
-[data-page=service] .service__wrapper__content__member__title {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 4rem;
-}
-[data-page=service] .service__wrapper__content__member__title__en {
-  font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-[data-page=service] .service__wrapper__content__member__title__jp {
-  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.5;
-}
-[data-page=service] .service__wrapper__content__member__title__jp {
   letter-spacing: 0.1em;
 }
-[data-page=service] .service__wrapper__content__member__container {
+[data-page=service] .service__wrapper__container__text {
+  margin-bottom: 3rem;
+  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 0.875rem;
+}
+[data-page=service] .service__wrapper__container__subheading {
+  margin-bottom: 0.875rem;
+  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+[data-page=service] .service__wrapper__container__example {
   display: flex;
-  flex-direction: row-reverse;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
-  width: 100%;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
 }
-[data-page=service] .service__wrapper__content__member__container:not(:last-child) {
-  margin-bottom: 7.5rem;
+[data-page=service] .service__wrapper__container__example__img {
+  height: 15rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
 }
-[data-page=service] .service__wrapper__content__member__container__img {
-  width: 50%;
-  height: 27rem;
+[data-page=service] .service__wrapper__container__example__img img {
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
 }
-[data-page=service] .service__wrapper__content__member__container__inner {
+[data-page=service] .service__wrapper__container__example__img:hover img {
+  scale: 1.1;
+}
+[data-page=service] .service__wrapper__container__example a {
   width: 50%;
-  padding-top: 1.5rem;
 }
-[data-page=service] .service__wrapper__content__member__container__inner__post {
+[data-page=service] .service__wrapper__container__example a h5 {
+  margin-left: 0.5rem;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 500;
-}
-[data-page=service] .service__wrapper__content__member__container__inner__name {
-  display: flex;
-  flex-direction: column;
-  margin: 2.5rem 0 1.5rem;
-}
-[data-page=service] .service__wrapper__content__member__container__inner__name__en {
-  font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
-[data-page=service] .service__wrapper__content__member__container__inner__name__jp {
-  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
-[data-page=service] .service__wrapper__content__member__container__inner__text {
-  width: 100%;
-  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.875rem;
-  white-space: wrap;
-  text-align: justify;
-}
-[data-page=service] .service__wrapper__content__profile {
-  padding-top: 6.25rem;
-}
-[data-page=service] .service__wrapper__content__profile__title {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 4rem;
-}
-[data-page=service] .service__wrapper__content__profile__title__en {
-  font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-[data-page=service] .service__wrapper__content__profile__title__jp {
-  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.5;
-}
-[data-page=service] .service__wrapper__content__profile__list {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
-}
-[data-page=service] .service__wrapper__content__profile__list__item {
-  display: flex;
-  -moz-column-gap: 8.5rem;
-       column-gap: 8.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px rgba(34, 34, 34, 0.2) solid;
-  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.875rem;
-}
-[data-page=service] .service__wrapper__content__profile__list__item dt {
-  font-weight: 400;
-  opacity: 0.5;
-}
-[data-page=service] .service__wrapper__content__profile iframe {
-  width: 44.5rem;
-  height: 22rem;
-  margin-top: 4.5rem;
-  filter: grayscale(1);
 }
 [data-page=service] .service__breadcrumbs {
   align-self: end;

@@ -236,7 +236,7 @@ const Service = defineComponent({
 					id: "web",
 					href: "service.html#web",
 					imageSrc: "assets/images/service_web.webp",
-					titleJp: "Web制作",
+					titleJp: "Webサイト制作",
 					titleEn: "Web",
 					text: "クライアントに合わせたオーダーメイドのWebサイトを制作いたします。<br>ウェブアクセシビリティやSEOに配慮したサイトづくりを心がけています。"
 				},
@@ -275,6 +275,107 @@ const Service = defineComponent({
 			});
 		});
 	}
+});
+
+const ServiceLower = defineComponent({
+	template: `
+					<section class="service__wrapper__container" v-for="(item, index) in items" :key="index" :id="item.id">
+						<h3 class="service__wrapper__container__title">
+							<span class="service__wrapper__container__title__en">
+								{{ item.titleEn }}
+							</span>
+							<span class="service__wrapper__container__title__jp">
+								{{ item.titleJp }}
+							</span>
+						</h3>
+
+						<p class="service__wrapper__container__text" v-html="item.text"></p>
+
+						<h4 class="service__wrapper__container__subheading">制作内容</h4>
+							<p class="service__wrapper__container__text">
+								{{ item.content }}
+							</p>
+
+							<h4 class="service__wrapper__container__subheading">制作事例</h4>
+							<div class="service__wrapper__container__example">
+								<a class="js-pageSwitch" :href="item.hrefA">
+									<div class="service__wrapper__container__example__img">
+										<img :src="item.imageSrcA" alt="" width="336" height="240">
+									</div>
+									<h5>
+										{{ item.exampleA }}
+									</h5>
+								</a>
+
+								<a class="js-pageSwitch" :href="item.hrefB">
+									<div class="service__wrapper__container__example__img">
+										<img :src="item.imageSrcB" alt="" width="336" height="240">
+									</div>
+									<h5>
+										{{ item.exampleB }}
+									</h5>
+								</a>
+							</div>
+						</section>
+      `,
+	data() {
+		return {
+			items: [
+				{
+					id: "graphic",
+					titleEn: "Graphic",
+					titleJp: "グラフィック制作",
+					text: "クライアントのご要望に沿った制作物をご用意しております。<br>「こんなものほしいんだけど…」とお気軽にお問い合わせください。",
+					content: "リーフレット / ポスター / パンフレット / 名刺 / DM / 冊子(会社案内 / 学校案内)",
+					hrefA: "works/kinjo_pamphlet.html",
+					imageSrcA: "assets/images/works/kinjo_pamphlet-01.webp",
+					exampleA: "金城学院大学 入学資料",
+					hrefB: "works/rohto_poster.html",
+					imageSrcB: "assets/images/works/rohto_poster-01.webp",
+					exampleB: "ロート製薬 新卒採用ポスター",
+				},
+				{
+					id: "web",
+					titleEn: "Web",
+					titleJp: "Webサイト制作",
+					text: "クライアントに合わせたオーダーメイドのWebサイトを制作いたします。<br>ウェブアクセシビリティやSEOに配慮したサイトづくりを心がけています。",
+					content: "新規サイトの制作 / 既存サイトのリニューアル / CMSを利用したサイトの制作 / サイト公開後の改善提案",
+					hrefA: "works/tesla_event.html",
+					imageSrcA: "assets/images/works/tesla_event-01.webp",
+					exampleA: "ふれあいテスラ イベントツール",
+					hrefB: "works/trike_web.html",
+					imageSrcB: "assets/images/works/trike_web-01.webp",
+					exampleB: "EV-TRIKE ランディングページ",
+				},
+				{
+					id: "movie",
+					titleEn: "Movie",
+					titleJp: "動画制作",
+					text: "PVからSNS用の動画に至るまで一貫して制作いたします。<br>動画を通して分かりやすく明確に表現し、効果的に訴求いたします。",
+					content: "プロモーションムービー / リール(Instagram) / Youtube Shout / モーショングラフィクス / 実写撮影",
+					hrefA: "works/tesla_event.html",
+					imageSrcA: "assets/images/works/tesla_event-01.webp",
+					exampleA: "ふれあいテスラ イベントツール",
+					hrefB: "works/seshuraku_branding.html",
+					imageSrcB: "assets/images/works/seshuraku_branding-01.webp",
+					exampleB: "せしゅらく ブランディングツール",
+				},
+				{
+					id: "photograph",
+					titleEn: "Photograph",
+					titleJp: "写真撮影・動画撮影",
+					text: "物撮り・イベント撮影などオールジャンル撮影可能。<br>カメラジンバル・ドローン等もございますので、空撮からシネマティック撮影までお任せください。",
+					content: "物撮り / イベント撮影 / 空撮 / シネマティック撮影 / レタッチ",
+					hrefA: "works/tesla_event.html",
+					imageSrcA: "assets/images/works/tesla_event-01.webp",
+					exampleA: "ふれあいテスラ イベントツール",
+					hrefB: "works/photograph.html",
+					imageSrcB: "assets/images/works/photograph-01.webp",
+					exampleB: "写真撮影・動画撮影",
+				},
+			],
+		}
+	},
 });
 
 const Works = defineComponent({
@@ -539,6 +640,7 @@ app.component('the-lower_header', LowerHeader);
 app.component('the-lower_footer', LowerFooter);
 app.component('the-contact', Contact);
 app.component('app-service', Service);
+app.component('app-service_lower', ServiceLower);
 app.component('app-works', Works);
 app.component('app-news', News);
 app.component('the-news_session-01', NewsSession01);
@@ -741,12 +843,15 @@ gsap.fromTo('.js-news', {
 *  About Background
 * -------------------------------- */
 const memberElement = document.getElementById("member");
-const memberHeight = memberElement.clientHeight;
-const memberTop = memberElement.getBoundingClientRect().top;
 const aboutBackElement = document.querySelector(".about__back");
 
-aboutBackElement.style.height = memberHeight + "px";
-aboutBackElement.style.top = (memberTop - 100) + "px";
+if (memberElement !== null) {
+	const memberHeight = memberElement.clientHeight;
+	const memberTop = memberElement.getBoundingClientRect().top;
+
+	aboutBackElement.style.height = memberHeight + "px";
+	aboutBackElement.style.top = (memberTop - 100) + "px";
+};
 
 /* --------------------------------
 *  Unify Width

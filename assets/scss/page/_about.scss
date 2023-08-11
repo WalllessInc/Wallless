@@ -69,194 +69,184 @@
         }
       }
 
-      &__content {
-        &__hero {
-          margin-bottom: rem(200);
+      &__hero {
+        margin-bottom: rem(200);
 
+        &__en {
+          font-family: $en;
+          font-size: rem(16);
+          font-weight: 500;
+          line-height: 1.5;
+          text-transform: capitalize;
+        }
+
+        &__copy {
+          margin-bottom: rem(64);
+          font-family: $jp;
+          font-size: rem(64);
+          font-weight: 500;
+          line-height: 1.5;
+          letter-spacing: 0.08em;
+        }
+
+        &__text {
+          font-family: $jp;
+          font-size: rem(16);
+          line-height: 2.25;
+        }
+      }
+
+      &__philosophy {
+        scroll-margin-top: rem(100);
+        margin-bottom: rem(100);
+
+        &__title {
+          @include smallTitle;
+        }
+
+        &__container {
           &__en {
+            margin-bottom: rem(8);
             font-family: $en;
-            font-size: rem(16);
+            font-size: rem(12);
             font-weight: 500;
-            line-height: 1.5;
             text-transform: capitalize;
           }
 
-          &__copy {
-            margin-bottom: rem(64);
-            font-family: $jp;
-            font-size: rem(64);
-            font-weight: 500;
-            line-height: 1.5;
-            letter-spacing: 0.08em;
-          }
+          &__inner {
+            margin: 0 0 rem(56) rem(56);
 
-          &__text {
-            font-family: $jp;
-            font-size: rem(16);
-            line-height: 2.25;
-          }
-        }
-
-        &__philosophy {
-          scroll-margin-top: rem(100);
-          margin-bottom: rem(100);
-
-          &__title {
-            @include smallTitle;
-          }
-
-          &__container {
-            &__en {
-              margin-bottom: rem(8);
+            &__number {
+              color: $green;
               font-family: $en;
               font-size: rem(12);
-              font-weight: 500;
-              text-transform: capitalize;
+              font-weight: 600;
+              line-height: 1;
             }
 
-            &__inner {
-              margin: 0 0 rem(56) rem(56);
+            &__copy {
+              margin-bottom: rem(16);
+              font-family: $jp;
+              font-size: rem(28);
+              font-weight: 500;
+            }
 
-              &__number {
-                color: $green;
+            &__text {
+              margin-left: rem(4);
+              font-family: $jp;
+              font-size: rem(14);
+            }
+          }
+
+          &.vision {
+            margin-bottom: rem(80);
+          }
+
+          &.value {
+            .about__wrapper__philosophy__container__inner__copy {
+              margin-bottom: rem(8);
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+
+      &__member {
+        padding: rem(100) 0;
+
+        &__title {
+          @include smallTitle;
+        }
+
+        &__container {
+          display: flex;
+          flex-direction: row-reverse;
+          column-gap: rem(48);
+          width: 100%;
+
+          &:not(:last-child) {
+            margin-bottom: rem(120);
+          }
+
+          &__img {
+            width: calc(100%/2);
+            height: rem(432);
+            object-fit: cover;
+          }
+
+          &__inner {
+            width: calc(100%/2);
+            padding-top: rem(24);
+
+            &__post {
+              font-family: $jp;
+              font-size: rem(14);
+              font-weight: 500;
+            }
+
+            &__name {
+              display: flex;
+              flex-direction: column;
+              margin: rem(40) 0 rem(24);
+
+              &__en {
                 font-family: $en;
                 font-size: rem(12);
-                font-weight: 600;
-                line-height: 1;
-              }
-
-              &__copy {
-                margin-bottom: rem(16);
-                font-family: $jp;
-                font-size: rem(28);
                 font-weight: 500;
+                line-height: 1.5;
               }
 
-              &__text {
-                margin-left: rem(4);
+              &__jp {
                 font-family: $jp;
-                font-size: rem(14);
-              }
-            }
-
-            &.vision {
-              margin-bottom: rem(80);
-            }
-
-            &.value {
-              .about__wrapper__content__philosophy__container__inner__copy {
-                margin-bottom: rem(8);
+                font-size: rem(32);
+                font-weight: 500;
                 line-height: 1.5;
               }
             }
-          }
 
-
-        }
-
-        &__member {
-          padding: rem(100) 0;
-
-          &__title {
-            @include smallTitle;
-
-            &__jp {
-              letter-spacing: 0.1em;
-            }
-          }
-
-          &__container {
-            display: flex;
-            flex-direction: row-reverse;
-            column-gap: rem(48);
-            width: 100%;
-
-            &:not(:last-child) {
-              margin-bottom: rem(120);
-            }
-
-            &__img {
-              width: calc(100%/2);
-              height: rem(432);
-              object-fit: cover;
-            }
-
-            &__inner {
-              width: calc(100%/2);
-              padding-top: rem(24);
-
-              &__post {
-                font-family: $jp;
-                font-size: rem(14);
-                font-weight: 500;
-              }
-
-              &__name {
-                display: flex;
-                flex-direction: column;
-                margin: rem(40) 0 rem(24);
-
-                &__en {
-                  font-family: $en;
-                  font-size: rem(12);
-                  font-weight: 500;
-                  line-height: 1.5;
-                }
-
-                &__jp {
-                  font-family: $jp;
-                  font-size: rem(32);
-                  font-weight: 500;
-                  line-height: 1.5;
-                }
-              }
-
-              &__text {
-                width: 100%;
-                font-family: $jp;
-                font-size: rem(14);
-                white-space: wrap;
-                text-align: justify;
-              }
-
-            }
-          }
-        }
-
-        &__profile {
-          // scroll-margin-top: rem(100);
-          padding-top: rem(100);
-
-          &__title {
-            @include smallTitle;
-          }
-
-          &__list {
-            display: flex;
-            flex-direction: column;
-            row-gap: rem(24);
-
-            &__item {
-              display: flex;
-              column-gap: rem(136);
-              padding-bottom: rem(24);
-              border-bottom: 1px rgba($color: $black, $alpha: 0.2) solid;
+            &__text {
+              width: 100%;
               font-family: $jp;
               font-size: rem(14);
-
-              dt {
-                font-weight: 400;
-                opacity: 0.5;
-              }
+              white-space: wrap;
+              text-align: justify;
             }
           }
+        }
+      }
 
-          iframe {
-            width: rem(712);
-            height: rem(352);
-            margin-top: rem(72);
-            filter: grayscale(1);
+      &__profile {
+        padding-top: rem(100);
+
+        &__title {
+          @include smallTitle;
+        }
+
+        &__list {
+          display: flex;
+          flex-direction: column;
+          row-gap: rem(24);
+
+          &__item {
+            display: flex;
+            column-gap: rem(136);
+            padding-bottom: rem(24);
+            border-bottom: 1px rgba($color: $black, $alpha: 0.2) solid;
+            font-family: $jp;
+            font-size: rem(14);
+
+            dt {
+              font-weight: 400;
+              opacity: 0.5;
+            }
           }
+        }
+
+        iframe {
+          width: rem(712);
+          height: rem(352);
+          margin-top: rem(72);
+          filter: grayscale(1);
         }
       }
     }
