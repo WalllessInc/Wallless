@@ -36,6 +36,7 @@
 
       a {
         font-size: rem(14);
+        text-transform: capitalize;
         transition: all 0.3s $ease1;
 
         &:hover {

@@ -34,6 +34,7 @@
         padding: rem(4) 0;
         font-family: $en;
         font-size: rem(16);
+        text-transform: capitalize;
         transition: all 0.3s $ease1;
 
         &::before {

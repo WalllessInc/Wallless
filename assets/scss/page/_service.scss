@@ -2,19 +2,10 @@
 @use "../global/" as *;
 @use "../common/component" as *;
 
-[data-page="about"] {
-  .about {
+[data-page="service"] {
+  .service {
     position: relative;
     padding: rem(152) rem(144) rem(200);
-
-    &__back {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
-      background-color: $gray;
-      z-index: -1;
-    }
 
     &__title {
       @include title;
@@ -78,7 +69,6 @@
             font-size: rem(16);
             font-weight: 500;
             line-height: 1.5;
-            text-transform: capitalize;
           }
 
           &__copy {
@@ -111,7 +101,6 @@
               font-family: $en;
               font-size: rem(12);
               font-weight: 500;
-              text-transform: capitalize;
             }
 
             &__inner {
