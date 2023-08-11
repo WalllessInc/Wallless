@@ -228,6 +228,33 @@
           &__title {
             @include smallTitle;
           }
+
+          &__list {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(24);
+
+            &__item {
+              display: flex;
+              column-gap: rem(136);
+              padding-bottom: rem(24);
+              border-bottom: 1px rgba($color: $black, $alpha: 0.2) solid;
+              font-family: $jp;
+              font-size: rem(14);
+
+              dt {
+                font-weight: 400;
+                opacity: 0.5;
+              }
+            }
+          }
+
+          iframe {
+            width: rem(712);
+            height: rem(352);
+            margin-top: rem(72);
+            filter: grayscale(1);
+          }
         }
       }
     }

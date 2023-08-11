@@ -1124,6 +1124,30 @@ main {
   font-weight: 600;
   line-height: 1.5;
 }
+[data-page=about] .about__wrapper__content__profile__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+[data-page=about] .about__wrapper__content__profile__list__item {
+  display: flex;
+  -moz-column-gap: 8.5rem;
+       column-gap: 8.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px rgba(34, 34, 34, 0.2) solid;
+  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 0.875rem;
+}
+[data-page=about] .about__wrapper__content__profile__list__item dt {
+  font-weight: 400;
+  opacity: 0.5;
+}
+[data-page=about] .about__wrapper__content__profile iframe {
+  width: 44.5rem;
+  height: 22rem;
+  margin-top: 4.5rem;
+  filter: grayscale(1);
+}
 [data-page=about] .about__breadcrumbs {
   align-self: end;
   position: relative;
@@ -1493,10 +1517,10 @@ main {
   margin-top: 1.5rem;
   font-size: 1rem;
 }
-.newsArticle__content__information div {
+.newsArticle__content__information__item {
   display: flex;
 }
-.newsArticle__content__information div dt {
+.newsArticle__content__information__item dt {
   font-weight: 400;
 }
 .newsArticle__hold {
