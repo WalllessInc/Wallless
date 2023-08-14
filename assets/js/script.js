@@ -56,10 +56,6 @@ const Footer = defineComponent({
 							<img src="assets/images/logo.svg" alt="Wallless" width="144" height="32">
 						</a>
 
-						<a class="footer__sns" href="https://twitter.com/wallless_yuki" target="_blank">
-							<img src="assets/images/icon_x.svg" alt="twitter" width="24" height="24">
-						</a>
-
 						<nav class="footer__nav">
 							<ul class="footer__nav__list">
 								<li>
@@ -83,6 +79,10 @@ const Footer = defineComponent({
 								</li>
 							</ul>
 						</nav>
+
+						<a class="footer__sns" href="https://twitter.com/wallless_yuki" target="_blank">
+							<img src="assets/images/icon_x.svg" alt="twitter" width="24" height="24">
+						</a>
 
 						<p class="footer__copyright"><small>&copy;2023 Wallless.inc</small></p>
 					</footer>
@@ -142,10 +142,6 @@ const LowerFooter = defineComponent({
 							<img src="../assets/images/logo.svg" alt="Wallless" width="144" height="32">
 						</a>
 
-						<a class="footer__sns" href="https://twitter.com/wallless_yuki" target="_blank">
-							<img src="../assets/images/icon_x.svg" alt="X" width="24" height="24">
-						</a>
-
 						<nav class="footer__nav">
 							<ul class="footer__nav__list">
 								<li>
@@ -169,6 +165,10 @@ const LowerFooter = defineComponent({
 								</li>
 							</ul>
 						</nav>
+
+						<a class="footer__sns" href="https://twitter.com/wallless_yuki" target="_blank">
+							<img src="../assets/images/icon_x.svg" alt="X" width="24" height="24">
+						</a>
 
 						<p class="footer__copyright"><small>&copy;2023 Wallless.inc</small></p>
 					</footer>
@@ -216,14 +216,47 @@ const Contact = defineComponent({
 	}
 });
 
-const Service = defineComponent({
+const ServiceImg = defineComponent({
+	template: `
+				<div class="service__img js-fadeIn">
+					<a class="service__img__inner js-serviceImg js-pageSwitch" v-for="(item, index) in items" :key="index" :class="item.class" :href="item.href">
+						<img :src="item.imageSrc" :alt="item.titleEn" width="800" height="296">
+					</a>
+				</div>
+      `,
+	data() {
+		return {
+			items: [
+				{
+					class: "graphic active",
+					href: "service.html#graphic",
+					imageSrc: "assets/images/service_graphic.webp",
+				},
+				{
+					class: "web",
+					href: "service.html#web",
+					imageSrc: "assets/images/service_web.webp",
+				},
+				{
+					class: "movie",
+					href: "service.html#movie",
+					imageSrc: "assets/images/service_movie.webp",
+				},
+				{
+					class: "photograph",
+					href: "service.html#photograph",
+					imageSrc: "assets/images/service_photograph.webp",
+				},
+			],
+		}
+	},
+});
+
+const ServiceContent = defineComponent({
 	template: `
 					<div class="service__content js-fadeIn">
 						<div class="service__content__inner js-serviceContent"
-						v-for="(item, index) in items" :key="index" :id="item.id" :class="item.class">
-							<a class="service__content__inner__img js-pageSwitch" :href="item.href">
-								<img :src="item.imageSrc" :alt="item.titleEn" width="800" height="296">
-							</a>
+						v-for="(item, index) in items" :key="index" :class="item.class">
 							<h3 class="service__content__inner__title">
 								<span class="service__content__inner__title__jp">
 									{{ item.titleJp }}
@@ -233,6 +266,9 @@ const Service = defineComponent({
 								</span>
 							</h3>
 							<p class="service__content__inner__text" v-html="item.text"></p>
+							<a class="service__content__inner__btn  js-serviceNav js-pageSwitch" href="service.html">
+								<span>Read More</span>
+							</a>
 						</div>
 					</div>
       `,
@@ -240,34 +276,26 @@ const Service = defineComponent({
 		return {
 			items: [
 				{
-					id: "graphic",
-					class: "active",
+					class: "graphic active",
 					href: "service.html#graphic",
-					imageSrc: "assets/images/service_graphic.webp",
 					titleJp: "グラフィック制作",
 					titleEn: "Graphic",
-					text: 'クライアントのご要望に沿った<br class="spOnly">制作物をご用意しております。<br>「こんなものほしいんだけど…」と<br class="spOnly">お気軽にお問い合わせください。'
+					text: 'クライアントのご要望に沿った制作物をご用意しております。<br>「こんなものほしいんだけど…」とお気軽にお問い合わせください。'
 				},
 				{
-					id: "web",
-					href: "service.html#web",
-					imageSrc: "assets/images/service_web.webp",
+					class: "web",
 					titleJp: "Webサイト制作",
 					titleEn: "Web",
-					text: 'クライアントに合わせたオーダーメイドの<br class="spOnly">Webサイトを制作いたします。<br>ウェブアクセシビリティやSEOに配慮した<br class="spOnly">サイトづくりを心がけています。'
+					text: 'クライアントに合わせたオーダーメイドのWebサイトを制作いたします。<br>ウェブアクセシビリティやSEOに配慮したサイトづくりを心がけています。'
 				},
 				{
-					id: "movie",
-					href: "service.html#movie",
-					imageSrc: "assets/images/service_movie.webp",
+					class: "movie",
 					titleJp: "動画制作",
 					titleEn: "Movie",
-					text: 'PVからSNS用の動画に至るまで<br class="spOnly">一貫して制作いたします。<br>動画を通して分かりやすく明確に表現し、<br class="spOnly">効果的に訴求いたします。'
+					text: 'PVからSNS用の動画に至るまで一貫して制作いたします。<br>動画を通して分かりやすく明確に表現し、効果的に訴求いたします。'
 				},
 				{
-					id: "photograph",
-					href: "service.html#photograph",
-					imageSrc: "assets/images/service_photograph.webp",
+					class: "photograph",
 					titleJp: "写真・動画撮影",
 					titleEn: "Photograph",
 					text: '物撮り・イベント撮影などオールジャンル撮影可能。<br>カメラジンバル・ドローン等もございますので、<br>空撮からシネマティック撮影までお任せください。'
@@ -275,22 +303,6 @@ const Service = defineComponent({
 			],
 		}
 	},
-	mounted() {
-		const serviceNav = document.querySelectorAll('.js-serviceNav');
-		const serviceContents = document.querySelectorAll('.js-serviceContent');
-
-		serviceNav.forEach((nav) => {
-			nav.addEventListener('click', function () {
-				const target = this.getAttribute('data-target');
-
-				serviceNav.forEach((nav) => nav.classList.remove('active'));
-				serviceContents.forEach((content) => content.classList.remove('active'));
-
-				this.classList.add('active');
-				document.getElementById(target).classList.add('active');
-			});
-		});
-	}
 });
 
 const ServiceLower = defineComponent({
@@ -658,7 +670,8 @@ app.component('the-footer', Footer);
 app.component('the-lower_header', LowerHeader);
 app.component('the-lower_footer', LowerFooter);
 app.component('the-contact', Contact);
-app.component('app-service', Service);
+app.component('app-service_img', ServiceImg);
+app.component('app-service_content', ServiceContent);
 app.component('app-service_lower', ServiceLower);
 app.component('app-works', Works);
 app.component('app-news', News);
@@ -729,7 +742,6 @@ headerNavLinks.forEach(function (link) {
 		headerNav.classList.remove('active');
 	});
 });
-
 
 /* --------------------------------
 *  Page Transition
@@ -882,20 +894,6 @@ gsap.fromTo('.js-news', {
 });
 
 /* --------------------------------
-*  About Background
-* -------------------------------- */
-const memberElement = document.getElementById("member");
-const aboutBackElement = document.querySelector(".about__back");
-
-if (memberElement !== null) {
-	const memberHeight = memberElement.clientHeight;
-	const memberTop = memberElement.getBoundingClientRect().top;
-
-	aboutBackElement.style.height = memberHeight + "px";
-	aboutBackElement.style.top = (memberTop - 100) + "px";
-};
-
-/* --------------------------------
 *  Unify Width
 * -------------------------------- */
 function unifyWidth(elements) {
@@ -918,4 +916,33 @@ window.addEventListener('load', function () {
 
 	const timeElements = document.querySelectorAll('time');
 	unifyWidth(timeElements);
+});
+
+/* --------------------------------
+*  About Background
+* -------------------------------- */
+const memberElement = document.getElementById("member");
+const aboutBackElement = document.querySelector(".about__back");
+
+if (memberElement !== null) {
+	const memberHeight = memberElement.clientHeight;
+	const memberTop = memberElement.getBoundingClientRect().top;
+
+	aboutBackElement.style.height = memberHeight + "px";
+	aboutBackElement.style.top = (memberTop - 100) + "px";
+};
+
+/* --------------------------------
+*  Service Toggle
+* -------------------------------- */
+const serviceNav = document.querySelectorAll('.js-serviceNav');
+const serviceElements = document.querySelectorAll('.js-serviceImg, .js-serviceContent');
+
+serviceNav.forEach(nav => {
+	nav.addEventListener('click', function () {
+		const target = this.getAttribute('data-target');
+
+		serviceNav.forEach(navItem => navItem.classList.toggle('active', navItem === nav));
+		serviceElements.forEach(element => element.classList.toggle('active', element.classList.contains(target)));
+	});
 });

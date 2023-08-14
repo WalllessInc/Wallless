@@ -30,7 +30,6 @@ body {
   letter-spacing: 0.06em;
   color: #222;
   background-color: #fff;
-  overflow-x: hidden;
 }
 body.active {
   overflow: hidden;
@@ -294,11 +293,26 @@ img {
 
 .footer {
   display: grid;
-  grid-template-areas: "logo nav" "sns copyright";
+  grid-template-areas: "logo nav" "sns  copyright";
   justify-content: space-between;
-  padding: 4.5rem 9rem 5rem;
+  padding: 4.5rem clamp(2rem, -0.901rem + 12.38vw, 9rem) clamp(4rem, 3.586rem + 1.77vw, 5rem);
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  display: none;
+}
+@media (width < 1024px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+@media (width < 640px) {
+  .footer {
+    display: grid;
+    grid-template-areas: "logo logo" "nav  sns" "nav  copyright";
+    grid-template-rows: auto 1fr auto;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
 }
 .footer__logo {
   grid-area: logo;
@@ -313,14 +327,31 @@ img {
 .footer__sns:hover {
   opacity: 0.6;
 }
+@media (width < 1024px) {
+  .footer__sns {
+    justify-self: flex-end;
+  }
+}
 .footer__nav {
   grid-area: nav;
   align-self: center;
+}
+@media (width < 1024px) {
+  .footer__nav {
+    align-self: flex-start;
+    margin-top: 2rem;
+  }
 }
 .footer__nav__list {
   display: flex;
   -moz-column-gap: 3rem;
        column-gap: 3rem;
+}
+@media (width < 640px) {
+  .footer__nav__list {
+    flex-direction: column;
+    row-gap: 0.25rem;
+  }
 }
 .footer__nav__list a {
   font-size: 0.875rem;
@@ -333,8 +364,13 @@ img {
 .footer__copyright {
   grid-area: copyright;
   justify-self: end;
-  margin-top: 2.5rem;
+  margin-top: clamp(1rem, 0.133rem + 3.7vw, 2.5rem);
   font-size: 0.75rem;
+}
+@media (width < 1024px) {
+  .footer__copyright {
+    justify-self: start;
+  }
 }
 
 .stalker {
@@ -394,14 +430,14 @@ img {
 }
 .contact__title__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: clamp(0.375rem, -1.127rem + 6.41vw, 4rem);
+  font-size: clamp(3.25rem, 2.939rem + 1.33vw, 4rem);
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: capitalize;
 }
 .contact__text {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.875rem;
+  font-size: clamp(0.813rem, 0.787rem + 0.11vw, 0.875rem);
   font-weight: 500;
   text-align: center;
 }
@@ -429,7 +465,7 @@ main {
 .hero {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 12.5rem;
+  margin-bottom: clamp(9rem, 7.55rem + 6.19vw, 12.5rem);
   padding: 13rem clamp(3rem, -0.522rem + 15.03vw, 11.5rem) 0;
 }
 .hero__content {
@@ -470,7 +506,7 @@ main {
   flex-direction: column;
   row-gap: 2.5rem;
   margin-top: clamp(9rem, 7.964rem + 4.42vw, 11.5rem);
-  font-size: clamp(0.875rem, 0.823rem + 0.22vw, 1rem);
+  font-size: clamp(0.813rem, 0.735rem + 0.33vw, 1rem);
   line-height: 2.5;
 }
 .hero__content__text p {
@@ -571,18 +607,23 @@ main {
 * -------------------------------- */
 .service {
   display: grid;
-  grid-template-areas: "title title" "nav content";
-  row-gap: clamp(4.5rem, 4.086rem + 1.77vw, 5.5rem);
-  -moz-column-gap: clamp(0rem, -1.243rem + 5.3vw, 3rem);
-       column-gap: clamp(0rem, -1.243rem + 5.3vw, 3rem);
-  margin-bottom: 12.5rem;
-  padding: 0 clamp(2rem, -0.901rem + 12.38vw, 9rem);
-  overflow: hidden;
+  grid-template-areas: "title title" "nav   img" "nav   content";
+  -moz-column-gap: clamp(3rem, 3rem + 0vw, 3rem);
+       column-gap: clamp(3rem, 3rem + 0vw, 3rem);
+  margin-bottom: clamp(9rem, 7.55rem + 6.19vw, 12.5rem);
+  padding: 0 clamp(2rem, -0.901rem + 12.38vw, 9rem) 0;
+}
+@media (width < 768px) {
+  .service {
+    grid-template-areas: "title     title" "nav       img" "content   content";
+    grid-template-rows: auto auto auto;
+  }
 }
 .service__title {
   display: flex;
   flex-direction: column;
   grid-area: title;
+  margin-bottom: clamp(4.5rem, 4.086rem + 1.77vw, 5.5rem);
 }
 .service__title__jp {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
@@ -641,7 +682,12 @@ main {
 }
 @media (width < 768px) {
   .service__nav li::before {
-    right: -20%;
+    right: -70%;
+  }
+}
+@media (width < 640px) {
+  .service__nav li::before {
+    right: -60%;
   }
 }
 .service__nav li.active {
@@ -693,14 +739,52 @@ main {
 }
 @media (width < 768px) {
   .service__nav a {
-    visibility: hidden;
+    display: none;
   }
+}
+.service__img {
+  grid-area: img;
+  position: relative;
+  width: 100%;
+  height: clamp(12.5rem, -11.5rem + 37.5vw, 18.5rem);
+  border-radius: 4px;
+  overflow: hidden;
+  translate: 0 20%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.service__img.view {
+  translate: 0 0;
+  opacity: 1;
+}
+.service__img__inner {
+  position: relative;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.service__img__inner img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.service__img__inner.active {
+  pointer-events: auto;
+  opacity: 1;
+}
+.service__img__inner:not(:first-child) {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.service__img__inner:hover img {
+  scale: 1.1;
 }
 .service__content {
   grid-area: content;
-  justify-self: end;
   position: relative;
-  translate: 0 50%;
+  translate: 0 20%;
   opacity: 0;
   transition: all 0.8s cubic-bezier(0.33, 1, 0.68, 1);
 }
@@ -709,47 +793,28 @@ main {
   opacity: 1;
 }
 .service__content__inner {
-  pointer-events: none;
   display: flex;
   flex-direction: column;
   opacity: 0;
   transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
 }
 .service__content__inner.active {
-  pointer-events: auto;
   opacity: 1;
 }
-.service__content__inner:not(:first-child) {
+.service__content__inner:not(.graphic) {
   position: absolute;
   top: 0;
   left: 0;
 }
-.service__content__inner__img {
-  position: relative;
-  width: 100%;
-  height: clamp(12.5rem, -11.5rem + 37.5vw, 18.5rem);
-  border-radius: 4px;
-  overflow: hidden;
-}
-.service__content__inner__img img {
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
-}
-.service__content__inner__img:hover img {
-  scale: 1.1;
-}
 .service__content__inner__title {
   display: flex;
   flex-direction: column;
-  margin: 2.5rem 0 0 clamp(0.5rem, -4.75rem + 10.94vw, 4rem);
+  margin: 3rem 0 0 clamp(0.5rem, -4.75rem + 10.94vw, 4rem);
   line-height: 1.5;
 }
 @media (width < 768px) {
   .service__content__inner__title {
-    margin-left: 0;
-    translate: -9.5rem 0;
+    margin: clamp(3rem, 2.046rem + 4.07vw, 4rem) 0 0;
   }
 }
 .service__content__inner__title__jp {
@@ -769,13 +834,51 @@ main {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: clamp(0.75rem, 0.646rem + 0.44vw, 1rem);
   line-height: 2;
+  white-space: wrap;
 }
 @media (width < 768px) {
   .service__content__inner__text {
+    width: clamp(17.5rem, 5.573rem + 50.89vw, 30rem);
     margin-left: 0;
-    translate: -9.5rem 0;
   }
-  .service__content__inner__text .spOnly {
+}
+.service__content__inner__btn {
+  position: relative;
+  display: block;
+  color: #fff;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  background-color: #222;
+  font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: capitalize;
+  overflow: hidden;
+  display: none;
+  margin-top: 2rem;
+}
+.service__content__inner__btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background-color: #3eb497;
+  scale: 1 0;
+  transform-origin: top left;
+  transition: scale 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.service__content__inner__btn:hover::before {
+  scale: 1 1;
+  transform-origin: bottom left;
+}
+.service__content__inner__btn span {
+  position: relative;
+}
+@media (width < 768px) {
+  .service__content__inner__btn {
     display: block;
   }
 }
@@ -785,8 +888,8 @@ main {
 * -------------------------------- */
 .works {
   position: relative;
-  margin-bottom: 12.5rem;
-  padding: 0 clamp(1.5rem, -1.608rem + 13.26vw, 9rem);
+  margin-bottom: clamp(9rem, 7.55rem + 6.19vw, 12.5rem);
+  padding: 0 clamp(2rem, -0.901rem + 12.38vw, 9rem);
 }
 .works__title {
   display: flex;
@@ -845,22 +948,28 @@ main {
 }
 .works__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 33.3333333333%);
+  justify-content: center;
   gap: 3rem;
   margin-top: 2rem;
 }
 @media (width < 1280px) {
   .works__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50%);
   }
 }
-@media (width < 768px) {
+@media (width < 640px) {
   .works__grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 .works__grid__content:nth-child(n+7) {
   display: none;
+}
+@media (width < 640px) {
+  .works__grid__content:nth-child(n+5) {
+    display: none;
+  }
 }
 .works__grid__content__img {
   position: relative;
@@ -888,7 +997,6 @@ main {
   -o-object-fit: cover;
      object-fit: cover;
   transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
-  aspect-ratio: 0;
 }
 .works__grid__content:hover .works__grid__content__img img {
   scale: 1.1;
@@ -899,6 +1007,8 @@ main {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .works__grid__content__category {
   margin: 0.5rem 0 0 0.5rem;
@@ -951,7 +1061,7 @@ main {
   grid-template-areas: "title list" "title btn";
   grid-template-columns: max-content 1fr;
   gap: clamp(0rem, -10rem + 15.63vw, 2.5rem) 3.5rem;
-  margin-bottom: 12.5rem;
+  margin-bottom: clamp(9rem, 7.55rem + 6.19vw, 12.5rem);
   padding: 0 clamp(2rem, -0.901rem + 12.38vw, 9rem);
 }
 @media (width < 1280px) {

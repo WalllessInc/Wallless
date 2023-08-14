@@ -13,7 +13,7 @@ main {
 .hero {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: remCalc(200);
+  margin-bottom: responsiveClamp(144, 200, 375, 1280);
   padding: remCalc(208) responsiveClamp(48, 184, 375, 1280) 0;
 
   &__content {
@@ -60,7 +60,7 @@ main {
       flex-direction: column;
       row-gap: remCalc(40);
       margin-top: responsiveClamp(144, 184, 375, 1280);
-      font-size: responsiveClamp(14, 16, 375, 1280);
+      font-size: responsiveClamp(13, 16, 375, 1280);
       line-height: 2.5;
 
       p {
@@ -145,17 +145,26 @@ main {
   display: grid;
   grid-template-areas:
     "title title"
-    "nav content"
+    "nav   img"
+    "nav   content"
   ;
-  row-gap: responsiveClamp(72, 88, 375, 1280);
-  column-gap: responsiveClamp(0, 48, 375, 1280);
-  margin-bottom: remCalc(200);
-  padding: 0 responsiveClamp(32, 144, 375, 1280);
-  overflow: hidden;
+  column-gap: responsiveClamp(48, 48, 375, 1280);
+  margin-bottom: responsiveClamp(144, 200, 375, 1280);
+  padding: 0 responsiveClamp(32, 144, 375, 1280) 0;
+
+  @include mq(md) {
+    grid-template-areas:
+      "title     title"
+      "nav       img"
+      "content   content"
+    ;
+    grid-template-rows: auto auto auto;
+  }
 
   &__title {
     @include title;
     grid-area: title;
+    margin-bottom: responsiveClamp(72, 88, 375, 1280);
 
     &__text {
       margin-top: remCalc(16);
@@ -198,7 +207,11 @@ main {
         transition: scale 0.5s $ease1;
 
         @include mq(md) {
-          right: -20%;
+          right: -70%;
+        }
+
+        @include mq(sm) {
+          right: -60%;
         }
       }
 
@@ -222,16 +235,19 @@ main {
       }
 
       @include mq(md) {
-        visibility: hidden;
+        display: none;
       }
     }
   }
 
-  &__content {
-    grid-area: content;
-    justify-self: end;
+  &__img {
+    grid-area: img;
     position: relative;
-    translate: 0 50%;
+    width: 100%;
+    height: responsiveClamp(200, 296, 1024, 1280);
+    border-radius: 4px;
+    overflow: hidden;
+    translate: 0 20%;
     opacity: 0;
     transition: all 0.8s $ease1;
 
@@ -241,11 +257,16 @@ main {
     }
 
     &__inner {
-      pointer-events: none;
-      display: flex;
-      flex-direction: column;
+      position: relative;
+      height: 100%;
       opacity: 0;
-      transition: all 0.5s $ease1;
+      transition: all 0.8s $ease1;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s $ease1;
+      }
 
       &.active {
         pointer-events: auto;
@@ -258,33 +279,48 @@ main {
         left: 0;
       }
 
-      &__img {
-        position: relative;
-        width: 100%;
-        height: responsiveClamp(200, 296, 1024, 1280);
-        border-radius: 4px;
-        overflow: hidden;
+      &:hover img {
+        scale: 1.1;
+      }
+    }
+  }
 
-        img {
-          height: 100%;
-          object-fit: cover;
-          transition: all 0.5s $ease1;
-        }
+  &__content {
+    grid-area: content;
+    position: relative;
+    translate: 0 20%;
+    opacity: 0;
+    transition: all 0.8s $ease1;
 
-        &:hover img {
-          scale: 1.1;
-        }
+    &.view {
+      translate: 0 0;
+      opacity: 1;
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transition: all 0.5s $ease1;
+
+      &.active {
+        opacity: 1;
+      }
+
+      &:not(.graphic) {
+        position: absolute;
+        top: 0;
+        left: 0;
       }
 
       &__title {
         display: flex;
         flex-direction: column;
-        margin: remCalc(40) 0 0 responsiveClamp(8, 64, 768, 1280);
+        margin: remCalc(48) 0 0 responsiveClamp(8, 64, 768, 1280);
         line-height: 1.5;
 
         @include mq(md) {
-          margin-left: 0;
-          translate: remCalc(-152) 0;
+          margin: responsiveClamp(48, 64, 375, 768) 0 0;
         }
 
         &__jp {
@@ -307,14 +343,21 @@ main {
         font-family: $jp;
         font-size: responsiveClamp(12, 16, 375, 1280);
         line-height: 2;
+        white-space: wrap;
 
         @include mq(md) {
+          width: responsiveClamp(280, 480, 375, 768);
           margin-left: 0;
-          translate: remCalc(-152) 0;
+        }
+      }
 
-          .spOnly {
-            display: block;
-          }
+      &__btn {
+        @include btn;
+        display: none;
+        margin-top: remCalc(32);
+
+        @include mq(md) {
+          display: block;
         }
       }
     }
@@ -326,8 +369,8 @@ main {
 * -------------------------------- */
 .works {
   position: relative;
-  margin-bottom: remCalc(200);
-  padding: 0 responsiveClamp(24, 144, 375, 1280);
+  margin-bottom: responsiveClamp(144, 200, 375, 1280);
+  padding: 0 responsiveClamp(32, 144, 375, 1280);
 
   &__title {
     @include title;
@@ -339,21 +382,28 @@ main {
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, calc(100%/3));
+    justify-content: center;
     gap: remCalc(48);
     margin-top: remCalc(32);
 
     @include mq(xl) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, calc(100%/2));
     }
 
-    @include mq(md) {
+    @include mq(sm) {
       grid-template-columns: repeat(1, 1fr);
     }
 
     &__content {
       &:nth-child(n+7) {
         display: none;
+      }
+
+      @include mq(sm) {
+        &:nth-child(n+5) {
+          display: none;
+        }
       }
 
       &__img {
@@ -385,7 +435,6 @@ main {
           height: 100%;
           object-fit: cover;
           transition: all 0.5s $ease1;
-          aspect-ratio: 0;
         }
       }
 
@@ -401,6 +450,8 @@ main {
         font-size: remCalc(16);
         font-weight: 500;
         line-height: 1.5;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       &__category {
@@ -430,7 +481,7 @@ main {
     "title btn";
   grid-template-columns: max-content 1fr;
   gap: responsiveClamp(0, 40, 1024, 1280) remCalc(56);
-  margin-bottom: remCalc(200);
+  margin-bottom: responsiveClamp(144, 200, 375, 1280);
   padding: 0 responsiveClamp(32, 144, 375, 1280);
 
   @include mq(xl) {

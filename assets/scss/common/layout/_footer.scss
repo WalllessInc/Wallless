@@ -5,11 +5,29 @@
   display: grid;
   grid-template-areas:
     "logo nav"
-    "sns copyright";
+    "sns  copyright"
+  ;
   justify-content: space-between;
-  padding: remCalc(72) remCalc(144) remCalc(80);
+  padding: remCalc(72) responsiveClamp(32, 144, 375, 1280) responsiveClamp(64, 80, 375, 1280);
   font-family: $en;
-  display: none;
+
+  @include mq(lg) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  @include mq(sm) {
+    display: grid;
+    grid-template-areas:
+      "logo logo"
+      "nav  sns"
+      "nav  copyright"
+    ;
+    grid-template-rows: auto 1fr auto;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
 
   &__logo {
     grid-area: logo;
@@ -25,15 +43,29 @@
     &:hover {
       opacity: 0.6;
     }
+
+    @include mq(lg) {
+      justify-self: flex-end;
+    }
   }
 
   &__nav {
     grid-area: nav;
     align-self: center;
 
+    @include mq(lg) {
+      align-self: flex-start;
+      margin-top: remCalc(32);
+    }
+
     &__list {
       display: flex;
       column-gap: remCalc(48);
+
+      @include mq(sm) {
+        flex-direction: column;
+        row-gap: remCalc(4);
+      }
 
       a {
         font-size: remCalc(14);
@@ -50,7 +82,11 @@
   &__copyright {
     grid-area: copyright;
     justify-self: end;
-    margin-top: remCalc(40);
+    margin-top: responsiveClamp(16, 40, 375, 1024);
     font-size: remCalc(12);
+
+    @include mq(lg) {
+      justify-self: start;
+    }
   }
 }
