@@ -61,7 +61,7 @@
 
     &__en {
       font-family: $en;
-      font-size: rem(64);
+      font-size: responsiveClamp(6, 64, 375, 1280);
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: capitalize;
