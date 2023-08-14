@@ -49,14 +49,14 @@
 
   &__jp {
     font-family: $jp;
-    font-size: rem(13);
+    font-size: responsiveClamp(12, 13, 375, 1280);
     font-weight: 500;
     line-height: 1.5;
   }
 
   &__en {
     font-family: $en;
-    font-size: rem(64);
+    font-size: responsiveClamp(56, 64, 375, 1280);
     font-weight: 600;
     line-height: 1.5;
     letter-spacing: 0.1em;

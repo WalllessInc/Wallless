@@ -9,6 +9,7 @@
   justify-content: space-between;
   padding: rem(72) rem(144) rem(80);
   font-family: $en;
+  display: none;
 
   &__logo {
     grid-area: logo;

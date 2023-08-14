@@ -12,8 +12,16 @@ const Header = defineComponent({
 							</a>
 						</h1>
 
-						<nav class="header__nav">
+						<div class="header__hamburger js-hamburger">
+							<span></span><span></span><span></span>
+						</div>
+
+						<nav class="header__nav js-headerNav">
 							<ul class="header__nav__list">
+								<li class="spOnly">
+									<a class="js-pageSwitch" href="index.html">Home</a>
+								</li>
+
 								<li>
 									<a class="js-pageSwitch" href="about.html">About</a>
 								</li>
@@ -90,8 +98,16 @@ const LowerHeader = defineComponent({
 							</a>
 						</h1>
 
+						<div class="header__hamburger js-hamburger">
+							<span></span><span></span><span></span>
+						</div>
+
 						<nav class="header__nav">
 							<ul class="header__nav__list">
+								<li class="spOnly">
+									<a class="js-pageSwitch" href="index.html">Home</a>
+								</li>
+
 								<li>
 									<a class="js-pageSwitch" href="../about.html">About</a>
 								</li>
@@ -230,7 +246,7 @@ const Service = defineComponent({
 					imageSrc: "assets/images/service_graphic.webp",
 					titleJp: "グラフィック制作",
 					titleEn: "Graphic",
-					text: "クライアントのご要望に沿った制作物をご用意しております。<br>「こんなものほしいんだけど…」とお気軽にお問い合わせください。"
+					text: 'クライアントのご要望に沿った<br class="spOnly">制作物をご用意しております。<br>「こんなものほしいんだけど…」と<br class="spOnly">お気軽にお問い合わせください。'
 				},
 				{
 					id: "web",
@@ -238,7 +254,7 @@ const Service = defineComponent({
 					imageSrc: "assets/images/service_web.webp",
 					titleJp: "Webサイト制作",
 					titleEn: "Web",
-					text: "クライアントに合わせたオーダーメイドのWebサイトを制作いたします。<br>ウェブアクセシビリティやSEOに配慮したサイトづくりを心がけています。"
+					text: 'クライアントに合わせたオーダーメイドの<br class="spOnly">Webサイトを制作いたします。<br>ウェブアクセシビリティやSEOに配慮した<br class="spOnly">サイトづくりを心がけています。'
 				},
 				{
 					id: "movie",
@@ -246,7 +262,7 @@ const Service = defineComponent({
 					imageSrc: "assets/images/service_movie.webp",
 					titleJp: "動画制作",
 					titleEn: "Movie",
-					text: "PVからSNS用の動画に至るまで一貫して制作いたします。<br>動画を通して分かりやすく明確に表現し、効果的に訴求いたします。"
+					text: 'PVからSNS用の動画に至るまで<br class="spOnly">一貫して制作いたします。<br>動画を通して分かりやすく明確に表現し、<br class="spOnly">効果的に訴求いたします。'
 				},
 				{
 					id: "photograph",
@@ -254,7 +270,7 @@ const Service = defineComponent({
 					imageSrc: "assets/images/service_photograph.webp",
 					titleJp: "写真・動画撮影",
 					titleEn: "Photograph",
-					text: "物撮り・イベント撮影などオールジャンル撮影可能。<br>カメラジンバル・ドローン等もございますので、空撮からシネマティック撮影までお任せください。"
+					text: '物撮り・イベント撮影などオールジャンル撮影可能。<br>カメラジンバル・ドローン等もございますので、<br>空撮からシネマティック撮影までお任せください。'
 				},
 			],
 		}
@@ -461,12 +477,15 @@ const News = defineComponent({
 					<ul class="news__list">
 						<li v-for="(item, index) in items" :key="index">
 							<a class="news__list__item js-news js-pageSwitch" :href="item.href">
-								<time class="news__list__item__date" :datetime="item.dateTime" >
-									{{ item.date }}
-								</time>
-								<p class="news__list__item__category js-unify" >
-									{{ item.category }}
-								</p>
+								<div>
+									<time class="news__list__item__date" :datetime="item.dateTime" >
+										{{ item.date }}
+									</time>
+									<p class="news__list__item__category js-unify" >
+										{{ item.category }}
+									</p>
+								</div>
+
 								<h3 class="news__list__item__title">
 									{{ item.title }}
 								</h3>
@@ -688,6 +707,29 @@ window.addEventListener('scroll', function () {
 
 	pastPos = scroll;
 });
+
+/* --------------------------------
+*  Hamburger Menu
+* -------------------------------- */
+const headerHamburger = document.querySelector('.js-hamburger');
+const headerNav = document.querySelector('.js-headerNav');
+const bodyElement = document.querySelector('body');
+
+
+headerHamburger.addEventListener('click', function () {
+	this.classList.toggle('active');
+	headerNav.classList.toggle('active');
+	bodyElement.classList.toggle('active');
+});
+
+const headerNavLinks = headerNav.querySelectorAll('.js-headerNav a');
+headerNavLinks.forEach(function (link) {
+	link.addEventListener('click', function () {
+		headerHamburger.classList.remove('active');
+		headerNav.classList.remove('active');
+	});
+});
+
 
 /* --------------------------------
 *  Page Transition

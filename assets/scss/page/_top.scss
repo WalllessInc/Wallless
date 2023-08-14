@@ -14,7 +14,7 @@ main {
   display: flex;
   justify-content: flex-end;
   margin-bottom: rem(200);
-  padding: rem(208) rem(184) 0;
+  padding: rem(208) responsiveClamp(48, 184, 375, 1280) 0;
 
   &__content {
     position: relative;
@@ -24,7 +24,7 @@ main {
     &__copy {
       display: flex;
       flex-direction: column;
-      font-size: rem(68);
+      font-size: responsiveClamp(40, 68, 375, 1280);
       font-weight: 600;
       line-height: 1.5;
       letter-spacing: 0.1em;
@@ -59,12 +59,19 @@ main {
       display: flex;
       flex-direction: column;
       row-gap: rem(40);
-      margin-top: rem(184);
+      margin-top: responsiveClamp(144, 184, 375, 1280);
+      font-size: responsiveClamp(14, 16, 375, 1280);
       line-height: 2.5;
 
       p {
         display: flex;
         flex-direction: column;
+
+        @include mq(sm) {
+          .spOnly {
+            display: block;
+          }
+        }
       }
     }
 
@@ -77,7 +84,7 @@ main {
   &__scroll {
     position: absolute;
     display: inline-block;
-    right: rem(100);
+    right: responsiveClamp(56, 96, 1024, 1280);
     bottom: 0;
     padding: 0 0 rem(72);
     color: $black;
@@ -140,9 +147,11 @@ main {
     "title title"
     "nav content"
   ;
-  row-gap: rem(88);
+  row-gap: responsiveClamp(72, 88, 375, 1280);
+  column-gap: responsiveClamp(0, 48, 375, 1280);
   margin-bottom: rem(200);
-  padding: 0 rem(144);
+  padding: 0 responsiveClamp(32, 144, 375, 1280);
+  overflow: hidden;
 
   &__title {
     @include title;
@@ -151,7 +160,7 @@ main {
     &__text {
       margin-top: rem(16);
       font-family: $jp;
-      font-size: rem(14);
+      font-size: responsiveClamp(12, 14, 375, 1280);
     }
   }
 
@@ -160,15 +169,15 @@ main {
     position: relative;
     display: flex;
     flex-direction: column;
-    row-gap: rem(20);
-    margin-left: rem(64);
+    row-gap: responsiveClamp(16, 20, 375, 1280);
+    margin-left: responsiveClamp(16, 56, 375, 1280);
     z-index: 2;
 
     li {
       cursor: pointer;
       position: relative;
       font-family: $en;
-      font-size: rem(24);
+      font-size: responsiveClamp(16, 24, 375, 1280);
       text-transform: capitalize;
       font-weight: 600;
       transition: all 0.3s $ease1;
@@ -179,14 +188,18 @@ main {
         position: absolute;
         top: 50%;
         right: -50%;
-        width: rem(100);
+        width: responsiveClamp(56, 100, 375, 1280);
         height: 1px;
         background-color: $green;
-        translate: 0 -50%;
         opacity: 0;
+        translate: 0 -50%;
         scale: 0 1;
         transform-origin: top left;
         transition: scale 0.5s $ease1;
+
+        @include mq(md) {
+          right: -20%;
+        }
       }
 
       &.active {
@@ -202,7 +215,15 @@ main {
     a {
       @include btn;
       margin-top: rem(32);
-      translate: rem(-64) 0;
+      translate: rem(-56) 0;
+
+      @include mq(lg) {
+        translate: rem(-24) 0;
+      }
+
+      @include mq(md) {
+        visibility: hidden;
+      }
     }
   }
 
@@ -239,8 +260,8 @@ main {
 
       &__img {
         position: relative;
-        width: rem(800);
-        height: rem(296);
+        width: 100%;
+        height: responsiveClamp(200, 296, 1024, 1280);
         border-radius: 4px;
         overflow: hidden;
 
@@ -258,8 +279,13 @@ main {
       &__title {
         display: flex;
         flex-direction: column;
-        margin: rem(40) 0 0 rem(64);
+        margin: rem(40) 0 0 responsiveClamp(8, 64, 768, 1280);
         line-height: 1.5;
+
+        @include mq(md) {
+          margin-left: 0;
+          translate: rem(-152) 0;
+        }
 
         &__jp {
           font-family: $jp;
@@ -269,7 +295,7 @@ main {
 
         &__en {
           font-family: $en;
-          font-size: rem(48);
+          font-size: responsiveClamp(40, 48, 375, 1280);
           font-weight: 600;
           letter-spacing: 0.1em;
           text-transform: capitalize;
@@ -277,10 +303,19 @@ main {
       }
 
       &__text {
-        margin: rem(24) 0 0 rem(64);
+        margin: rem(24) 0 0 responsiveClamp(8, 64, 768, 1280);
         font-family: $jp;
-        font-size: rem(16);
+        font-size: responsiveClamp(12, 16, 375, 1280);
         line-height: 2;
+
+        @include mq(md) {
+          margin-left: 0;
+          translate: rem(-152) 0;
+
+          .spOnly {
+            display: block;
+          }
+        }
       }
     }
   }
@@ -292,7 +327,7 @@ main {
 .works {
   position: relative;
   margin-bottom: rem(200);
-  padding: 0 rem(144);
+  padding: 0 responsiveClamp(24, 144, 375, 1280);
 
   &__title {
     @include title;
@@ -307,6 +342,14 @@ main {
     grid-template-columns: repeat(3, 1fr);
     gap: rem(48);
     margin-top: rem(32);
+
+    @include mq(xl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(md) {
+      grid-template-columns: repeat(1, 1fr);
+    }
 
     &__content {
       &:nth-child(n+7) {
@@ -338,9 +381,11 @@ main {
         }
 
         img {
+          width: 100%;
           height: 100%;
           object-fit: cover;
           transition: all 0.5s $ease1;
+          aspect-ratio: 0;
         }
       }
 
@@ -384,9 +429,14 @@ main {
     "title list"
     "title btn";
   grid-template-columns: max-content 1fr;
-  gap: rem(40) rem(56);
+  gap: responsiveClamp(0, 40, 1024, 1280) rem(56);
   margin-bottom: rem(200);
-  padding: 0 rem(144);
+  padding: 0 responsiveClamp(32, 144, 375, 1280);
+
+  @include mq(xl) {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__title {
     @include title;
@@ -396,7 +446,7 @@ main {
   &__list {
     grid-area: list;
     width: 100%;
-    margin-top: rem(40);
+    margin-top: responsiveClamp(24, 40, 375, 1280);
 
     li:nth-child(n+4) {
       display: none;
@@ -406,11 +456,16 @@ main {
       position: relative;
       display: flex;
       align-items: center;
+      gap: responsiveClamp(16, 24, 375, 1280) rem(136);
       padding: rem(40) 0;
-      font-size: rem(14);
       font-weight: 500;
       line-height: 1.5;
       translate: 0 50%;
+
+      @include mq(md) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
       &::before {
         content: "";
@@ -441,19 +496,25 @@ main {
         transform-origin: top left;
       }
 
+      div {
+        display: flex;
+        column-gap: responsiveClamp(24, 56, 375, 1280);
+      }
+
       &__date {
         font-family: $en;
+        font-size: responsiveClamp(12, 14, 375, 1280);
       }
 
       &__category {
-        margin-left: rem(56);
         font-family: $en;
+        font-size: responsiveClamp(12, 14, 375, 1280);
         text-transform: capitalize;
       }
 
       &__title {
-        margin-left: rem(136);
         font-family: $jp;
+        font-size: rem(14);
       }
     }
   }
@@ -461,5 +522,9 @@ main {
   &__btn {
     @include btn;
     grid-area: btn;
+
+    @include mq(xl) {
+      margin-top: rem(32);
+    }
   }
 }

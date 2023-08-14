@@ -33,6 +33,11 @@ body {
   letter-spacing: .06em;
   color: $black;
   background-color: $white;
+  overflow-x: hidden;
+
+  &.active {
+    overflow: hidden;
+  }
 }
 
 body::-webkit-scrollbar {
@@ -80,4 +85,8 @@ img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
+}
+
+.spOnly {
+  display: none;
 }

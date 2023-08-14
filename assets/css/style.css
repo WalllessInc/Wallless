@@ -30,6 +30,10 @@ body {
   letter-spacing: 0.06em;
   color: #222;
   background-color: #fff;
+  overflow-x: hidden;
+}
+body.active {
+  overflow: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -84,14 +88,19 @@ img {
   vertical-align: middle;
 }
 
+.spOnly {
+  display: none;
+}
+
 .header {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: 3rem 4rem 0;
+  padding: 3rem clamp(2.5rem, 1.633rem + 3.7vw, 4rem) 0;
   transition: translate 0.6s cubic-bezier(0.33, 1, 0.68, 1), opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1);
   z-index: 999;
 }
@@ -103,11 +112,104 @@ img {
   display: block;
   width: 9rem;
 }
+.header__hamburger {
+  cursor: pointer;
+  position: relative;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(0.313rem, 0.204rem + 0.46vw, 0.5rem) 0;
+  width: clamp(2.5rem, 1.055rem + 6.16vw, 5rem);
+  height: clamp(2.5rem, 1.055rem + 6.16vw, 5rem);
+  z-index: 2;
+}
+@media (width < 1024px) {
+  .header__hamburger {
+    display: flex;
+  }
+}
+.header__hamburger span {
+  width: 40%;
+  height: 2px;
+  background-color: #222;
+}
+.header__hamburger span:nth-child(2) {
+  width: 60%;
+}
+.header__hamburger span:nth-child(3) {
+  width: 90%;
+}
+.header__hamburger.active span {
+  width: 90%;
+  background-color: #fff;
+  rotate: 35deg;
+  animation: hamburger 0.7s forwards;
+}
+.header__hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.header__hamburger.active span:nth-child(3) {
+  translate: 0 -1.0625rem;
+  rotate: -35deg;
+  animation: hamburger 0.7s forwards;
+}
+@media (width < 640px) {
+  .header__hamburger.active span:nth-child(3) {
+    translate: 0 -0.875rem;
+  }
+}
+@keyframes hamburger {
+  0% {
+    scale: 0 1;
+  }
+  50% {
+    scale: 0 1;
+  }
+  100% {
+    scale: 1 1;
+  }
+}
+@media (width < 1024px) {
+  .header__nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    inset: 0;
+    top: 100%;
+    background-color: #222;
+    visibility: hidden;
+    transform-origin: left bottom;
+    transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+  .header__nav.active {
+    top: 0;
+    visibility: visible;
+  }
+}
 .header__nav__list {
   display: flex;
   align-items: center;
   -moz-column-gap: 3.5rem;
        column-gap: 3.5rem;
+}
+@media (width < 1024px) {
+  .header__nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: clamp(3rem, 1.267rem + 7.4vw, 6rem);
+  }
+}
+@media (width < 1024px) and (width < 640px) {
+  .header__nav__list {
+    row-gap: 1rem;
+  }
+}
+@media (width < 1024px) {
+  .header__nav__list .spOnly {
+    display: block;
+  }
 }
 .header__nav__list li:not(.header__nav__list__btn) a {
   position: relative;
@@ -116,6 +218,13 @@ img {
   font-size: 1rem;
   text-transform: capitalize;
   transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+@media (width < 1024px) {
+  .header__nav__list li:not(.header__nav__list__btn) a {
+    color: #fff;
+    font-size: clamp(2rem, 0.844rem + 4.93vw, 4rem);
+    font-weight: 600;
+  }
 }
 .header__nav__list li:not(.header__nav__list__btn) a::before {
   content: "";
@@ -170,6 +279,18 @@ img {
 .header__nav__list__btn a span {
   position: relative;
 }
+@media (width < 1024px) {
+  .header__nav__list__btn a {
+    padding: 0;
+    border-radius: 0;
+    background-color: none;
+    font-size: clamp(2rem, 0.844rem + 4.93vw, 4rem);
+    font-weight: 600;
+  }
+  .header__nav__list__btn a::before {
+    display: none;
+  }
+}
 
 .footer {
   display: grid;
@@ -177,6 +298,7 @@ img {
   justify-content: space-between;
   padding: 4.5rem 9rem 5rem;
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  display: none;
 }
 .footer__logo {
   grid-area: logo;
@@ -308,7 +430,7 @@ main {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 12.5rem;
-  padding: 13rem 11.5rem 0;
+  padding: 13rem clamp(3rem, -0.522rem + 15.03vw, 11.5rem) 0;
 }
 .hero__content {
   position: relative;
@@ -318,7 +440,7 @@ main {
 .hero__content__copy {
   display: flex;
   flex-direction: column;
-  font-size: 4.25rem;
+  font-size: clamp(2.5rem, 1.775rem + 3.09vw, 4.25rem);
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.1em;
@@ -347,12 +469,18 @@ main {
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;
-  margin-top: 11.5rem;
+  margin-top: clamp(9rem, 7.964rem + 4.42vw, 11.5rem);
+  font-size: clamp(0.875rem, 0.823rem + 0.22vw, 1rem);
   line-height: 2.5;
 }
 .hero__content__text p {
   display: flex;
   flex-direction: column;
+}
+@media (width < 640px) {
+  .hero__content__text p .spOnly {
+    display: block;
+  }
 }
 .hero__content__btn {
   position: relative;
@@ -391,7 +519,7 @@ main {
 .hero__scroll {
   position: absolute;
   display: inline-block;
-  right: 6.25rem;
+  right: clamp(3.5rem, -6.5rem + 15.63vw, 6rem);
   bottom: 0;
   padding: 0 0 4.5rem;
   color: #222;
@@ -444,9 +572,12 @@ main {
 .service {
   display: grid;
   grid-template-areas: "title title" "nav content";
-  row-gap: 5.5rem;
+  row-gap: clamp(4.5rem, 4.086rem + 1.77vw, 5.5rem);
+  -moz-column-gap: clamp(0rem, -1.243rem + 5.3vw, 3rem);
+       column-gap: clamp(0rem, -1.243rem + 5.3vw, 3rem);
   margin-bottom: 12.5rem;
-  padding: 0 9rem;
+  padding: 0 clamp(2rem, -0.901rem + 12.38vw, 9rem);
+  overflow: hidden;
 }
 .service__title {
   display: flex;
@@ -455,13 +586,13 @@ main {
 }
 .service__title__jp {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.8125rem;
+  font-size: clamp(0.75rem, 0.724rem + 0.11vw, 0.813rem);
   font-weight: 500;
   line-height: 1.5;
 }
 .service__title__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 4rem;
+  font-size: clamp(3.5rem, 3.293rem + 0.88vw, 4rem);
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.1em;
@@ -473,22 +604,22 @@ main {
 .service__title__text {
   margin-top: 1rem;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 0.698rem + 0.22vw, 0.875rem);
 }
 .service__nav {
   grid-area: nav;
   position: relative;
   display: flex;
   flex-direction: column;
-  row-gap: 1.25rem;
-  margin-left: 4rem;
+  row-gap: clamp(1rem, 0.896rem + 0.44vw, 1.25rem);
+  margin-left: clamp(1rem, -0.036rem + 4.42vw, 3.5rem);
   z-index: 2;
 }
 .service__nav li {
   cursor: pointer;
   position: relative;
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 0.793rem + 0.88vw, 1.5rem);
   text-transform: capitalize;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
@@ -499,14 +630,19 @@ main {
   position: absolute;
   top: 50%;
   right: -50%;
-  width: 6.25rem;
+  width: clamp(3.5rem, 2.36rem + 4.86vw, 6.25rem);
   height: 1px;
   background-color: #3eb497;
-  translate: 0 -50%;
   opacity: 0;
+  translate: 0 -50%;
   scale: 0 1;
   transform-origin: top left;
   transition: scale 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+@media (width < 768px) {
+  .service__nav li::before {
+    right: -20%;
+  }
 }
 .service__nav li.active {
   color: #3eb497;
@@ -531,7 +667,7 @@ main {
   text-transform: capitalize;
   overflow: hidden;
   margin-top: 2rem;
-  translate: -4rem 0;
+  translate: -3.5rem 0;
 }
 .service__nav a::before {
   content: "";
@@ -549,6 +685,16 @@ main {
 }
 .service__nav a span {
   position: relative;
+}
+@media (width < 1024px) {
+  .service__nav a {
+    translate: -1.5rem 0;
+  }
+}
+@media (width < 768px) {
+  .service__nav a {
+    visibility: hidden;
+  }
 }
 .service__content {
   grid-area: content;
@@ -580,8 +726,8 @@ main {
 }
 .service__content__inner__img {
   position: relative;
-  width: 50rem;
-  height: 18.5rem;
+  width: 100%;
+  height: clamp(12.5rem, -11.5rem + 37.5vw, 18.5rem);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -597,8 +743,14 @@ main {
 .service__content__inner__title {
   display: flex;
   flex-direction: column;
-  margin: 2.5rem 0 0 4rem;
+  margin: 2.5rem 0 0 clamp(0.5rem, -4.75rem + 10.94vw, 4rem);
   line-height: 1.5;
+}
+@media (width < 768px) {
+  .service__content__inner__title {
+    margin-left: 0;
+    translate: -9.5rem 0;
+  }
 }
 .service__content__inner__title__jp {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
@@ -607,16 +759,25 @@ main {
 }
 .service__content__inner__title__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 2.293rem + 0.88vw, 3rem);
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: capitalize;
 }
 .service__content__inner__text {
-  margin: 1.5rem 0 0 4rem;
+  margin: 1.5rem 0 0 clamp(0.5rem, -4.75rem + 10.94vw, 4rem);
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 1rem;
+  font-size: clamp(0.75rem, 0.646rem + 0.44vw, 1rem);
   line-height: 2;
+}
+@media (width < 768px) {
+  .service__content__inner__text {
+    margin-left: 0;
+    translate: -9.5rem 0;
+  }
+  .service__content__inner__text .spOnly {
+    display: block;
+  }
 }
 
 /* --------------------------------
@@ -625,7 +786,7 @@ main {
 .works {
   position: relative;
   margin-bottom: 12.5rem;
-  padding: 0 9rem;
+  padding: 0 clamp(1.5rem, -1.608rem + 13.26vw, 9rem);
 }
 .works__title {
   display: flex;
@@ -633,13 +794,13 @@ main {
 }
 .works__title__jp {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.8125rem;
+  font-size: clamp(0.75rem, 0.724rem + 0.11vw, 0.813rem);
   font-weight: 500;
   line-height: 1.5;
 }
 .works__title__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 4rem;
+  font-size: clamp(3.5rem, 3.293rem + 0.88vw, 4rem);
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.1em;
@@ -688,6 +849,16 @@ main {
   gap: 3rem;
   margin-top: 2rem;
 }
+@media (width < 1280px) {
+  .works__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width < 768px) {
+  .works__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .works__grid__content:nth-child(n+7) {
   display: none;
 }
@@ -712,10 +883,12 @@ main {
   scale: 1 0;
 }
 .works__grid__content__img img {
+  width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+  aspect-ratio: 0;
 }
 .works__grid__content:hover .works__grid__content__img img {
   scale: 1.1;
@@ -777,9 +950,15 @@ main {
   display: grid;
   grid-template-areas: "title list" "title btn";
   grid-template-columns: max-content 1fr;
-  gap: 2.5rem 3.5rem;
+  gap: clamp(0rem, -10rem + 15.63vw, 2.5rem) 3.5rem;
   margin-bottom: 12.5rem;
-  padding: 0 9rem;
+  padding: 0 clamp(2rem, -0.901rem + 12.38vw, 9rem);
+}
+@media (width < 1280px) {
+  .news {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .news__title {
   display: flex;
@@ -788,13 +967,13 @@ main {
 }
 .news__title__jp {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.8125rem;
+  font-size: clamp(0.75rem, 0.724rem + 0.11vw, 0.813rem);
   font-weight: 500;
   line-height: 1.5;
 }
 .news__title__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 4rem;
+  font-size: clamp(3.5rem, 3.293rem + 0.88vw, 4rem);
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.1em;
@@ -806,7 +985,7 @@ main {
 .news__list {
   grid-area: list;
   width: 100%;
-  margin-top: 2.5rem;
+  margin-top: clamp(1.5rem, 1.086rem + 1.77vw, 2.5rem);
 }
 .news__list li:nth-child(n+4) {
   display: none;
@@ -815,11 +994,17 @@ main {
   position: relative;
   display: flex;
   align-items: center;
+  gap: clamp(1rem, 0.793rem + 0.88vw, 1.5rem) 8.5rem;
   padding: 2.5rem 0;
-  font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.5;
   translate: 0 50%;
+}
+@media (width < 768px) {
+  .news__list__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .news__list__item::before {
   content: "";
@@ -847,17 +1032,23 @@ main {
   scale: 1 1;
   transform-origin: top left;
 }
+.news__list__item div {
+  display: flex;
+  -moz-column-gap: clamp(1.5rem, 0.671rem + 3.54vw, 3.5rem);
+       column-gap: clamp(1.5rem, 0.671rem + 3.54vw, 3.5rem);
+}
 .news__list__item__date {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: clamp(0.75rem, 0.698rem + 0.22vw, 0.875rem);
 }
 .news__list__item__category {
-  margin-left: 3.5rem;
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: clamp(0.75rem, 0.698rem + 0.22vw, 0.875rem);
   text-transform: capitalize;
 }
 .news__list__item__title {
-  margin-left: 8.5rem;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 0.875rem;
 }
 .news__btn {
   position: relative;
@@ -893,6 +1084,11 @@ main {
 .news__btn span {
   position: relative;
 }
+@media (width < 1280px) {
+  .news__btn {
+    margin-top: 2rem;
+  }
+}
 
 [data-page=about] .about {
   position: relative;
@@ -904,7 +1100,7 @@ main {
   top: 0;
   left: 0;
   background-color: #f5f5f5;
-  z-index: -1;
+  z-index: 1;
 }
 [data-page=about] .about__title {
   display: flex;
@@ -913,13 +1109,13 @@ main {
 }
 [data-page=about] .about__title__jp {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.8125rem;
+  font-size: clamp(0.75rem, 0.724rem + 0.11vw, 0.813rem);
   font-weight: 500;
   line-height: 1.5;
 }
 [data-page=about] .about__title__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 4rem;
+  font-size: clamp(3.5rem, 3.293rem + 0.88vw, 4rem);
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.1em;
@@ -929,10 +1125,12 @@ main {
   color: #3eb497;
 }
 [data-page=about] .about__wrapper {
+  position: relative;
   display: flex;
   justify-content: flex-start;
   -moz-column-gap: 17.5rem;
        column-gap: 17.5rem;
+  z-index: 2;
 }
 [data-page=about] .about__wrapper__nav {
   padding: 2rem 0 0 4rem;
@@ -1217,13 +1415,13 @@ main {
 }
 [data-page=service] .service__title__jp {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 0.8125rem;
+  font-size: clamp(0.75rem, 0.724rem + 0.11vw, 0.813rem);
   font-weight: 500;
   line-height: 1.5;
 }
 [data-page=service] .service__title__en {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: 4rem;
+  font-size: clamp(3.5rem, 3.293rem + 0.88vw, 4rem);
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.1em;
