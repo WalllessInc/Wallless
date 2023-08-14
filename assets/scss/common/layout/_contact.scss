@@ -4,10 +4,10 @@
 .stalker {
   pointer-events: none;
   position: fixed;
-  top: rem(-8);
-  left: rem(-8);
-  width: rem(24);
-  height: rem(24);
+  top: remCalc(-8);
+  left: remCalc(-8);
+  width: remCalc(24);
+  height: remCalc(24);
   border-radius: 50%;
   background: rgba($white, 0.7);
   transform: translate(0, 0);
@@ -16,10 +16,10 @@
   z-index: 998;
 
   &.js-hover {
-    top: rem(-40);
-    left: rem(-40);
-    width: rem(104);
-    height: rem(104);
+    top: remCalc(-40);
+    left: remCalc(-40);
+    width: remCalc(104);
+    height: remCalc(104);
     opacity: 1;
 
     &::before {
@@ -29,7 +29,7 @@
       left: 50%;
       color: $black;
       font-family: $en;
-      font-size: rem(12);
+      font-size: remCalc(12);
       font-weight: 600;
       translate: -50% -50%;
     }
@@ -41,9 +41,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  row-gap: rem(32);
+  row-gap: remCalc(32);
   width: 100%;
-  padding: rem(120) 0 rem(96);
+  padding: remCalc(120) 0 remCalc(96);
   color: $white;
   background-color: $black;
 
@@ -55,7 +55,7 @@
 
     &__jp {
       font-family: $jp;
-      font-size: rem(13);
+      font-size: remCalc(13);
       font-weight: 500;
     }
 
@@ -70,7 +70,7 @@
 
   &__text {
     font-family: $jp;
-    font-size: rem(14);
+    font-size: remCalc(14);
     font-weight: 500;
     text-align: center;
   }

@@ -7,19 +7,19 @@
     "logo nav"
     "sns copyright";
   justify-content: space-between;
-  padding: rem(72) rem(144) rem(80);
+  padding: remCalc(72) remCalc(144) remCalc(80);
   font-family: $en;
   display: none;
 
   &__logo {
     grid-area: logo;
-    width: rem(144);
+    width: remCalc(144);
   }
 
   &__sns {
     grid-area: sns;
-    margin-top: rem(32);
-    width: rem(24);
+    margin-top: remCalc(32);
+    width: remCalc(24);
     transition: all 0.3s $ease1;
 
     &:hover {
@@ -33,10 +33,10 @@
 
     &__list {
       display: flex;
-      column-gap: rem(48);
+      column-gap: remCalc(48);
 
       a {
-        font-size: rem(14);
+        font-size: remCalc(14);
         text-transform: capitalize;
         transition: all 0.3s $ease1;
 
@@ -50,7 +50,7 @@
   &__copyright {
     grid-area: copyright;
     justify-self: end;
-    margin-top: rem(40);
-    font-size: rem(12);
+    margin-top: remCalc(40);
+    font-size: remCalc(12);
   }
 }

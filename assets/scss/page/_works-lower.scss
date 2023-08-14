@@ -4,39 +4,39 @@
 
 .worksLower {
   position: relative;
-  margin-bottom: rem(200);
-  padding: rem(48) rem(144) 0;
+  margin-bottom: remCalc(200);
+  padding: remCalc(48) remCalc(144) 0;
 
   >img:first-child {
     width: 100%;
     object-fit: cover;
 
     &.short {
-      height: rem(600);
+      height: remCalc(600);
     }
   }
 
   &__head {
-    margin: rem(64) 0 rem(72) rem(64);
+    margin: remCalc(64) 0 remCalc(72) remCalc(64);
     line-height: 1.5;
 
     &__client {
       font-family: $jp;
-      font-size: rem(14);
+      font-size: remCalc(14);
       font-weight: 500;
     }
 
     &__title {
-      margin: rem(16) 0 rem(12);
+      margin: remCalc(16) 0 remCalc(12);
       font-family: $jp;
-      font-size: rem(28);
+      font-size: remCalc(28);
       font-weight: 500;
       letter-spacing: 0.1em;
     }
 
     &__category {
       font-family: $en;
-      font-size: rem(12);
+      font-size: remCalc(12);
       opacity: 0.5;
     }
   }
@@ -44,16 +44,16 @@
   &__detail {
     display: flex;
     flex-direction: column;
-    row-gap: rem(40);
-    margin-left: rem(64);
+    row-gap: remCalc(40);
+    margin-left: remCalc(64);
 
     div {
       display: flex;
-      column-gap: rem(56);
+      column-gap: remCalc(56);
 
       dt {
         font-family: $en;
-        font-size: rem(13);
+        font-size: remCalc(13);
         font-weight: 400;
         text-transform: capitalize;
         opacity: 0.5;
@@ -61,7 +61,7 @@
 
       dd {
         font-family: $jp;
-        font-size: rem(14);
+        font-size: remCalc(14);
 
         a {
           position: relative;
@@ -93,18 +93,18 @@
   &__gallery {
     display: flex;
     flex-direction: column;
-    row-gap: rem(64);
-    margin-top: rem(80);
-    padding: 0 rem(64);
+    row-gap: remCalc(64);
+    margin-top: remCalc(80);
+    padding: 0 remCalc(64);
 
     iframe {
       width: 100%;
-      height: rem(672);
+      height: remCalc(672);
     }
 
     &__side {
       display: flex;
-      column-gap: rem(24);
+      column-gap: remCalc(24);
 
       img {
         width: calc(100%/2);
@@ -115,9 +115,9 @@
 
   &__btn {
     @include btn;
-    margin: rem(64) auto 0;
-    padding: rem(24) rem(120);
-    font-size: rem(24);
+    margin: remCalc(64) auto 0;
+    padding: remCalc(24) remCalc(120);
+    font-size: remCalc(24);
   }
 
   &__breadcrumbs {

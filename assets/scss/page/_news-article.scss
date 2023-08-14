@@ -6,74 +6,74 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: rem(200);
-  padding: rem(152) rem(144) 0;
+  margin-bottom: remCalc(200);
+  padding: remCalc(152) remCalc(144) 0;
   font-family: $jp;
 
   &__title {
-    font-size: rem(40);
+    font-size: remCalc(40);
     font-weight: 700;
   }
 
   &__detail {
     display: flex;
-    column-gap: rem(42);
-    margin: rem(16) 0 rem(64);
+    column-gap: remCalc(42);
+    margin: remCalc(16) 0 remCalc(64);
     font-family: $en;
-    font-size: rem(14);
+    font-size: remCalc(14);
     font-weight: 500;
   }
 
   &__img {
-    margin-bottom: rem(48);
+    margin-bottom: remCalc(48);
   }
 
   &__text {
-    font-size: rem(16);
+    font-size: remCalc(16);
   }
 
   &__subheading {
-    margin: 0 0 rem(16) rem(64);
-    font-size: rem(32);
+    margin: 0 0 remCalc(16) remCalc(64);
+    font-size: remCalc(32);
     font-weight: 700;
   }
 
   &__promotion {
-    margin: 0 0 rem(48) rem(64);
-    font-size: rem(14);
+    margin: 0 0 remCalc(48) remCalc(64);
+    font-size: remCalc(14);
   }
 
   &__content {
-    margin: 0 0 rem(48) rem(64);
+    margin: 0 0 remCalc(48) remCalc(64);
 
     &__title {
-      margin-bottom: rem(12);
-      font-size: rem(24);
+      margin-bottom: remCalc(12);
+      font-size: remCalc(24);
       font-weight: 500;
     }
 
     &__text {
-      margin-top: rem(8);
-      font-size: rem(14);
+      margin-top: remCalc(8);
+      font-size: remCalc(14);
     }
 
     &__list {
-      margin-left: rem(20);
-      font-size: rem(16);
+      margin-left: remCalc(20);
+      font-size: remCalc(16);
       font-weight: 500;
       list-style: disc;
     }
 
     &__teacher {
-      font-size: rem(16);
+      font-size: remCalc(16);
     }
 
     &__information {
       display: flex;
       flex-direction: column;
-      row-gap: rem(4);
-      margin-top: rem(24);
-      font-size: rem(16);
+      row-gap: remCalc(4);
+      margin-top: remCalc(24);
+      font-size: remCalc(16);
 
       &__item {
         display: flex;
@@ -88,9 +88,9 @@
   &__hold {
     display: flex;
     flex-direction: column;
-    row-gap: rem(16);
-    margin: 0 0 rem(48) rem(64);
-    font-size: rem(14);
+    row-gap: remCalc(16);
+    margin: 0 0 remCalc(48) remCalc(64);
+    font-size: remCalc(14);
 
     dt {
       font-weight: 500;
@@ -99,29 +99,29 @@
 
   &__btn {
     @include btn;
-    margin-left: rem(64);
-    padding: rem(24) rem(120);
-    font-size: rem(24);
+    margin-left: remCalc(64);
+    padding: remCalc(24) remCalc(120);
+    font-size: remCalc(24);
   }
 
   &__share {
-    margin: rem(48) 0 0 rem(64);
+    margin: remCalc(48) 0 0 remCalc(64);
     width: fit-content;
 
     dt {
-      margin-bottom: rem(16);
-      font-size: rem(14);
+      margin-bottom: remCalc(16);
+      font-size: remCalc(14);
       font-weight: 500;
     }
 
     dd {
       display: flex;
       justify-content: center;
-      column-gap: rem(32);
+      column-gap: remCalc(32);
 
       a {
-        width: rem(24);
-        height: rem(24);
+        width: remCalc(24);
+        height: remCalc(24);
         transition: all 0.3s $ease1;
 
         &:hover {

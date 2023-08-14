@@ -4,14 +4,14 @@
 
 [data-page="works"] {
   .works {
-    padding: rem(152) rem(144) 0;
+    padding: remCalc(152) remCalc(144) 0;
 
     &__title {
-      margin-bottom: rem(72);
+      margin-bottom: remCalc(72);
     }
 
     &__grid {
-      gap: rem(72) rem(48);
+      gap: remCalc(72) remCalc(48);
 
       &__content {
         &:nth-child(n+7) {
@@ -23,8 +23,8 @@
     &__breadcrumbs {
       @include breadcrumbs;
       position: absolute;
-      top: rem(152);
-      right: rem(32);
+      top: remCalc(152);
+      right: remCalc(32);
       margin: 0;
       rotate: 90deg;
     }

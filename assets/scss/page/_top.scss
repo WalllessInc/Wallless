@@ -13,8 +13,8 @@ main {
 .hero {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: rem(200);
-  padding: rem(208) responsiveClamp(48, 184, 375, 1280) 0;
+  margin-bottom: remCalc(200);
+  padding: remCalc(208) responsiveClamp(48, 184, 375, 1280) 0;
 
   &__content {
     position: relative;
@@ -58,7 +58,7 @@ main {
     &__text {
       display: flex;
       flex-direction: column;
-      row-gap: rem(40);
+      row-gap: remCalc(40);
       margin-top: responsiveClamp(144, 184, 375, 1280);
       font-size: responsiveClamp(14, 16, 375, 1280);
       line-height: 2.5;
@@ -77,7 +77,7 @@ main {
 
     &__btn {
       @include btn;
-      margin-top: rem(32);
+      margin-top: remCalc(32);
     }
   }
 
@@ -86,10 +86,10 @@ main {
     display: inline-block;
     right: responsiveClamp(56, 96, 1024, 1280);
     bottom: 0;
-    padding: 0 0 rem(72);
+    padding: 0 0 remCalc(72);
     color: $black;
     font-family: $en;
-    font-size: rem(12);
+    font-size: remCalc(12);
     writing-mode: vertical-lr;
 
     &::before {
@@ -98,7 +98,7 @@ main {
       left: 50%;
       bottom: 0;
       width: 1px;
-      height: rem(56);
+      height: remCalc(56);
       background-color: $black;
       opacity: 0.4;
     }
@@ -109,7 +109,7 @@ main {
       left: 50%;
       bottom: 0;
       width: 1px;
-      height: rem(56);
+      height: remCalc(56);
       background-color: $black;
       animation: scroll 2s cubic-bezier(1, 0, 0, 1) infinite;
 
@@ -149,7 +149,7 @@ main {
   ;
   row-gap: responsiveClamp(72, 88, 375, 1280);
   column-gap: responsiveClamp(0, 48, 375, 1280);
-  margin-bottom: rem(200);
+  margin-bottom: remCalc(200);
   padding: 0 responsiveClamp(32, 144, 375, 1280);
   overflow: hidden;
 
@@ -158,7 +158,7 @@ main {
     grid-area: title;
 
     &__text {
-      margin-top: rem(16);
+      margin-top: remCalc(16);
       font-family: $jp;
       font-size: responsiveClamp(12, 14, 375, 1280);
     }
@@ -214,11 +214,11 @@ main {
 
     a {
       @include btn;
-      margin-top: rem(32);
-      translate: rem(-56) 0;
+      margin-top: remCalc(32);
+      translate: remCalc(-56) 0;
 
       @include mq(lg) {
-        translate: rem(-24) 0;
+        translate: remCalc(-24) 0;
       }
 
       @include mq(md) {
@@ -279,17 +279,17 @@ main {
       &__title {
         display: flex;
         flex-direction: column;
-        margin: rem(40) 0 0 responsiveClamp(8, 64, 768, 1280);
+        margin: remCalc(40) 0 0 responsiveClamp(8, 64, 768, 1280);
         line-height: 1.5;
 
         @include mq(md) {
           margin-left: 0;
-          translate: rem(-152) 0;
+          translate: remCalc(-152) 0;
         }
 
         &__jp {
           font-family: $jp;
-          font-size: rem(12);
+          font-size: remCalc(12);
           font-weight: 500;
         }
 
@@ -303,14 +303,14 @@ main {
       }
 
       &__text {
-        margin: rem(24) 0 0 responsiveClamp(8, 64, 768, 1280);
+        margin: remCalc(24) 0 0 responsiveClamp(8, 64, 768, 1280);
         font-family: $jp;
         font-size: responsiveClamp(12, 16, 375, 1280);
         line-height: 2;
 
         @include mq(md) {
           margin-left: 0;
-          translate: rem(-152) 0;
+          translate: remCalc(-152) 0;
 
           .spOnly {
             display: block;
@@ -326,7 +326,7 @@ main {
 * -------------------------------- */
 .works {
   position: relative;
-  margin-bottom: rem(200);
+  margin-bottom: remCalc(200);
   padding: 0 responsiveClamp(24, 144, 375, 1280);
 
   &__title {
@@ -340,8 +340,8 @@ main {
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: rem(48);
-    margin-top: rem(32);
+    gap: remCalc(48);
+    margin-top: remCalc(32);
 
     @include mq(xl) {
       grid-template-columns: repeat(2, 1fr);
@@ -359,7 +359,7 @@ main {
       &__img {
         position: relative;
         width: 100%;
-        height: rem(248);
+        height: remCalc(248);
         border-radius: 4px;
         overflow: hidden;
 
@@ -396,17 +396,17 @@ main {
       }
 
       &__title {
-        margin: rem(20) 0 0 rem(8);
+        margin: remCalc(20) 0 0 remCalc(8);
         font-family: $jp;
-        font-size: rem(16);
+        font-size: remCalc(16);
         font-weight: 500;
         line-height: 1.5;
       }
 
       &__category {
-        margin: rem(8) 0 0 rem(8);
+        margin: remCalc(8) 0 0 remCalc(8);
         font-family: $en;
-        font-size: rem(12);
+        font-size: remCalc(12);
         line-height: 1.5;
         opacity: 0.5;
       }
@@ -415,7 +415,7 @@ main {
 
   &__btn {
     @include btn;
-    margin: rem(72) auto 0;
+    margin: remCalc(72) auto 0;
   }
 }
 
@@ -429,8 +429,8 @@ main {
     "title list"
     "title btn";
   grid-template-columns: max-content 1fr;
-  gap: responsiveClamp(0, 40, 1024, 1280) rem(56);
-  margin-bottom: rem(200);
+  gap: responsiveClamp(0, 40, 1024, 1280) remCalc(56);
+  margin-bottom: remCalc(200);
   padding: 0 responsiveClamp(32, 144, 375, 1280);
 
   @include mq(xl) {
@@ -456,8 +456,8 @@ main {
       position: relative;
       display: flex;
       align-items: center;
-      gap: responsiveClamp(16, 24, 375, 1280) rem(136);
-      padding: rem(40) 0;
+      gap: responsiveClamp(16, 24, 375, 1280) remCalc(136);
+      padding: remCalc(40) 0;
       font-weight: 500;
       line-height: 1.5;
       translate: 0 50%;
@@ -514,7 +514,7 @@ main {
 
       &__title {
         font-family: $jp;
-        font-size: rem(14);
+        font-size: remCalc(14);
       }
     }
   }
@@ -524,7 +524,7 @@ main {
     grid-area: btn;
 
     @include mq(xl) {
-      margin-top: rem(32);
+      margin-top: remCalc(32);
     }
   }
 }

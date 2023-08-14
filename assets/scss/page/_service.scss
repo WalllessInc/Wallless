@@ -9,33 +9,33 @@
     margin: 0;
 
     position: relative;
-    padding: rem(152) rem(144) rem(200);
+    padding: remCalc(152) remCalc(144) remCalc(200);
 
     &__title {
       @include title;
-      margin-bottom: rem(40);
+      margin-bottom: remCalc(40);
     }
 
     &__wrapper {
       display: flex;
       justify-content: flex-start;
-      column-gap: rem(280);
+      column-gap: remCalc(280);
 
       &__nav {
-        padding: rem(32) 0 0 rem(64);
+        padding: remCalc(32) 0 0 remCalc(64);
         height: 100%;
 
         &__list {
           position: sticky;
           display: flex;
           flex-direction: column;
-          row-gap: rem(24);
-          top: rem(240);
+          row-gap: remCalc(24);
+          top: remCalc(240);
 
           a {
             position: relative;
             font-family: $en;
-            font-size: rem(16);
+            font-size: remCalc(16);
             font-weight: 500;
             text-transform: capitalize;
             transition: all 0.3s $ease1;
@@ -44,7 +44,7 @@
               content: "";
               position: absolute;
               left: 0;
-              bottom: rem(-2);
+              bottom: remCalc(-2);
               width: 100%;
               height: 1px;
               background-color: $green;
@@ -66,12 +66,12 @@
       }
 
       &__hero {
-        margin-bottom: rem(200);
+        margin-bottom: remCalc(200);
 
         &__copy {
-          margin-bottom: rem(64);
+          margin-bottom: remCalc(64);
           font-family: $jp;
-          font-size: rem(48);
+          font-size: remCalc(48);
           font-weight: 500;
           line-height: 1.5;
           letter-spacing: 0.08em;
@@ -79,14 +79,14 @@
 
         &__text {
           font-family: $jp;
-          font-size: rem(15);
+          font-size: remCalc(15);
           line-height: 2.25;
         }
       }
 
       &__container {
-        scroll-margin-top: rem(100);
-        margin-bottom: rem(200);
+        scroll-margin-top: remCalc(100);
+        margin-bottom: remCalc(200);
 
         &:last-child {
           margin-bottom: 0;
@@ -94,30 +94,30 @@
 
         &__title {
           @include smallTitle;
-          margin-bottom: rem(24);
+          margin-bottom: remCalc(24);
         }
 
         &__text {
-          margin-bottom: rem(48);
+          margin-bottom: remCalc(48);
           font-family: $jp;
-          font-size: rem(14);
+          font-size: remCalc(14);
         }
 
         &__subheading {
-          margin-bottom: rem(14);
+          margin-bottom: remCalc(14);
           font-family: $jp;
-          font-size: rem(20);
+          font-size: remCalc(20);
           font-weight: 500;
           line-height: 1.5;
         }
 
         &__example {
           display: flex;
-          column-gap: rem(32);
+          column-gap: remCalc(32);
 
           &__img {
-            height: rem(240);
-            margin-bottom: rem(16);
+            height: remCalc(240);
+            margin-bottom: remCalc(16);
             border-radius: 4px;
             overflow: hidden;
 
@@ -136,9 +136,9 @@
             width: calc(100%/2);
 
             h5 {
-              margin-left: rem(8);
+              margin-left: remCalc(8);
               font-family: $jp;
-              font-size: rem(16);
+              font-size: remCalc(16);
               font-weight: 500;
             }
           }
@@ -149,8 +149,8 @@
     &__breadcrumbs {
       @include breadcrumbs;
       position: absolute;
-      top: rem(152);
-      right: rem(32);
+      top: remCalc(152);
+      right: remCalc(32);
       margin: 0;
       rotate: 90deg;
     }

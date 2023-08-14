@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 //////////////////////////////
-// clapm calc
+// clamp calc
 //////////////////////////////
 @use "sass:math";
 
@@ -32,10 +32,9 @@
 //////////////////////////////
 // px to rem
 //////////////////////////////
-@function rem($pixels, $base: 16) {
+@function remCalc($pixels, $base: 16) {
   @return ($pixels / $base) * 1rem;
 }
-
 
 //////////////////////////////
 // BreakPoint

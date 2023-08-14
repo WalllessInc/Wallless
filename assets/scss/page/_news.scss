@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: rem(152) rem(144) 0;
+    padding: remCalc(152) remCalc(144) 0;
 
     &__list {
       li:nth-child(n+4) {
@@ -16,7 +16,7 @@
 
       &__item {
         &__category {
-          margin-left: rem(96);
+          margin-left: remCalc(96);
         }
       }
     }
@@ -24,8 +24,8 @@
     &__breadcrumbs {
       @include breadcrumbs;
       position: absolute;
-      top: rem(152);
-      right: rem(32);
+      top: remCalc(152);
+      right: remCalc(32);
       margin: 0;
       rotate: 90deg;
     }
