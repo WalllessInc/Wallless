@@ -92,16 +92,20 @@
 // breadcrumbs
 //////////////////////////////
 @mixin breadcrumbs {
-  align-self: end;
+  align-self: flex-end;
   position: relative;
   display: flex;
   align-items: center;
   column-gap: remCalc(16);
-  margin: 0 remCalc(144) remCalc(24) 0;
+  margin: 0 responsiveClamp(32, 144, 375, 1280) remCalc(24) 0;
   font-family: $en;
-  font-size: remCalc(14);
+  font-size: responsiveClamp(12, 14, 640, 1280);
   line-height: 1.5;
   text-transform: capitalize;
+
+  @include mq(sm) {
+    display: none;
+  }
 
   a {
     position: relative;
@@ -113,7 +117,7 @@
       position: absolute;
       right: remCalc(-12);
       bottom: remCalc(-1);
-      font-size: remCalc(14);
+      font-size: responsiveClamp(12, 14, 640, 1280);
     }
 
     &:hover {

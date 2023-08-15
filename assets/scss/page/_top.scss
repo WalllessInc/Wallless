@@ -450,8 +450,8 @@ main {
         font-size: remCalc(16);
         font-weight: 500;
         line-height: 1.5;
-        overflow: hidden;
         text-overflow: ellipsis;
+        overflow: hidden;
       }
 
       &__category {
@@ -566,6 +566,8 @@ main {
       &__title {
         font-family: $jp;
         font-size: remCalc(14);
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
     }
   }

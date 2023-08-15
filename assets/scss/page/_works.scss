@@ -4,18 +4,24 @@
 
 [data-page="works"] {
   .works {
-    padding: remCalc(152) remCalc(144) 0;
+    padding: responsiveClamp(120, 152, 375, 1280) responsiveClamp(32, 144, 375, 1280) 0;
 
     &__title {
-      margin-bottom: remCalc(72);
+      margin-bottom: responsiveClamp(56, 72, 375, 1280);
     }
 
     &__grid {
-      gap: remCalc(72) remCalc(48);
+      gap: responsiveClamp(64, 72, 375, 1280) remCalc(48);
 
       &__content {
         &:nth-child(n+7) {
           display: block;
+        }
+
+        @include mq(sm) {
+          &:nth-child(n+5) {
+            display: block;
+          }
         }
       }
     }
@@ -23,8 +29,8 @@
     &__breadcrumbs {
       @include breadcrumbs;
       position: absolute;
-      top: remCalc(152);
-      right: remCalc(32);
+      top: responsiveClamp(120, 152, 375, 1280);
+      right: responsiveClamp(24, 32, 640, 1280);
       margin: 0;
       rotate: 90deg;
     }

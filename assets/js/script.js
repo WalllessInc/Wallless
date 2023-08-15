@@ -102,7 +102,7 @@ const LowerHeader = defineComponent({
 							<span></span><span></span><span></span>
 						</div>
 
-						<nav class="header__nav">
+						<nav class="header__nav js-headerNav">
 							<ul class="header__nav__list">
 								<li class="spOnly">
 									<a class="js-pageSwitch" href="index.html">Home</a>
@@ -581,8 +581,7 @@ const NewsSession01 = defineComponent({
 							</p>
 							<p class="newsArticle__content__text">
 								岐阜市生まれ。<br>
-								専門学校HAL名古屋に入学後、インハウスデザイナーや<br>
-								中部圏最大のドラッグストアの販促ポスター、大手製薬メーカーの新卒採用ポスターを手掛ける。<br>
+								専門学校HAL名古屋に入学後、インハウスデザイナーや<br class="pcOnly">中部圏最大のドラッグストアの販促ポスター、大手製薬メーカーの新卒採用ポスターを手掛ける。<br>
 								2023年1月クリエイティブチーム「Wallless」を立ち上げ。<br>
 								これまで培ったデザインノウハウをもとに、地元岐阜で若者に新しい道を差し伸べるためクリエイティブスクール「Wac」を設立。
 							</p>
@@ -607,7 +606,7 @@ const NewsSession02 = defineComponent({
 						</dl>
 
 						<a class="newsArticle__btn" href="" target="_blank">
-							<span>Entry</span>
+							<span>ENTRY</span>
 						</a>
 
 						<the-news_share></the-news_share>

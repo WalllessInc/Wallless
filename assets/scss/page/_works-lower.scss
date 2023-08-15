@@ -4,15 +4,15 @@
 
 .worksLower {
   position: relative;
-  margin-bottom: remCalc(200);
-  padding: remCalc(48) remCalc(144) 0;
+  margin-bottom: responsiveClamp(144, 200, 375, 1280);
+  padding: remCalc(48) responsiveClamp(32, 144, 375, 1280) 0;
 
   >img:first-child {
     width: 100%;
     object-fit: cover;
 
     &.short {
-      height: remCalc(600);
+      height: responsiveClamp(200, 600, 375, 1280);
     }
   }
 
@@ -20,18 +20,23 @@
     margin: remCalc(64) 0 remCalc(72) remCalc(64);
     line-height: 1.5;
 
+    @include mq(lg) {
+      margin: responsiveClamp(48, 64, 375, 1280) 0 responsiveClamp(64, 72, 375, 1280) 0;
+    }
+
     &__client {
       font-family: $jp;
-      font-size: remCalc(14);
+      font-size: responsiveClamp(12, 14, 375, 1280);
       font-weight: 500;
     }
 
     &__title {
-      margin: remCalc(16) 0 remCalc(12);
+      margin: responsiveClamp(8, 16, 375, 1280) 0 remCalc(12);
       font-family: $jp;
-      font-size: remCalc(28);
+      font-size: responsiveClamp(18, 28, 375, 1280);
       font-weight: 500;
       letter-spacing: 0.1em;
+      white-space: wrap;
     }
 
     &__category {
@@ -44,16 +49,25 @@
   &__detail {
     display: flex;
     flex-direction: column;
-    row-gap: remCalc(40);
+    row-gap: responsiveClamp(28, 40, 375, 1280);
     margin-left: remCalc(64);
+
+    @include mq(lg) {
+      margin-left: 0;
+    }
 
     div {
       display: flex;
-      column-gap: remCalc(56);
+      column-gap: responsiveClamp(28, 56, 375, 1280);
+
+      @include mq(sm) {
+        flex-direction: column;
+        row-gap: remCalc(8);
+      }
 
       dt {
         font-family: $en;
-        font-size: remCalc(13);
+        font-size: responsiveClamp(12, 13, 375, 1280);
         font-weight: 400;
         text-transform: capitalize;
         opacity: 0.5;
@@ -61,7 +75,9 @@
 
       dd {
         font-family: $jp;
-        font-size: remCalc(14);
+        font-size: responsiveClamp(12, 14, 375, 1280);
+        white-space: wrap;
+        text-align: justify;
 
         a {
           position: relative;
@@ -93,31 +109,53 @@
   &__gallery {
     display: flex;
     flex-direction: column;
-    row-gap: remCalc(64);
+    row-gap: responsiveClamp(40, 64, 375, 1280);
     margin-top: remCalc(80);
     padding: 0 remCalc(64);
 
+    @include mq(lg) {
+      padding: 0;
+    }
+
     iframe {
       width: 100%;
-      height: remCalc(672);
+      height: responsiveClamp(176, 672, 375, 1280);
     }
 
     &__side {
       display: flex;
-      column-gap: remCalc(24);
+      justify-content: center;
+      column-gap: responsiveClamp(4, 24, 640, 1280);
+
+      @include mq(sm) {
+        flex-direction: column;
+        justify-content: flex-start;
+        row-gap: responsiveClamp(40, 64, 375, 1280);
+      }
 
       img {
         width: calc(100%/2);
-        object-fit: cover
+        object-fit: cover;
+
+        @include mq(sm) {
+          width: 100%;
+        }
       }
     }
   }
 
   &__btn {
     @include btn;
-    margin: remCalc(64) auto 0;
+    margin: responsiveClamp(40, 64, 375, 1280) auto 0;
     padding: remCalc(24) remCalc(120);
-    font-size: remCalc(24);
+    font-size: responsiveClamp(20, 24, 375, 1280);
+
+    @include mq(sm) {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: remCalc(24) 0
+    }
   }
 
   &__breadcrumbs {

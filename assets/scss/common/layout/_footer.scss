@@ -8,7 +8,7 @@
     "sns  copyright"
   ;
   justify-content: space-between;
-  padding: remCalc(72) responsiveClamp(32, 144, 375, 1280) responsiveClamp(64, 80, 375, 1280);
+  padding: remCalc(72) responsiveClamp(40, 144, 375, 1280) responsiveClamp(48, 80, 375, 1280);
   font-family: $en;
 
   @include mq(lg) {
