@@ -22,19 +22,19 @@ const Header = defineComponent({
 									<a class="js-pageSwitch" href="index.html">Home</a>
 								</li>
 
-								<li>
+								<li class="js-headerNavItem">
 									<a class="js-pageSwitch" href="about.html">About</a>
 								</li>
 
-								<li>
+								<li class="js-headerNavItem">
 									<a class="js-pageSwitch" href="service.html">Service</a>
 								</li>
 
-								<li>
+								<li class="js-headerNavItem">
 									<a class="js-pageSwitch" href="works.html">Works</a>
 								</li>
 
-								<li>
+								<li class="js-headerNavItem">
 									<a class="js-pageSwitch" href="news.html">News</a>
 								</li>
 
@@ -108,19 +108,19 @@ const LowerHeader = defineComponent({
 									<a class="js-pageSwitch" href="index.html">Home</a>
 								</li>
 
-								<li>
+								<li class="js-headerNavItem">
 									<a class="js-pageSwitch" href="../about.html">About</a>
 								</li>
 
-								<li>
+								<li class="js-headerNavItem">
 									<a class="js-pageSwitch" href="../service.html">Service</a>
 								</li>
 
-								<li>
+								<li class="js-headerNavItem">
 									<a class="js-pageSwitch" href="../works.html">Works</a>
 								</li>
 
-								<li>
+								<li class="js-headerNavItem">
 									<a class="js-pageSwitch" href="../news.html">News</a>
 								</li>
 
@@ -743,6 +743,17 @@ headerNavLinks.forEach(function (link) {
 });
 
 /* --------------------------------
+*  Header Current
+* -------------------------------- */
+const links = document.querySelectorAll(".js-headerNavItem > a");
+
+links.forEach(function (link) {
+	if (link.href === location.href || (location.href.includes("works") && link.href.includes("works.html")) || (location.href.includes("news") && link.href.includes("news.html"))) {
+		link.closest(".js-headerNavItem").classList.add("current");
+	}
+});
+
+/* --------------------------------
 *  Page Transition
 * -------------------------------- */
 const blindfoldContainer = document.querySelector('.blindfold');
@@ -841,7 +852,6 @@ const fadeInTimeline = gsap.to('.js-hero', {
 	scrollTrigger: {
 		trigger: '.js-trigger',
 		start: 'top center+=200',
-		// markers: true,
 		// 上スクロールで逆再生
 		onLeaveBack: function () {
 			fadeInTimeline.reverse();
@@ -874,6 +884,7 @@ gsap.fromTo('.js-serviceNav', {
 	opacity: 1,
 	stagger: { each: 0.1 },
 	scrollTrigger: {
+		// markers: true,
 		trigger: '.service__nav',
 		start: 'top center+=100',
 	}
@@ -918,20 +929,6 @@ window.addEventListener('load', function () {
 });
 
 /* --------------------------------
-*  About Background
-* -------------------------------- */
-const memberElement = document.getElementById("member");
-const aboutBackElement = document.querySelector(".about__back");
-
-if (memberElement !== null) {
-	const memberHeight = memberElement.clientHeight;
-	const memberTop = memberElement.getBoundingClientRect().top;
-
-	aboutBackElement.style.height = memberHeight + "px";
-	aboutBackElement.style.top = (memberTop - 100) + "px";
-};
-
-/* --------------------------------
 *  Service Toggle
 * -------------------------------- */
 const serviceNav = document.querySelectorAll('.js-serviceNav');
@@ -945,3 +942,23 @@ serviceNav.forEach(nav => {
 		serviceElements.forEach(element => element.classList.toggle('active', element.classList.contains(target)));
 	});
 });
+
+/* --------------------------------
+*  About Background
+* -------------------------------- */
+const memberElement = document.getElementById("member");
+const aboutBackElement = document.querySelector(".about__back");
+
+function handleResize() {
+	if (memberElement !== null) {
+		const memberHeight = memberElement.clientHeight;
+		const memberTop = memberElement.getBoundingClientRect().top;
+
+		aboutBackElement.style.height = memberHeight + "px";
+		aboutBackElement.style.top = (memberTop - 100) + "px";
+	};
+};
+
+window.addEventListener("resize", handleResize);
+
+handleResize();

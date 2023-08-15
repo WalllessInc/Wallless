@@ -5,13 +5,13 @@
 [data-page="about"] {
   .about {
     position: relative;
-    padding: remCalc(152) remCalc(144) remCalc(200);
+    padding: responsiveClamp(120, 152, 375, 1280) responsiveClamp(32, 144, 375, 1280) responsiveClamp(144, 200, 375, 1280);
 
     &__back {
       position: absolute;
-      width: 100%;
       top: 0;
       left: 0;
+      width: 100%;
       background-color: $gray;
       z-index: 1;
     }
@@ -19,18 +19,34 @@
     &__title {
       @include title;
       margin-bottom: remCalc(40);
+
+      @include mq(md) {
+        margin-bottom: responsiveClamp(56, 64, 375, 768);
+      }
     }
 
     &__wrapper {
       position: relative;
       display: flex;
       justify-content: flex-start;
-      column-gap: remCalc(280);
+      column-gap: responsiveClamp(120, 280, 768, 1280);
       z-index: 2;
 
+      @include mq(md) {
+        column-gap: 0;
+      }
+
       &__nav {
-        padding: remCalc(32) 0 0 remCalc(64);
+        padding: remCalc(32) 0 0 responsiveClamp(0, 64, 768, 1280);
         height: 100%;
+
+        @include mq(lg) {
+          padding: 0;
+        }
+
+        @include mq(md) {
+          display: none;
+        }
 
         &__list {
           position: sticky;
@@ -42,7 +58,7 @@
           a {
             position: relative;
             font-family: $jp;
-            font-size: remCalc(16);
+            font-size: responsiveClamp(14, 16, 768, 1280);
             font-weight: 500;
             transition: all 0.3s $ease1;
 
@@ -72,35 +88,42 @@
       }
 
       &__hero {
-        margin-bottom: remCalc(200);
+        margin-bottom: responsiveClamp(96, 200, 375, 1280);
 
         &__en {
           font-family: $en;
-          font-size: remCalc(16);
+          font-size: responsiveClamp(14, 16, 375, 1280);
           font-weight: 500;
           line-height: 1.5;
           text-transform: capitalize;
         }
 
         &__copy {
-          margin-bottom: remCalc(64);
+          margin-bottom: responsiveClamp(40, 64, 375, 1280);
           font-family: $jp;
-          font-size: remCalc(64);
+          font-size: responsiveClamp(40, 64, 375, 1280);
           font-weight: 500;
           line-height: 1.5;
           letter-spacing: 0.08em;
+
+          @media (width < 1400px) {
+            .spOnly {
+              display: block;
+            }
+          }
         }
 
         &__text {
           font-family: $jp;
-          font-size: remCalc(16);
+          font-size: responsiveClamp(13, 16, 375, 1280);
           line-height: 2.25;
+          white-space: wrap;
         }
       }
 
       &__philosophy {
         scroll-margin-top: remCalc(100);
-        margin-bottom: remCalc(100);
+        margin-bottom: responsiveClamp(64, 100, 375, 1280);
 
         &__title {
           @include smallTitle;
@@ -116,7 +139,8 @@
           }
 
           &__inner {
-            margin: 0 0 remCalc(56) remCalc(56);
+            margin: 0 0 remCalc(56) responsiveClamp(40, 56, 375, 1280);
+            ;
 
             &__number {
               color: $green;
@@ -129,19 +153,30 @@
             &__copy {
               margin-bottom: remCalc(16);
               font-family: $jp;
-              font-size: remCalc(28);
+              font-size: responsiveClamp(22, 28, 375, 1280);
               font-weight: 500;
+
+              @include mq(sm) {
+                .spOnly {
+                  display: block;
+                }
+              }
             }
 
             &__text {
               margin-left: remCalc(4);
               font-family: $jp;
-              font-size: remCalc(14);
+              font-size: responsiveClamp(12, 16, 375, 1280);
+              white-space: wrap;
+
+              @include mq(lg) {
+                white-space: wrap;
+              }
             }
           }
 
           &.vision {
-            margin-bottom: remCalc(80);
+            margin-bottom: responsiveClamp(64, 80, 375, 1280);
           }
 
           &.value {
@@ -154,35 +189,64 @@
       }
 
       &__member {
-        padding: remCalc(100) 0;
+        padding: responsiveClamp(64, 100, 375, 1280) 0;
 
         &__title {
           @include smallTitle;
         }
 
         &__container {
+          position: relative;
           display: flex;
           flex-direction: row-reverse;
-          column-gap: remCalc(48);
+          column-gap: responsiveClamp(32, 48, 768, 1280);
           width: 100%;
 
           &:not(:last-child) {
-            margin-bottom: remCalc(120);
+            margin-bottom: responsiveClamp(80, 120, 375, 1280);
           }
 
           &__img {
             width: calc(100%/2);
             height: remCalc(432);
+
+            @include mq(lg) {
+              height: remCalc(456);
+            }
+
+            @include mq(md) {
+              position: absolute;
+              top: 0;
+              right: remCalc(8);
+              width: 60%;
+              height: 100%;
+            }
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+
+            @include mq(md) {
+              position: sticky;
+              top: 0;
+            }
           }
 
           &__inner {
+            position: relative;
             width: calc(100%/2);
             padding-top: remCalc(24);
 
+            @include mq(md) {
+              width: 100%;
+              background-color: rgba($color: $gray, $alpha: 0.7);
+            }
+
             &__post {
               font-family: $jp;
-              font-size: remCalc(14);
+              font-size: responsiveClamp(12, 14, 768, 1280);
               font-weight: 500;
             }
 
@@ -209,7 +273,7 @@
             &__text {
               width: 100%;
               font-family: $jp;
-              font-size: remCalc(14);
+              font-size: responsiveClamp(12, 14, 375, 1280);
               white-space: wrap;
               text-align: justify;
             }
@@ -218,7 +282,7 @@
       }
 
       &__profile {
-        padding-top: remCalc(100);
+        padding-top: responsiveClamp(64, 100, 375, 1280);
 
         &__title {
           @include smallTitle;
@@ -231,23 +295,45 @@
 
           &__item {
             display: flex;
-            column-gap: remCalc(136);
+            column-gap: responsiveClamp(64, 136, 768, 1280);
             padding-bottom: remCalc(24);
             border-bottom: 1px rgba($color: $black, $alpha: 0.2) solid;
             font-family: $jp;
-            font-size: remCalc(14);
+            font-size: responsiveClamp(13, 14, 375, 1280);
+
+            @include mq(sm) {
+              column-gap: responsiveClamp(16, 64, 375, 768);
+            }
 
             dt {
               font-weight: 400;
               opacity: 0.5;
+
+              @include mq(lg) {
+                .spOnly {
+                  display: block;
+                }
+              }
+            }
+
+            dd {
+              @include mq(sm) {
+                .spOnly {
+                  display: block;
+                }
+
+                &.center {
+                  align-self: center;
+                }
+              }
             }
           }
         }
 
         iframe {
-          width: remCalc(712);
-          height: remCalc(352);
-          margin-top: remCalc(72);
+          width: 100%;
+          height: responsiveClamp(240, 352, 768, 1280);
+          margin-top: responsiveClamp(56, 72, 768, 1280);
           filter: grayscale(1);
         }
       }
@@ -256,8 +342,8 @@
     &__breadcrumbs {
       @include breadcrumbs;
       position: absolute;
-      top: remCalc(152);
-      right: remCalc(32);
+      top: responsiveClamp(120, 152, 375, 1280);
+      right: responsiveClamp(24, 32, 640, 1280);
       margin: 0;
       rotate: 90deg;
     }

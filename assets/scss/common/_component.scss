@@ -71,7 +71,7 @@
 @mixin smallTitle {
   display: flex;
   flex-direction: column;
-  margin-bottom: remCalc(64);
+  margin-bottom: responsiveClamp(40, 64, 768, 1280);
 
   &__en {
     font-family: $en;
