@@ -233,10 +233,11 @@
 
             @include mq(md) {
               position: absolute;
-              top: 0;
-              right: remCalc(8);
+              // top: remCalc(12);
+              right: 0;
               width: 60%;
               height: 100%;
+              opacity: 0.3;
             }
           }
 
@@ -258,7 +259,7 @@
 
             @include mq(md) {
               width: 100%;
-              background-color: rgba($color: $gray, $alpha: 0.7);
+              padding-right: remCalc(12);
             }
 
             &__post {
@@ -319,7 +320,7 @@
             font-size: responsiveClamp(13, 14, 375, 1280);
 
             @include mq(sm) {
-              column-gap: responsiveClamp(16, 64, 375, 768);
+              column-gap: responsiveClamp(20, 64, 375, 768);
             }
 
             dt {

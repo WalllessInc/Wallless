@@ -990,18 +990,26 @@ function callback(entries, observer) {
 /* --------------------------------
 *  About Background
 * -------------------------------- */
-const memberElement = document.getElementById("member");
 const aboutBackElement = document.querySelector(".about__back");
+const memberElement = document.getElementById("member");
 
 function handleResize() {
 	if (memberElement !== null) {
 		const memberHeight = memberElement.clientHeight;
 		const memberTop = memberElement.getBoundingClientRect().top;
+		const memberPadding = parseInt(getComputedStyle(memberElement).getPropertyValue("padding-top"), 10);
+		const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
 		aboutBackElement.style.height = memberHeight + "px";
-		aboutBackElement.style.top = (memberTop - 100) + "px";
-	};
-};
+
+		if (windowWidth <= 1024) {
+			const offsetVw = (memberTop - memberPadding - 20) / windowWidth * 100;
+			aboutBackElement.style.top = offsetVw + "vw";
+		} else {
+			aboutBackElement.style.top = (memberTop - memberPadding) + "px";
+		}
+	}
+}
 
 window.addEventListener("resize", handleResize);
 
