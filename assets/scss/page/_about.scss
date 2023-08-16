@@ -57,6 +57,7 @@
 
           a {
             position: relative;
+            display: block;
             font-family: $jp;
             font-size: responsiveClamp(14, 16, 768, 1280);
             font-weight: 500;
@@ -65,14 +66,20 @@
             &::before {
               content: "";
               position: absolute;
-              left: 0;
-              bottom: remCalc(-2);
-              width: 100%;
+              top: 50%;
+              right: remCalc(-72);
+              width: remCalc(48);
               height: 1px;
               background-color: $green;
               scale: 0 1;
+              translate: 0 -50%;
               transform-origin: right top;
               transition: scale 0.3s $ease1;
+
+              @include mq(lg) {
+                right: remCalc(-56);
+                width: remCalc(40);
+              }
             }
 
             &:hover {
@@ -81,6 +88,16 @@
               &::before {
                 scale: 1 1;
                 transform-origin: left top;
+              }
+            }
+          }
+
+          .current {
+            a {
+              color: $green;
+
+              &::before {
+                scale: 1 1;
               }
             }
           }

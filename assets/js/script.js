@@ -307,7 +307,7 @@ const ServiceContent = defineComponent({
 
 const ServiceLower = defineComponent({
 	template: `
-					<section class="service__wrapper__container" v-for="(item, index) in items" :key="index" :id="item.id">
+					<section class="service__wrapper__container js-sideSection" v-for="(item, index) in items" :key="index" :id="item.id">
 						<h3 class="service__wrapper__container__title">
 							<span class="service__wrapper__container__title__en">
 								{{ item.titleEn }}
@@ -818,22 +818,25 @@ if (document.querySelector('.js-main')) {
 *  Scroll Animation
 * -------------------------------- */
 window.addEventListener('load', function () {
+
 	// IntersectionObserverの作成
 	const observer = new IntersectionObserver(function (entries) {
 		for (let i = 0; i < entries.length; i++) {
+
 			// 領域内なら処理を実行
 			if (entries[i].intersectionRatio <= 0) continue;
 			showElm(entries[i].target);
 		}
 	}, {
-		// オプション
 		rootMargin: '-10% 0% -10% 0%'
 	});
+
 	// 監視対象の追加
 	const elements = document.querySelectorAll('.js-fadeIn');
 	for (let i = 0; i < elements.length; i++) {
 		observer.observe(elements[i]);
 	}
+
 	// 領域内に入ったとき実行する処理
 	function showElm(e) {
 		e.classList.add('view');
@@ -942,6 +945,47 @@ serviceNav.forEach(nav => {
 		serviceElements.forEach(element => element.classList.toggle('active', element.classList.contains(target)));
 	});
 });
+
+/* --------------------------------
+*  Side Nav Current
+* -------------------------------- */
+const sections = document.querySelectorAll(".js-sideSection");
+const contentsList = document.querySelector(".js-sideNav");
+
+const sectionsArray = Array.from(sections);
+
+// IntersectionObserverの作成
+const options = {
+	root: null, // ルートをdocumentに設定
+	rootMargin: "-40% 0px -60% 0%",
+	threshold: 0,
+};
+const observer = new IntersectionObserver(callback, options);
+
+// 対象を監視
+sections.forEach((section) => {
+	observer.observe(section);
+});
+
+// コールバック
+function callback(entries, observer) {
+	entries.forEach((entry) => {
+		const indexList = sectionsArray.indexOf(entry.target);
+		const currentList = document.querySelector(".js-sideNavItem.current");
+		if (entry.isIntersecting) {
+			if (currentList !== null) {
+				currentList.classList.remove("current");
+			}
+			contentsList.children[indexList].classList.add("current");
+		} else {
+			if (indexList === 0) {
+				if (currentList !== null) {
+					currentList.classList.remove("current");
+				}
+			}
+		}
+	});
+}
 
 /* --------------------------------
 *  About Background

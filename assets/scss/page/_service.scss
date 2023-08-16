@@ -9,21 +9,37 @@
     margin: 0;
 
     position: relative;
-    padding: remCalc(152) remCalc(144) remCalc(200);
+    padding: responsiveClamp(120, 152, 375, 1280) responsiveClamp(32, 144, 375, 1280) responsiveClamp(144, 200, 375, 1280);
 
     &__title {
       @include title;
       margin-bottom: remCalc(40);
+
+      @include mq(md) {
+        margin-bottom: responsiveClamp(56, 64, 375, 768);
+      }
     }
 
     &__wrapper {
       display: flex;
       justify-content: flex-start;
-      column-gap: remCalc(280);
+      column-gap: responsiveClamp(120, 280, 768, 1280);
+
+      @include mq(md) {
+        column-gap: 0;
+      }
 
       &__nav {
-        padding: remCalc(32) 0 0 remCalc(64);
+        padding: remCalc(32) 0 0 responsiveClamp(0, 64, 768, 1280);
         height: 100%;
+
+        @include mq(lg) {
+          padding: 0;
+        }
+
+        @include mq(md) {
+          display: none;
+        }
 
         &__list {
           position: sticky;
@@ -34,8 +50,9 @@
 
           a {
             position: relative;
+            display: block;
             font-family: $en;
-            font-size: remCalc(16);
+            font-size: responsiveClamp(14, 16, 768, 1280);
             font-weight: 500;
             text-transform: capitalize;
             transition: all 0.3s $ease1;
@@ -43,14 +60,20 @@
             &::before {
               content: "";
               position: absolute;
-              left: 0;
-              bottom: remCalc(-2);
-              width: 100%;
+              top: 50%;
+              right: remCalc(-72);
+              width: remCalc(48);
               height: 1px;
               background-color: $green;
               scale: 0 1;
+              translate: 0 -50%;
               transform-origin: right top;
               transition: scale 0.3s $ease1;
+
+              @include mq(lg) {
+                right: remCalc(-56);
+                width: remCalc(40);
+              }
             }
 
             &:hover {
@@ -62,31 +85,49 @@
               }
             }
           }
+
+          .current {
+            a {
+              color: $green;
+
+              &::before {
+                scale: 1 1;
+              }
+            }
+          }
         }
       }
 
       &__hero {
-        margin-bottom: remCalc(200);
+        margin-bottom: responsiveClamp(96, 200, 375, 1280);
 
         &__copy {
-          margin-bottom: remCalc(64);
+          margin-bottom: responsiveClamp(40, 64, 375, 1280);
           font-family: $jp;
-          font-size: remCalc(48);
+          font-size: responsiveClamp(32, 48, 375, 1280);
           font-weight: 500;
           line-height: 1.5;
           letter-spacing: 0.08em;
+
+          @media (width < 1400px) {
+            .spOnly {
+              display: block;
+            }
+          }
         }
 
         &__text {
           font-family: $jp;
-          font-size: remCalc(15);
+          font-size: responsiveClamp(13, 16, 375, 1280);
           line-height: 2.25;
+          white-space: wrap;
         }
       }
 
       &__container {
         scroll-margin-top: remCalc(100);
-        margin-bottom: remCalc(200);
+        margin-bottom: responsiveClamp(128, 200, 375, 1280);
+        padding: 0 4px;
 
         &:last-child {
           margin-bottom: 0;
@@ -100,24 +141,28 @@
         &__text {
           margin-bottom: remCalc(48);
           font-family: $jp;
-          font-size: remCalc(14);
+          font-size: responsiveClamp(13, 14, 375, 1280);
+          white-space: wrap;
         }
 
         &__subheading {
           margin-bottom: remCalc(14);
           font-family: $jp;
-          font-size: remCalc(20);
+          font-size: responsiveClamp(18, 20, 375, 1280);
           font-weight: 500;
           line-height: 1.5;
         }
 
         &__example {
-          display: flex;
-          column-gap: remCalc(32);
+          display: grid;
+          grid-template-columns: repeat(2, calc(100%/2));
+          justify-content: center;
+          column-gap: responsiveClamp(16, 32, 375, 1280);
 
           &__img {
-            height: remCalc(240);
-            margin-bottom: remCalc(16);
+            width: 100%;
+            height: responsiveClamp(96, 240, 375, 1280);
+            margin-bottom: responsiveClamp(12, 16, 375, 1280);
             border-radius: 4px;
             overflow: hidden;
 
@@ -132,15 +177,14 @@
             }
           }
 
-          a {
-            width: calc(100%/2);
-
-            h5 {
-              margin-left: remCalc(8);
-              font-family: $jp;
-              font-size: remCalc(16);
-              font-weight: 500;
-            }
+          h5 {
+            margin-left: responsiveClamp(2, 8, 375, 1280);
+            font-family: $jp;
+            font-size: responsiveClamp(13, 16, 375, 1280);
+            font-weight: 500;
+            white-space: wrap;
+            // text-overflow: ellipsis;
+            // overflow: hidden;
           }
         }
       }
@@ -149,8 +193,8 @@
     &__breadcrumbs {
       @include breadcrumbs;
       position: absolute;
-      top: remCalc(152);
-      right: remCalc(32);
+      top: responsiveClamp(120, 152, 375, 1280);
+      right: responsiveClamp(24, 32, 640, 1280);
       margin: 0;
       rotate: 90deg;
     }

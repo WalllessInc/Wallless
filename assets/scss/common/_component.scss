@@ -81,7 +81,7 @@
 
   &__jp {
     font-family: $jp;
-    font-size: remCalc(32);
+    font-size: responsiveClamp(28, 32, 375, 1280);
     font-weight: 600;
     line-height: 1.5;
     letter-spacing: 0.1em;
