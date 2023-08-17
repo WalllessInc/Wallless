@@ -1518,11 +1518,13 @@ main {
   line-height: 1.5;
 }
 [data-page=about] .about__wrapper__member__container__inner__text {
+  display: inline-block;
   width: 100%;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: clamp(0.75rem, 0.698rem + 0.22vw, 0.875rem);
   white-space: wrap;
   text-align: justify;
+  word-break: break-all;
 }
 [data-page=about] .about__wrapper__profile {
   padding-top: clamp(4rem, 3.068rem + 3.98vw, 6.25rem);

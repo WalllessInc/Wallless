@@ -289,11 +289,13 @@
             }
 
             &__text {
+              display: inline-block;
               width: 100%;
               font-family: $jp;
               font-size: responsiveClamp(12, 14, 375, 1280);
               white-space: wrap;
               text-align: justify;
+              word-break: break-all
             }
           }
         }
