@@ -325,11 +325,21 @@ img {
 }
 .footer__sns {
   grid-area: sns;
-  margin-top: 2rem;
-  width: 1.5rem;
+  display: flex;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.footer__sns a {
   transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
 }
-.footer__sns:hover {
+.footer__sns a img {
+  width: clamp(1.25rem, 1.146rem + 0.44vw, 1.5rem);
+  height: clamp(1.25rem, 1.146rem + 0.44vw, 1.5rem);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.footer__sns a:hover {
   opacity: 0.6;
 }
 @media (width < 1024px) {
@@ -408,6 +418,7 @@ img {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
+  white-space: nowrap;
   translate: -50% -50%;
 }
 
@@ -486,6 +497,7 @@ main {
   line-height: 1.5;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  white-space: nowrap;
   opacity: 0;
   transition: all 0.7s 0.8s cubic-bezier(0.33, 1, 0.68, 1);
 }
@@ -513,15 +525,11 @@ main {
   margin-top: clamp(9rem, 7.964rem + 4.42vw, 11.5rem);
   font-size: clamp(0.813rem, 0.735rem + 0.33vw, 1rem);
   line-height: 2.5;
+  word-break: keep-all;
 }
 .hero__content__text p {
   display: flex;
   flex-direction: column;
-}
-@media (width < 640px) {
-  .hero__content__text p .spOnly {
-    display: block;
-  }
 }
 .hero__content__btn {
   position: relative;
@@ -839,7 +847,7 @@ main {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: clamp(0.75rem, 0.646rem + 0.44vw, 1rem);
   line-height: 2;
-  white-space: wrap;
+  text-align: justify;
 }
 @media (width < 768px) {
   .service__content__inner__text {
@@ -1017,8 +1025,7 @@ main {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  word-break: keep-all;
 }
 .works__grid__content__category {
   margin: 0.5rem 0 0 0.5rem;
@@ -1399,6 +1406,7 @@ main {
   margin-left: 0.25rem;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: clamp(0.75rem, 0.646rem + 0.44vw, 1rem);
+  text-align: justify;
 }
 [data-page=about] .about__wrapper__philosophy__container.vision {
   margin-bottom: clamp(4rem, 3.586rem + 1.77vw, 5rem);
@@ -1484,6 +1492,7 @@ main {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: clamp(0.75rem, 0.563rem + 0.39vw, 0.875rem);
   font-weight: 500;
+  word-break: keep-all;
 }
 [data-page=about] .about__wrapper__member__container__inner__name {
   display: flex;
@@ -1735,17 +1744,13 @@ main {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.08em;
-}
-@media (width < 1400px) {
-  [data-page=service] .service__wrapper__hero__copy .spOnly {
-    display: block;
-  }
+  word-break: keep-all;
 }
 [data-page=service] .service__wrapper__hero__text {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: clamp(0.813rem, 0.735rem + 0.33vw, 1rem);
   line-height: 2.25;
-  white-space: wrap;
+  text-align: justify;
 }
 [data-page=service] .service__wrapper__container {
   scroll-margin-top: 6.25rem;
@@ -1777,7 +1782,7 @@ main {
   margin-bottom: 3rem;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: clamp(0.813rem, 0.787rem + 0.11vw, 0.875rem);
-  white-space: wrap;
+  text-align: justify;
 }
 [data-page=service] .service__wrapper__container__subheading {
   margin-bottom: 0.875rem;
@@ -1814,7 +1819,8 @@ main {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: clamp(0.813rem, 0.735rem + 0.33vw, 1rem);
   font-weight: 500;
-  white-space: wrap;
+  line-height: 1.5;
+  word-break: keep-all;
 }
 [data-page=service] .service__breadcrumbs {
   align-self: flex-end;
@@ -1956,7 +1962,7 @@ main {
   font-size: clamp(1.125rem, 0.866rem + 1.1vw, 1.75rem);
   font-weight: 500;
   letter-spacing: 0.1em;
-  white-space: wrap;
+  word-break: keep-all;
 }
 .worksLower__head__category {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
@@ -1995,7 +2001,6 @@ main {
 .worksLower__detail div dd {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: clamp(0.75rem, 0.698rem + 0.22vw, 0.875rem);
-  white-space: wrap;
   text-align: justify;
 }
 .worksLower__detail div dd a {

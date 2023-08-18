@@ -108,19 +108,14 @@
           font-weight: 500;
           line-height: 1.5;
           letter-spacing: 0.08em;
-
-          @media (width < 1400px) {
-            .spOnly {
-              display: block;
-            }
-          }
+          word-break: keep-all;
         }
 
         &__text {
           font-family: $jp;
           font-size: responsiveClamp(13, 16, 375, 1280);
           line-height: 2.25;
-          white-space: wrap;
+          text-align: justify;
         }
       }
 
@@ -142,7 +137,7 @@
           margin-bottom: remCalc(48);
           font-family: $jp;
           font-size: responsiveClamp(13, 14, 375, 1280);
-          white-space: wrap;
+          text-align: justify;
         }
 
         &__subheading {
@@ -182,9 +177,8 @@
             font-family: $jp;
             font-size: responsiveClamp(13, 16, 375, 1280);
             font-weight: 500;
-            white-space: wrap;
-            // text-overflow: ellipsis;
-            // overflow: hidden;
+            line-height: 1.5;
+            word-break: keep-all;
           }
         }
       }

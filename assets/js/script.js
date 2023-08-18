@@ -80,9 +80,15 @@ const Footer = defineComponent({
 							</ul>
 						</nav>
 
-						<a class="footer__sns" href="https://twitter.com/wallless_yuki" target="_blank">
-							<img src="assets/images/icon_x.svg" alt="twitter" width="24" height="24">
-						</a>
+						<div class="footer__sns">
+							<a href="https://twitter.com/wallless_yuki" target="_blank">
+								<img src="assets/images/icon_x.svg" alt="twitter" width="24" height="24">
+							</a>
+
+							<a href="https://www.instagram.com/wallless_/" target="_blank">
+								<img src="assets/images/icon_instagram.svg" alt="instagram" width="24" height="24">
+							</a>
+						</div>
 
 						<p class="footer__copyright"><small>&copy;2023 Wallless.inc</small></p>
 					</footer>
@@ -166,9 +172,15 @@ const LowerFooter = defineComponent({
 							</ul>
 						</nav>
 
-						<a class="footer__sns" href="https://twitter.com/wallless_yuki" target="_blank">
-							<img src="../assets/images/icon_x.svg" alt="X" width="24" height="24">
-						</a>
+						<div class="footer__sns">
+							<a href="https://twitter.com/wallless_yuki" target="_blank">
+								<img src="../assets/images/icon_x.svg" alt="twitter" width="24" height="24">
+							</a>
+
+							<a href="https://www.instagram.com/wallless_/" target="_blank">
+								<img src="../assets/images/icon_instagram.svg" alt="instagram" width="24" height="24">
+							</a>
+						</div>
 
 						<p class="footer__copyright"><small>&copy;2023 Wallless.inc</small></p>
 					</footer>
@@ -330,18 +342,14 @@ const ServiceLower = defineComponent({
 									<div class="service__wrapper__container__example__img">
 										<img :src="item.imageSrcA" alt="" width="336" height="240">
 									</div>
-									<h5>
-										{{ item.exampleA }}
-									</h5>
+									<h5 v-html="item.exampleA"></h5>
 								</a>
 
 								<a class="js-pageSwitch" :href="item.hrefB">
 									<div class="service__wrapper__container__example__img">
 										<img :src="item.imageSrcB" alt="" width="336" height="240">
 									</div>
-									<h5>
-										{{ item.exampleB }}
-									</h5>
+									<h5 v-html="item.exampleB"></h5>
 								</a>
 							</div>
 						</section>
@@ -357,10 +365,10 @@ const ServiceLower = defineComponent({
 					content: "リーフレット / ポスター / パンフレット / 名刺 / DM / 冊子(会社案内 / 学校案内)",
 					hrefA: "works/kinjo_pamphlet.html",
 					imageSrcA: "assets/images/works/kinjo_pamphlet-01.webp",
-					exampleA: "金城学院大学 入学資料",
+					exampleA: "金城学院大学<wbr />入学資料",
 					hrefB: "works/rohto_poster.html",
 					imageSrcB: "assets/images/works/rohto_poster-01.webp",
-					exampleB: "ロート製薬 新卒採用ポスター",
+					exampleB: "ロート製薬<wbr />新卒採用ポスター",
 				},
 				{
 					id: "web",
@@ -370,10 +378,10 @@ const ServiceLower = defineComponent({
 					content: "新規サイトの制作 / 既存サイトのリニューアル / CMSを利用したサイトの制作 / サイト公開後の改善提案",
 					hrefA: "works/tesla_event.html",
 					imageSrcA: "assets/images/works/tesla_event-01.webp",
-					exampleA: "ふれあいテスラ イベントツール",
+					exampleA: "ふれあいテスラ<wbr />イベントツール",
 					hrefB: "works/trike_web.html",
 					imageSrcB: "assets/images/works/trike_web-01.webp",
-					exampleB: "EV-TRIKE ランディングページ",
+					exampleB: "EV-TRIKE<wbr />ランディングページ",
 				},
 				{
 					id: "movie",
@@ -383,10 +391,10 @@ const ServiceLower = defineComponent({
 					content: "プロモーションムービー / リール(Instagram) / Youtube Shout / モーショングラフィクス / 実写撮影",
 					hrefA: "works/tesla_event.html",
 					imageSrcA: "assets/images/works/tesla_event-01.webp",
-					exampleA: "ふれあいテスラ イベントツール",
+					exampleA: "ふれあいテスラ<wbr />イベントツール",
 					hrefB: "works/seshuraku_branding.html",
 					imageSrcB: "assets/images/works/seshuraku_branding-01.webp",
-					exampleB: "せしゅらく ブランディングツール",
+					exampleB: "せしゅらく<wbr />ブランディングツール",
 				},
 				{
 					id: "photograph",
@@ -396,7 +404,7 @@ const ServiceLower = defineComponent({
 					content: "物撮り / イベント撮影 / 空撮 / シネマティック撮影 / レタッチ",
 					hrefA: "works/tesla_event.html",
 					imageSrcA: "assets/images/works/tesla_event-01.webp",
-					exampleA: "ふれあいテスラ イベントツール",
+					exampleA: "ふれあいテスラ<wbr />イベントツール",
 					hrefB: "works/photograph.html",
 					imageSrcB: "assets/images/works/photograph-01.webp",
 					exampleB: "写真撮影・動画撮影",
@@ -413,9 +421,7 @@ const Works = defineComponent({
 							<div class="works__grid__content__img js-fadeIn">
 								<img :src="item.imageSrc" alt="" width="352" height="248">
 							</div>
-							<h3 class="works__grid__content__title">
-								{{ item.title }}
-							</h3>
+							<h3 class="works__grid__content__title" v-html="item.title"></h3>
 							<p class="works__grid__content__category">
 								{{ item.category }}
 							</p>
@@ -452,7 +458,7 @@ const Works = defineComponent({
 				{
 					href: "works/polaris_branding.html",
 					imageSrc: "assets/images/works/polaris_branding-01.webp",
-					title: "ポラリスエクスポート ブランディングツール",
+					title: "ポラリスエクスポート<wbr />ブランディングツール",
 					category: "Graphic / Web"
 				},
 				{
@@ -464,7 +470,7 @@ const Works = defineComponent({
 				{
 					href: "works/cooonworks_support.html",
 					imageSrc: "assets/images/works/cooonworks_support-01.webp",
-					title: "COOON WORKS CFクリエイティブサポート",
+					title: "COOON WORKS<wbr />CFクリエイティブサポート",
 					category: "Graphic"
 				},
 				{

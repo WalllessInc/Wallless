@@ -36,12 +36,22 @@
 
   &__sns {
     grid-area: sns;
-    margin-top: remCalc(32);
-    width: remCalc(24);
-    transition: all 0.3s $ease1;
+    display: flex;
+    column-gap: remCalc(24);
+    margin-top: remCalc(40);
 
-    &:hover {
-      opacity: 0.6;
+    a {
+      transition: all 0.3s $ease1;
+
+      img {
+        width: responsiveClamp(20, 24, 375, 1280);
+        height: responsiveClamp(20, 24, 375, 1280);
+        object-fit: cover;
+      }
+
+      &:hover {
+        opacity: 0.6;
+      }
     }
 
     @include mq(lg) {

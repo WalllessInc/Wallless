@@ -29,6 +29,7 @@ main {
       line-height: 1.5;
       letter-spacing: 0.1em;
       text-transform: uppercase;
+      white-space: nowrap;
       opacity: 0;
       transition: all 0.7s 0.8s $ease1;
 
@@ -62,16 +63,11 @@ main {
       margin-top: responsiveClamp(144, 184, 375, 1280);
       font-size: responsiveClamp(13, 16, 375, 1280);
       line-height: 2.5;
+      word-break: keep-all;
 
       p {
         display: flex;
         flex-direction: column;
-
-        @include mq(sm) {
-          .spOnly {
-            display: block;
-          }
-        }
       }
     }
 
@@ -343,7 +339,7 @@ main {
         font-family: $jp;
         font-size: responsiveClamp(12, 16, 375, 1280);
         line-height: 2;
-        white-space: wrap;
+        text-align: justify;
 
         @include mq(md) {
           width: responsiveClamp(280, 480, 375, 768);
@@ -450,8 +446,7 @@ main {
         font-size: remCalc(16);
         font-weight: 500;
         line-height: 1.5;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        word-break: keep-all;
       }
 
       &__category {

@@ -36,7 +36,7 @@
       font-size: responsiveClamp(18, 28, 375, 1280);
       font-weight: 500;
       letter-spacing: 0.1em;
-      white-space: wrap;
+      word-break: keep-all;
     }
 
     &__category {
@@ -76,7 +76,6 @@
       dd {
         font-family: $jp;
         font-size: responsiveClamp(12, 14, 375, 1280);
-        white-space: wrap;
         text-align: justify;
 
         a {
