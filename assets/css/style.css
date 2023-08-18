@@ -25,7 +25,6 @@ body {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-feature-settings: "palt";
   -webkit-font-smoothing: antialiased;
-  white-space: nowrap;
   line-height: 1.8;
   letter-spacing: 0.06em;
   color: #222;
@@ -74,6 +73,7 @@ h5,
 h6,
 p {
   overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 a {
@@ -1344,13 +1344,12 @@ main {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.08em;
-  word-break: keep-all;
+  white-space: nowrap;
 }
 [data-page=about] .about__wrapper__hero__text {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: clamp(0.813rem, 0.735rem + 0.33vw, 1rem);
   line-height: 2.25;
-  word-break: keep-all;
 }
 [data-page=about] .about__wrapper__philosophy {
   scroll-margin-top: 6.25rem;

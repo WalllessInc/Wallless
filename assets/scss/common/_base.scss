@@ -28,7 +28,6 @@ body {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-feature-settings: 'palt';
   -webkit-font-smoothing: antialiased;
-  white-space: nowrap;
   line-height: 1.8;
   letter-spacing: .06em;
   color: $black;
@@ -73,6 +72,7 @@ h5,
 h6,
 p {
   overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 a {

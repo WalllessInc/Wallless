@@ -122,14 +122,13 @@
           font-weight: 500;
           line-height: 1.5;
           letter-spacing: 0.08em;
-          word-break: keep-all;
+          white-space: nowrap;
         }
 
         &__text {
           font-family: $jp;
           font-size: responsiveClamp(13, 16, 375, 1280);
           line-height: 2.25;
-          word-break: keep-all;
         }
       }
 
