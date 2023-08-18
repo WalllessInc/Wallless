@@ -1344,7 +1344,6 @@ main {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.08em;
-  white-space: nowrap;
 }
 [data-page=about] .about__wrapper__hero__text {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
