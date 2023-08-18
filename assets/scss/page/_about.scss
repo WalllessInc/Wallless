@@ -106,6 +106,7 @@
 
       &__hero {
         margin-bottom: responsiveClamp(96, 200, 375, 1280);
+        word-break: keep-all;
 
         &__en {
           font-family: $en;
@@ -134,6 +135,7 @@
       &__philosophy {
         scroll-margin-top: remCalc(100);
         margin-bottom: responsiveClamp(64, 100, 375, 1280);
+
 
         &__title {
           @include smallTitle;
@@ -165,23 +167,13 @@
               font-family: $jp;
               font-size: responsiveClamp(22, 28, 375, 1280);
               font-weight: 500;
-
-              @include mq(sm) {
-                .spOnly {
-                  display: block;
-                }
-              }
+              word-break: keep-all;
             }
 
             &__text {
               margin-left: remCalc(4);
               font-family: $jp;
               font-size: responsiveClamp(12, 16, 375, 1280);
-              white-space: wrap;
-
-              @include mq(lg) {
-                white-space: wrap;
-              }
             }
           }
 
@@ -226,7 +218,7 @@
 
             @include mq(md) {
               position: absolute;
-              // top: remCalc(12);
+              top: 0;
               right: 0;
               width: 60%;
               height: 100%;
@@ -282,13 +274,10 @@
             }
 
             &__text {
-              display: inline-block;
               width: 100%;
               font-family: $jp;
               font-size: responsiveClamp(12, 14, 375, 1280);
-              white-space: wrap;
               text-align: justify;
-              word-break: break-all
             }
           }
         }
@@ -321,8 +310,9 @@
             dt {
               font-weight: 400;
               opacity: 0.5;
+              word-break: keep-all;
 
-              @include mq(lg) {
+              @include mq(sm) {
                 .spOnly {
                   display: block;
                 }
@@ -330,11 +320,9 @@
             }
 
             dd {
-              @include mq(sm) {
-                .spOnly {
-                  display: block;
-                }
+              word-break: keep-all;
 
+              @include mq(sm) {
                 &.center {
                   align-self: center;
                 }
