@@ -1340,21 +1340,17 @@ main {
 [data-page=about] .about__wrapper__hero__copy {
   margin-bottom: clamp(2.5rem, 1.878rem + 2.65vw, 4rem);
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: clamp(2.5rem, 1.878rem + 2.65vw, 4rem);
+  font-size: clamp(2.5rem, 1.982rem + 2.21vw, 3.75rem);
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.08em;
-}
-@media (width < 1400px) {
-  [data-page=about] .about__wrapper__hero__copy .spOnly {
-    display: block;
-  }
+  word-break: keep-all;
 }
 [data-page=about] .about__wrapper__hero__text {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: clamp(0.813rem, 0.735rem + 0.33vw, 1rem);
   line-height: 2.25;
-  white-space: wrap;
+  word-break: keep-all;
 }
 [data-page=about] .about__wrapper__philosophy {
   scroll-margin-top: 6.25rem;

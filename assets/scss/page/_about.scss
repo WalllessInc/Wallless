@@ -118,23 +118,18 @@
         &__copy {
           margin-bottom: responsiveClamp(40, 64, 375, 1280);
           font-family: $jp;
-          font-size: responsiveClamp(40, 64, 375, 1280);
+          font-size: responsiveClamp(40, 60, 375, 1280);
           font-weight: 500;
           line-height: 1.5;
           letter-spacing: 0.08em;
-
-          @media (width < 1400px) {
-            .spOnly {
-              display: block;
-            }
-          }
+          word-break: keep-all;
         }
 
         &__text {
           font-family: $jp;
           font-size: responsiveClamp(13, 16, 375, 1280);
           line-height: 2.25;
-          white-space: wrap;
+          word-break: keep-all;
         }
       }
 
