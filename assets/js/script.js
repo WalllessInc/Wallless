@@ -842,12 +842,13 @@ pageSwitchElements.forEach((element) => {
 	});
 });
 
-if (document.querySelector('.js-main')) {
-	pageTransitionAfter();
-}
+// if (document.querySelector('.js-main')) {
+// 	pageTransitionAfter();
+// }
 
 const agent = window.navigator.userAgent.toLowerCase()
 if (agent.indexOf("safari") != -1) {
+	console.log("hi")
 	history.replaceState(null, null, null);
 	window.addEventListener('popstate', function (event) {
 		if (document.querySelector('.js-main')) {
