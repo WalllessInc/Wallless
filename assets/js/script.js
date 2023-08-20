@@ -845,7 +845,7 @@ pageSwitchElements.forEach((element) => {
 const userAgent = navigator.userAgent;
 
 if (userAgent.includes('Safari') && !userAgent.includes('Chrome') || userAgent.includes('Firefox')) {
-	console.log('This is Safari.');
+	console.log('This is Safari & Firefox.');
 	window.addEventListener('popstate', (e) => {
 		if (document.querySelector('.js-main')) {
 			pageTransitionAfter();
@@ -857,7 +857,7 @@ if (userAgent.includes('Safari') && !userAgent.includes('Chrome') || userAgent.i
 	// 	}
 	// });
 } else {
-	console.log('This is original!');
+	console.log('This is Chrome!');
 	if (document.querySelector('.js-main')) {
 		pageTransitionAfter();
 	};
