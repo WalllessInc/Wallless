@@ -846,16 +846,16 @@ const userAgent = navigator.userAgent;
 
 if (userAgent.includes('Safari') && !userAgent.includes('Chrome') || userAgent.includes('Firefox')) {
 	console.log('This is Safari & Firefox.');
-	window.addEventListener('popstate', (e) => {
-		if (document.querySelector('.js-main')) {
-			pageTransitionAfter();
-		}
-	});
-	// window.addEventListener('pageshow', (e) => {
+	// window.addEventListener('popstate', (e) => {
 	// 	if (document.querySelector('.js-main')) {
 	// 		pageTransitionAfter();
 	// 	}
 	// });
+	window.addEventListener('pageshow', (e) => {
+		if (document.querySelector('.js-main')) {
+			pageTransitionAfter();
+		}
+	});
 } else {
 	console.log('This is Chrome!');
 	if (document.querySelector('.js-main')) {
