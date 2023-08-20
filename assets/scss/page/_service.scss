@@ -159,11 +159,29 @@
           }
 
           &__img {
+            position: relative;
             width: 100%;
             height: responsiveClamp(88, 240, 375, 1280);
             margin-bottom: responsiveClamp(12, 16, 375, 1280);
             border-radius: 4px;
             overflow: hidden;
+
+            &::before {
+              content: "";
+              position: absolute;
+              inset: 0;
+              background-color: $offWhite;
+              scale: 1 1;
+              transform-origin: top left;
+              transition: all 0.5s $ease1;
+              z-index: 2;
+            }
+
+            &.view {
+              &::before {
+                scale: 1 0;
+              }
+            }
 
             img {
               height: 100%;

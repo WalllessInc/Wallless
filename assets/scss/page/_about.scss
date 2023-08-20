@@ -210,6 +210,7 @@
           }
 
           &__img {
+            position: relative;
             width: calc(100%/2);
             height: remCalc(432);
 
@@ -224,6 +225,23 @@
               width: 60%;
               height: 100%;
               opacity: 0.3;
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              inset: 0;
+              background-color: $offWhite;
+              scale: 1 1;
+              transform-origin: top left;
+              transition: all 0.5s $ease1;
+              z-index: 2;
+            }
+
+            &.view {
+              &::before {
+                scale: 1 0;
+              }
             }
           }
 

@@ -339,14 +339,14 @@ const ServiceLower = defineComponent({
 							<h4 class="service__wrapper__container__subheading">制作事例</h4>
 							<div class="service__wrapper__container__example">
 								<a class="js-pageSwitch" :href="item.hrefA">
-									<div class="service__wrapper__container__example__img">
+									<div class="service__wrapper__container__example__img js-fadeIn">
 										<img :src="item.imageSrcA" alt="" width="336" height="240">
 									</div>
 									<h5 v-html="item.exampleA"></h5>
 								</a>
 
 								<a class="js-pageSwitch" :href="item.hrefB">
-									<div class="service__wrapper__container__example__img">
+									<div class="service__wrapper__container__example__img js-fadeIn">
 										<img :src="item.imageSrcB" alt="" width="336" height="240">
 									</div>
 									<h5 v-html="item.exampleB"></h5>
@@ -849,7 +849,7 @@ pageSwitchElements.forEach((element) => {
 const agent = window.navigator.userAgent.toLowerCase()
 if (agent.indexOf("safari") != -1) {
 	history.replaceState(null, null, null);
-	window.addEventListener('popstate', function (event) {
+	window.addEventListener('popstate', function (popstate) {
 		console.log("hi")
 		if (document.querySelector('.js-main')) {
 			pageTransitionAfter();
@@ -945,6 +945,31 @@ gsap.fromTo('.js-news', {
 	stagger: { each: 0.1 },
 	scrollTrigger: {
 		trigger: '.news__list',
+		start: 'top center+=100',
+	},
+});
+
+gsap.fromTo('.js-vision', {
+	y: 50,
+	opacity: 0,
+}, {
+	y: 0,
+	opacity: 1,
+	scrollTrigger: {
+		trigger: '.vision',
+		start: 'top center+=100',
+	},
+});
+
+gsap.fromTo('.js-value', {
+	y: 50,
+	opacity: 0,
+}, {
+	y: 0,
+	opacity: 1,
+	stagger: { each: 0.1 },
+	scrollTrigger: {
+		trigger: '.value',
 		start: 'top center+=100',
 	},
 });
