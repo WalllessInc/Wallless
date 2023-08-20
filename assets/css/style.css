@@ -1803,12 +1803,12 @@ main {
 }
 @media (width < 1280px) {
   [data-page=service] .service__wrapper__container__example {
-    grid-template-columns: repeat(2, clamp(9rem, 6.255rem + 11.71vw, 15.625rem));
+    grid-template-columns: repeat(2, clamp(9.25rem, 6.608rem + 11.27vw, 15.625rem));
   }
 }
 [data-page=service] .service__wrapper__container__example__img {
   width: 100%;
-  height: clamp(6rem, 2.271rem + 15.91vw, 15rem);
+  height: clamp(5.5rem, 1.564rem + 16.8vw, 15rem);
   margin-bottom: clamp(0.75rem, 0.646rem + 0.44vw, 1rem);
   border-radius: 4px;
   overflow: hidden;

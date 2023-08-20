@@ -155,12 +155,12 @@
           column-gap: remCalc(24);
 
           @include mq(xl) {
-            grid-template-columns: repeat(2, responsiveClamp(144, 250, 375, 1280));
+            grid-template-columns: repeat(2, responsiveClamp(148, 250, 375, 1280));
           }
 
           &__img {
             width: 100%;
-            height: responsiveClamp(96, 240, 375, 1280);
+            height: responsiveClamp(88, 240, 375, 1280);
             margin-bottom: responsiveClamp(12, 16, 375, 1280);
             border-radius: 4px;
             overflow: hidden;
