@@ -859,14 +859,11 @@ pageSwitchElements.forEach((element) => {
 // 	console.log("This is not Safari browser.");
 // }
 
-history.replaceState(null, null, null);
-window.addEventListener('popstate', function (event) {
-	console.log("lanobe")
+window.addEventListener('pageshow', (e) => {
 	if (document.querySelector('.js-main')) {
 		pageTransitionAfter();
 	}
 });
-
 
 /* --------------------------------
 *  Scroll Animation
