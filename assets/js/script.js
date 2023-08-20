@@ -790,7 +790,7 @@ links.forEach(function (link) {
 * -------------------------------- */
 const blindfoldContainer = document.querySelector('.blindfold');
 const blindfoldItem = document.querySelectorAll('.blindfold__item');
-gsap.set(blindfoldContainer, { yPercent: 0 });
+gsap.set(blindfoldContainer, { yPercent: -100 });
 gsap.set(blindfoldItem, { scaleY: 0 });
 
 // 画面遷移 前のアニメーション
