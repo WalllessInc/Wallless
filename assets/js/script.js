@@ -790,7 +790,7 @@ links.forEach(function (link) {
 * -------------------------------- */
 const blindfoldContainer = document.querySelector('.blindfold');
 const blindfoldItem = document.querySelectorAll('.blindfold__item');
-gsap.set(blindfoldContainer, { yPercent: -100 });
+gsap.set(blindfoldContainer, { yPercent: 0 });
 gsap.set(blindfoldItem, { scaleY: 0 });
 
 // 画面遷移 前のアニメーション
@@ -844,6 +844,16 @@ pageSwitchElements.forEach((element) => {
 
 if (document.querySelector('.js-main')) {
 	pageTransitionAfter();
+}
+
+const agent = window.navigator.userAgent.toLowerCase()
+if (agent.indexOf("safari") != -1) {
+	history.replaceState(null, null, null);
+	window.addEventListener('popstate', function (event) {
+		if (document.querySelector('.js-main')) {
+			pageTransitionAfter();
+		}
+	});
 };
 
 /* --------------------------------
