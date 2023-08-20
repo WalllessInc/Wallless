@@ -846,18 +846,26 @@ pageSwitchElements.forEach((element) => {
 // 	pageTransitionAfter();
 // }
 
-const agent = window.navigator.userAgent.toLowerCase();
-if (agent.indexOf("safari") !== -1) {
-	// history.replaceState(null, null, null);
-	// window.addEventListener('popstate', function (event) {
-	// 	if (document.querySelector('.js-main')) {
-	// 		pageTransitionAfter();
-	// 	}
-	// });
-	console.log("This is Safari browser!");
-} else {
-	console.log("This is not Safari browser.");
-}
+// const agent = window.navigator.userAgent.toLowerCase();
+// if (agent.indexOf("safari") !== -1) {
+// history.replaceState(null, null, null);
+// window.addEventListener('popstate', function (event) {
+// 	if (document.querySelector('.js-main')) {
+// 		pageTransitionAfter();
+// 	}
+// });
+// 	console.log("This is Safari browser!");
+// } else {
+// 	console.log("This is not Safari browser.");
+// }
+
+history.replaceState(null, null, null);
+window.addEventListener('popstate', function (event) {
+	console.log("lanobe")
+	if (document.querySelector('.js-main')) {
+		pageTransitionAfter();
+	}
+});
 
 
 /* --------------------------------
