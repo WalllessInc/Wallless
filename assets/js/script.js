@@ -859,7 +859,7 @@ pageSwitchElements.forEach((element) => {
 // 	console.log("This is not Safari browser.");
 // }
 
-window.addEventListener('pageshow', (e) => {
+window.addEventListener('DOMContentLoaded', (e) => {
 	if (document.querySelector('.js-main')) {
 		pageTransitionAfter();
 	}
