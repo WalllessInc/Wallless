@@ -854,7 +854,7 @@ if (userAgent.includes('Safari') && !userAgent.includes('Chrome') || userAgent.i
 	window.addEventListener('pageshow', (e) => {
 		if (document.querySelector('.js-main')) {
 			pageTransitionAfter();
-		}
+		};
 	});
 } else {
 	console.log('This is Chrome!');
@@ -875,7 +875,7 @@ window.addEventListener('load', function () {
 			// 領域内なら処理を実行
 			if (entries[i].intersectionRatio <= 0) continue;
 			showElm(entries[i].target);
-		}
+		};
 	}, {
 		rootMargin: '-10% 0% -10% 0%'
 	});
@@ -884,13 +884,13 @@ window.addEventListener('load', function () {
 	const elements = document.querySelectorAll('.js-fadeIn');
 	for (let i = 0; i < elements.length; i++) {
 		observer.observe(elements[i]);
-	}
+	};
 
 	// 領域内に入ったとき実行する処理
 	function showElm(e) {
 		e.classList.add('view');
 		observer.unobserve(e);
-	}
+	};
 }, false);
 
 gsap.set('.js-hero', {
@@ -989,13 +989,13 @@ function unifyWidth(elements) {
 		const width = element.offsetWidth;
 		if (width > maxWidth) {
 			maxWidth = width;
-		}
+		};
 	});
 
 	elements.forEach(function (element) {
 		element.style.width = `${maxWidth}px`;
 	});
-}
+};
 
 window.addEventListener('load', function () {
 	const unifyElements = document.querySelectorAll('.js-unify');
@@ -1030,7 +1030,7 @@ const sectionsArray = Array.from(sections);
 
 // IntersectionObserverの作成
 const options = {
-	root: null, // ルートをdocumentに設定
+	root: null,
 	rootMargin: "-40% 0px -60% 0%",
 	threshold: 0,
 };
@@ -1049,42 +1049,14 @@ function callback(entries, observer) {
 		if (entry.isIntersecting) {
 			if (currentList !== null) {
 				currentList.classList.remove("current");
-			}
+			};
 			contentsList.children[indexList].classList.add("current");
 		} else {
 			if (indexList === 0) {
 				if (currentList !== null) {
 					currentList.classList.remove("current");
-				}
-			}
-		}
+				};
+			};
+		};
 	});
-}
-
-/* --------------------------------
-*  About Background
-* -------------------------------- */
-const aboutBackElement = document.querySelector(".about__back");
-const memberElement = document.getElementById("member");
-
-function handleResize() {
-	if (memberElement !== null) {
-		const memberHeight = memberElement.clientHeight;
-		const memberTop = memberElement.getBoundingClientRect().top;
-		const memberPadding = parseInt(getComputedStyle(memberElement).getPropertyValue("padding-top"), 10);
-		const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-		aboutBackElement.style.height = memberHeight + "px";
-
-		if (windowWidth <= 1024) {
-			const offsetVw = (memberTop - memberPadding - 20) / windowWidth * 100;
-			aboutBackElement.style.top = offsetVw + "vw";
-		} else {
-			aboutBackElement.style.top = (memberTop - memberPadding) + "px";
-		}
-	}
-}
-
-window.addEventListener("resize", handleResize);
-
-handleResize();
+};

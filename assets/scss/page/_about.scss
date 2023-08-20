@@ -7,15 +7,6 @@
     position: relative;
     padding: responsiveClamp(120, 152, 375, 1280) responsiveClamp(32, 144, 375, 1280) responsiveClamp(144, 200, 375, 1280);
 
-    &__back {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: $gray;
-      z-index: 1;
-    }
-
     &__title {
       @include title;
       margin-bottom: remCalc(40);
@@ -134,8 +125,7 @@
 
       &__philosophy {
         scroll-margin-top: remCalc(100);
-        margin-bottom: responsiveClamp(64, 100, 375, 1280);
-
+        margin-bottom: responsiveClamp(96, 200, 375, 1280);
 
         &__title {
           @include smallTitle;
@@ -192,7 +182,7 @@
       }
 
       &__member {
-        padding: responsiveClamp(64, 100, 375, 1280) 0;
+        margin-bottom: responsiveClamp(96, 200, 375, 1280);
 
         &__title {
           @include smallTitle;
@@ -304,8 +294,6 @@
       }
 
       &__profile {
-        padding-top: responsiveClamp(64, 100, 375, 1280);
-
         &__title {
           @include smallTitle;
         }
