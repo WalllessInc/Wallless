@@ -363,12 +363,14 @@ const ServiceLower = defineComponent({
 					titleJp: "グラフィック制作",
 					text: "クライアントのご要望に沿った制作物をご用意しております。<br>「こんなものほしいんだけど…」とお気軽にお問い合わせください。",
 					content: "リーフレット / ポスター / パンフレット / 名刺 / DM / 冊子(会社案内 / 学校案内)",
+
 					hrefA: "works/kinjo_pamphlet.html",
 					imageSrcA: "assets/images/works/kinjo_pamphlet-01.webp",
-					exampleA: "金城学院大学<wbr />入学資料",
+					exampleA: "金城学院大学 入学資料",
+
 					hrefB: "works/rohto_poster.html",
 					imageSrcB: "assets/images/works/rohto_poster-01.webp",
-					exampleB: "ロート製薬<wbr />新卒採用ポスター",
+					exampleB: "ロート製薬 新卒採用ポスター",
 				},
 				{
 					id: "web",
@@ -376,12 +378,14 @@ const ServiceLower = defineComponent({
 					titleJp: "Webサイト制作",
 					text: "クライアントに合わせたオーダーメイドのWebサイトを制作いたします。<br>ウェブアクセシビリティやSEOに配慮したサイトづくりを心がけています。",
 					content: "新規サイトの制作 / 既存サイトのリニューアル / CMSを利用したサイトの制作 / サイト公開後の改善提案",
-					hrefA: "works/tesla_event.html",
-					imageSrcA: "assets/images/works/tesla_event-01.webp",
-					exampleA: "ふれあいテスラ<wbr />イベントツール",
-					hrefB: "works/trike_web.html",
-					imageSrcB: "assets/images/works/trike_web-01.webp",
-					exampleB: "EV-TRIKE<wbr />ランディングページ",
+
+					hrefA: "works/trike_web.html",
+					imageSrcA: "assets/images/works/trike_web-01.webp",
+					exampleA: "EV-TRIKE ランディングページ",
+
+					hrefB: "works/meihokan_web.html",
+					imageSrcB: "assets/images/works/meihokan_web-01.webp",
+					exampleB: "明蓬館高等学校 採用ページ",
 				},
 				{
 					id: "movie",
@@ -389,12 +393,14 @@ const ServiceLower = defineComponent({
 					titleJp: "動画制作",
 					text: "PVからSNS用の動画に至るまで一貫して制作いたします。<br>動画を通して分かりやすく明確に表現し、効果的に訴求いたします。",
 					content: "プロモーションムービー / リール(Instagram) / Youtube Shout / モーショングラフィクス / 実写撮影",
-					hrefA: "works/tesla_event.html",
-					imageSrcA: "assets/images/works/tesla_event-01.webp",
-					exampleA: "ふれあいテスラ<wbr />イベントツール",
-					hrefB: "works/seshuraku_branding.html",
-					imageSrcB: "assets/images/works/seshuraku_branding-01.webp",
-					exampleB: "せしゅらく<wbr />ブランディングツール",
+
+					hrefA: "works/sumiyoshi_pv.html",
+					imageSrcA: "assets/images/works/sumiyoshi_pv-01.webp",
+					exampleA: "ホームカミングデイ プロモーションビデオ",
+
+					hrefB: "works/tesla_event.html",
+					imageSrcB: "assets/images/works/tesla_event-01.webp",
+					exampleB: "ふれあいテスラ イベントツール",
 				},
 				{
 					id: "photograph",
@@ -402,9 +408,11 @@ const ServiceLower = defineComponent({
 					titleJp: "写真撮影・動画撮影",
 					text: "物撮り・イベント撮影などオールジャンル撮影可能。<br>カメラジンバル・ドローン等もございますので、空撮からシネマティック撮影までお任せください。",
 					content: "物撮り / イベント撮影 / 空撮 / シネマティック撮影 / レタッチ",
+
 					hrefA: "works/tesla_event.html",
 					imageSrcA: "assets/images/works/tesla_event-01.webp",
-					exampleA: "ふれあいテスラ<wbr />イベントツール",
+					exampleA: "ふれあいテスラ イベントツール",
+
 					hrefB: "works/photograph.html",
 					imageSrcB: "assets/images/works/photograph-01.webp",
 					exampleB: "写真撮影・動画撮影",
@@ -446,7 +454,7 @@ const Works = defineComponent({
 				{
 					href: "works/seshuraku_branding.html",
 					imageSrc: "assets/images/works/seshuraku_branding-01.webp",
-					title: "せしゅらく ブランディングツール",
+					title: "せしゅらく マーケティングツール",
 					category: "Graphic / Movie"
 				},
 				{
@@ -458,7 +466,7 @@ const Works = defineComponent({
 				{
 					href: "works/polaris_branding.html",
 					imageSrc: "assets/images/works/polaris_branding-01.webp",
-					title: "ポラリスエクスポート<wbr />ブランディングツール",
+					title: "ポラリスエクスポート クリエイティブブランディング",
 					category: "Graphic / Web"
 				},
 				{
@@ -470,7 +478,7 @@ const Works = defineComponent({
 				{
 					href: "works/cooonworks_support.html",
 					imageSrc: "assets/images/works/cooonworks_support-01.webp",
-					title: "COOON WORKS<wbr />CFクリエイティブサポート",
+					title: "COOON WORKS CFクリエイティブサポート",
 					category: "Graphic"
 				},
 				{
@@ -478,6 +486,24 @@ const Works = defineComponent({
 					imageSrc: "assets/images/works/trike_web-01.webp",
 					title: "EV-TRIKE ランディングページ",
 					category: "Web"
+				},
+				{
+					href: "works/meihokan_web.html",
+					imageSrc: "assets/images/works/meihokan_web-01.webp",
+					title: "明蓬館高等学校 採用ページ",
+					category: "Web"
+				},
+				{
+					href: "works/sumiyoshi_pv.html",
+					imageSrc: "assets/images/works/sumiyoshi_pv-01.webp",
+					title: "ホームカミングデイ プロモーションビデオ",
+					category: "Movie / Photograph"
+				},
+				{
+					href: "works/kayabuki_pv.html",
+					imageSrc: "assets/images/works/kayabuki_pv-01.webp",
+					title: "かやぶきの里 プロモーションビデオ",
+					category: "Movie / Photograph"
 				},
 				{
 					href: "works/photograph.html",
@@ -557,7 +583,7 @@ const News = defineComponent({
 const NewsSession01 = defineComponent({
 	template: `
 					<div>
-						<h3 class="newsArticle__subheading">岐阜市初のクリエイティブスクールついに開校！</h3>
+						<h3 class="newsArticle__subheading">岐阜市初のクリエイティブスクール<wbr />ついに開校！</h3>
 						<p class="newsArticle__promotion">
 							皆さんがよく使っている「YouTube」や「Instagram」などの起業は、創業期にデザイナーがいました。<br>
 							また、会社全体でもデザイナーを迎え入れたいという会社は多く全体の55％にまで登ります。<br>

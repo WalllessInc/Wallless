@@ -388,7 +388,7 @@ main {
     }
 
     @include mq(sm) {
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(1, 100%);
     }
 
     &__content {
@@ -441,12 +441,14 @@ main {
       }
 
       &__title {
-        margin: remCalc(20) 0 0 remCalc(8);
+        margin: remCalc(20) remCalc(8) 0 remCalc(8);
         font-family: $jp;
         font-size: remCalc(16);
         font-weight: 500;
         line-height: 1.5;
-        word-break: keep-all;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
 
       &__category {
@@ -556,6 +558,7 @@ main {
         font-family: $en;
         font-size: responsiveClamp(12, 14, 375, 1280);
         text-transform: capitalize;
+        white-space: nowrap;
       }
 
       &__title {

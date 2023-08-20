@@ -36,7 +36,6 @@
       font-size: responsiveClamp(18, 28, 375, 1280);
       font-weight: 500;
       letter-spacing: 0.1em;
-      word-break: keep-all;
     }
 
     &__category {
@@ -50,10 +49,10 @@
     display: flex;
     flex-direction: column;
     row-gap: responsiveClamp(28, 40, 375, 1280);
-    margin-left: remCalc(64);
+    padding: 0 remCalc(64);
 
     @include mq(lg) {
-      margin-left: 0;
+      padding: 0;
     }
 
     div {

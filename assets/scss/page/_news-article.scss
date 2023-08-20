@@ -9,7 +9,6 @@
   margin-bottom: responsiveClamp(144, 200, 375, 1280);
   padding: responsiveClamp(120, 152, 375, 1280) responsiveClamp(32, 144, 375, 1280) 0;
   font-family: $jp;
-  white-space: wrap;
   text-align: justify;
 
   &__title {
@@ -38,6 +37,8 @@
     margin: 0 0 remCalc(16) remCalc(64);
     font-size: responsiveClamp(18, 32, 375, 1280);
     font-weight: 700;
+    text-align: start;
+    word-break: keep-all;
 
     @include mq(lg) {
       margin: 0 0 remCalc(16) 0;

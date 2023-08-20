@@ -978,7 +978,7 @@ main {
 }
 @media (width < 640px) {
   .works__grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 100%);
   }
 }
 .works__grid__content:nth-child(n+7) {
@@ -1020,12 +1020,14 @@ main {
   scale: 1.1;
 }
 .works__grid__content__title {
-  margin: 1.25rem 0 0 0.5rem;
+  margin: 1.25rem 0.5rem 0 0.5rem;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  word-break: keep-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .works__grid__content__category {
   margin: 0.5rem 0 0 0.5rem;
@@ -1172,6 +1174,7 @@ main {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
   font-size: clamp(0.75rem, 0.698rem + 0.22vw, 0.875rem);
   text-transform: capitalize;
+  white-space: nowrap;
 }
 .news__list__item__title {
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
@@ -1736,6 +1739,7 @@ main {
 }
 [data-page=service] .service__wrapper__hero {
   margin-bottom: clamp(6rem, 3.307rem + 11.49vw, 12.5rem);
+  white-space: wrap;
 }
 [data-page=service] .service__wrapper__hero__copy {
   margin-bottom: clamp(2.5rem, 1.878rem + 2.65vw, 4rem);
@@ -1755,7 +1759,6 @@ main {
 [data-page=service] .service__wrapper__container {
   scroll-margin-top: 6.25rem;
   margin-bottom: clamp(8rem, 6.135rem + 7.96vw, 12.5rem);
-  padding: 0 4px;
 }
 [data-page=service] .service__wrapper__container:last-child {
   margin-bottom: 0;
@@ -1794,9 +1797,14 @@ main {
 [data-page=service] .service__wrapper__container__example {
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  justify-content: center;
-  -moz-column-gap: clamp(1rem, 0.586rem + 1.77vw, 2rem);
-       column-gap: clamp(1rem, 0.586rem + 1.77vw, 2rem);
+  justify-content: space-between;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+@media (width < 1280px) {
+  [data-page=service] .service__wrapper__container__example {
+    grid-template-columns: repeat(2, clamp(9rem, 6.255rem + 11.71vw, 15.625rem));
+  }
 }
 [data-page=service] .service__wrapper__container__example__img {
   width: 100%;
@@ -1817,10 +1825,12 @@ main {
 [data-page=service] .service__wrapper__container__example h5 {
   margin-left: clamp(0.125rem, -0.03rem + 0.66vw, 0.5rem);
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  font-size: clamp(0.813rem, 0.735rem + 0.33vw, 1rem);
+  font-size: clamp(0.813rem, 0.787rem + 0.11vw, 0.875rem);
   font-weight: 500;
   line-height: 1.5;
-  word-break: keep-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 [data-page=service] .service__breadcrumbs {
   align-self: flex-end;
@@ -1962,7 +1972,6 @@ main {
   font-size: clamp(1.125rem, 0.866rem + 1.1vw, 1.75rem);
   font-weight: 500;
   letter-spacing: 0.1em;
-  word-break: keep-all;
 }
 .worksLower__head__category {
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
@@ -1973,11 +1982,11 @@ main {
   display: flex;
   flex-direction: column;
   row-gap: clamp(1.75rem, 1.439rem + 1.33vw, 2.5rem);
-  margin-left: 4rem;
+  padding: 0 4rem;
 }
 @media (width < 1024px) {
   .worksLower__detail {
-    margin-left: 0;
+    padding: 0;
   }
 }
 .worksLower__detail div {
@@ -2214,7 +2223,6 @@ main {
   margin-bottom: clamp(9rem, 7.55rem + 6.19vw, 12.5rem);
   padding: clamp(7.5rem, 6.671rem + 3.54vw, 9.5rem) clamp(2rem, -0.901rem + 12.38vw, 9rem) 0;
   font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-  white-space: wrap;
   text-align: justify;
 }
 .newsArticle__title {
@@ -2240,6 +2248,8 @@ main {
   margin: 0 0 1rem 4rem;
   font-size: clamp(1.125rem, 0.762rem + 1.55vw, 2rem);
   font-weight: 700;
+  text-align: start;
+  word-break: keep-all;
 }
 @media (width < 1024px) {
   .newsArticle__subheading {
