@@ -842,28 +842,26 @@ pageSwitchElements.forEach((element) => {
 	});
 });
 
-// if (document.querySelector('.js-main')) {
-// 	pageTransitionAfter();
-// }
+const userAgent = navigator.userAgent;
 
-// const agent = window.navigator.userAgent.toLowerCase();
-// if (agent.indexOf("safari") !== -1) {
-// history.replaceState(null, null, null);
-// window.addEventListener('popstate', function (event) {
-// 	if (document.querySelector('.js-main')) {
-// 		pageTransitionAfter();
-// 	}
-// });
-// 	console.log("This is Safari browser!");
-// } else {
-// 	console.log("This is not Safari browser.");
-// }
-
-window.addEventListener('DOMContentLoaded', (e) => {
+if (userAgent.includes('Safari') && !userAgent.includes('Chrome') || userAgent.includes('Firefox')) {
+	console.log('This is Safari.');
+	window.addEventListener('popstate', (e) => {
+		if (document.querySelector('.js-main')) {
+			pageTransitionAfter();
+		}
+	});
+	// window.addEventListener('pageshow', (e) => {
+	// 	if (document.querySelector('.js-main')) {
+	// 		pageTransitionAfter();
+	// 	}
+	// });
+} else {
+	console.log('This is original!');
 	if (document.querySelector('.js-main')) {
 		pageTransitionAfter();
-	}
-});
+	};
+};
 
 /* --------------------------------
 *  Scroll Animation
