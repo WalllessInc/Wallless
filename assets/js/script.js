@@ -500,12 +500,6 @@ const Works = defineComponent({
 					category: "Movie / Photograph"
 				},
 				{
-					href: "works/kayabuki_pv.html",
-					imageSrc: "assets/images/works/kayabuki_pv-01.webp",
-					title: "かやぶきの里 プロモーションビデオ",
-					category: "Movie / Photograph"
-				},
-				{
 					href: "works/photograph.html",
 					imageSrc: "assets/images/works/photograph-01.webp",
 					title: "写真撮影・動画撮影",

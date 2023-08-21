@@ -38,14 +38,14 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-body::-moz-selection {
+::-moz-selection {
   color: #fff;
-  background: #222;
+  background: #3eb497;
 }
 
-body::selection {
+::selection {
   color: #fff;
-  background: #222;
+  background: #3eb497;
 }
 
 img,
