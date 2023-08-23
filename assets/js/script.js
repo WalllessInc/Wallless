@@ -845,14 +845,15 @@ pageSwitchElements.forEach((element) => {
 });
 
 // ページ読み込みで発火
-if (document.querySelector('.js-main')) {
-	pageTransitionAfter();
-};
+window.addEventListener('pageshow', (e) => {
+	if (document.querySelector('.js-main')) {
+		pageTransitionAfter();
+	};
+});
 
 const userAgent = navigator.userAgent;
 if (userAgent.includes('Safari') && !userAgent.includes('Chrome')) {
 	console.log('This is Safari!');
-	history.pushState(null, null, window.location.href);
 	// ページ表示で発火
 	window.addEventListener('pageshow', (e) => {
 		if (document.querySelector('.js-main')) {
@@ -863,7 +864,7 @@ if (userAgent.includes('Safari') && !userAgent.includes('Chrome')) {
 
 if (userAgent.includes('Firefox') && !userAgent.includes('Chrome')) {
 	console.log('This is Firefox!');
-	history.pushState(null, null, window.location.href);
+	// history.pushState(null, null, window.location.href);
 	// ブラウザバックで発火
 	window.addEventListener('popstate', (e) => {
 		console.log('popstate!!');
