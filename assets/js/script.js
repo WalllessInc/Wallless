@@ -849,6 +849,7 @@ window.addEventListener('pageshow', (e) => {
 	if (document.querySelector('.js-main')) {
 		pageTransitionAfter();
 	};
+	console.log('pageshow!');
 });
 
 const userAgent = navigator.userAgent;
