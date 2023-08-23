@@ -6,6 +6,7 @@
   position: fixed;
   display: flex;
   inset: 0;
+  top: 100%;
   z-index: 9999;
 
   &__item {

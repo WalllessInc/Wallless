@@ -868,7 +868,6 @@ if (userAgent.includes('Safari') && !userAgent.includes('Chrome')) {
 
 if (userAgent.includes('Firefox') && !userAgent.includes('Chrome')) {
 	console.log('This is Firefox!');
-	history.pushState(null, null, window.location.href);
 	// ブラウザバックで発火
 	window.addEventListener('popstate', (e) => {
 		console.log('popstate!!');
