@@ -792,7 +792,7 @@ links.forEach(function (link) {
 * -------------------------------- */
 const blindfoldContainer = document.querySelector('.blindfold');
 const blindfoldItem = document.querySelectorAll('.blindfold__item');
-gsap.set(blindfoldContainer, { yPercent: 0 });
+gsap.set(blindfoldContainer, { yPercent: 100 });
 gsap.set(blindfoldItem, { scaleY: 0 });
 
 // 画面遷移 前のアニメーション
@@ -843,13 +843,14 @@ pageSwitchElements.forEach((element) => {
 		}, 1200);
 	});
 });
-console.log(history);
+
 // ページ読み込みで発火
-window.addEventListener('load', (e) => {
+window.addEventListener('DOMContentLoaded', (e) => {
+	console.log('DOMContentLoaded!!');
 	if (document.querySelector('.js-main')) {
+		console.log('DOMContentLoaded if true!!');
 		pageTransitionAfter();
 	};
-	console.log('load!');
 });
 
 const userAgent = navigator.userAgent;
@@ -857,10 +858,11 @@ if (userAgent.includes('Safari') && !userAgent.includes('Chrome')) {
 	console.log('This is Safari!');
 	// ページ表示で発火
 	window.addEventListener('pageshow', (e) => {
+		console.log('pageshow!!');
 		if (document.querySelector('.js-main')) {
+			console.log('pageshow if true!!');
 			pageTransitionAfter();
 		};
-		console.log('pageshow!');
 	});
 }
 
