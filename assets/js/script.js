@@ -860,6 +860,7 @@ if (userAgent.includes('Safari') && !userAgent.includes('Chrome')) {
 		if (document.querySelector('.js-main')) {
 			pageTransitionAfter();
 		};
+		console.log('pageshow!');
 	});
 }
 
