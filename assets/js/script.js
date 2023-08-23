@@ -845,11 +845,9 @@ pageSwitchElements.forEach((element) => {
 });
 
 // ページ読み込みで発火
-window.addEventListener('DOMContentLoaded', (e) => {
-	if (document.querySelector('.js-main')) {
-		pageTransitionAfter();
-	};
-});
+if (document.querySelector('.js-main')) {
+	pageTransitionAfter();
+};
 
 const userAgent = navigator.userAgent;
 if (userAgent.includes('Safari') && !userAgent.includes('Chrome')) {
