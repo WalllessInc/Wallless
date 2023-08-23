@@ -18,6 +18,10 @@ const Header = defineComponent({
 
 						<nav class="header__nav js-headerNav">
 							<ul class="header__nav__list">
+								<li class="header__nav__list__logo">
+									<img src="assets/images/logo_white.svg" alt="" width="144" height="652">
+								</li>
+
 								<li class="spOnly">
 									<a class="js-pageSwitch" href="index.html">Home</a>
 								</li>
@@ -110,6 +114,10 @@ const LowerHeader = defineComponent({
 
 						<nav class="header__nav js-headerNav">
 							<ul class="header__nav__list">
+								<li class="header__nav__list__logo">
+									<img src="../assets/images/logo_white.svg" alt="" width="144" height="652">
+								</li>
+
 								<li class="spOnly">
 									<a class="js-pageSwitch" href="index.html">Home</a>
 								</li>
@@ -232,7 +240,7 @@ const ServiceImg = defineComponent({
 	template: `
 				<div class="service__img js-fadeIn">
 					<a class="service__img__inner js-serviceImg js-pageSwitch" v-for="(item, index) in items" :key="index" :class="item.class" :href="item.href">
-						<img :src="item.imageSrc" :alt="item.titleEn" width="800" height="296">
+						<img :src="item.imageSrc" alt="" width="800" height="296">
 					</a>
 				</div>
       `,
@@ -836,25 +844,36 @@ pageSwitchElements.forEach((element) => {
 	});
 });
 
-const userAgent = navigator.userAgent;
+// ページ読み込みで発火
+window.addEventListener('DOMContentLoaded', (e) => {
+	if (document.querySelector('.js-main')) {
+		pageTransitionAfter();
+	};
+});
 
-if (userAgent.includes('Safari') && !userAgent.includes('Chrome') || userAgent.includes('Firefox')) {
-	console.log('This is Safari & Firefox.');
-	// window.addEventListener('popstate', (e) => {
-	// 	if (document.querySelector('.js-main')) {
-	// 		pageTransitionAfter();
-	// 	}
-	// });
+const userAgent = navigator.userAgent;
+if (userAgent.includes('Safari') && !userAgent.includes('Chrome')) {
+	console.log('This is Safari!');
+	history.pushState(null, null, window.location.href);
+	// ページ表示で発火
 	window.addEventListener('pageshow', (e) => {
 		if (document.querySelector('.js-main')) {
 			pageTransitionAfter();
 		};
 	});
-} else {
-	console.log('This is Chrome!');
-	if (document.querySelector('.js-main')) {
-		pageTransitionAfter();
-	};
+}
+
+if (userAgent.includes('Firefox') && !userAgent.includes('Chrome')) {
+	console.log('This is Firefox!');
+	history.pushState(null, null, window.location.href);
+	// ブラウザバックで発火
+	window.addEventListener('popstate', (e) => {
+		console.log('popstate!!');
+		if (document.querySelector('.js-main')) {
+			console.log('popstate if true!!');
+			pageTransitionAfter();
+		}
+	});
 };
 
 /* --------------------------------

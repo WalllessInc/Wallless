@@ -93,6 +93,8 @@
   }
 
   &__nav {
+    position: relative;
+
     @include mq(lg) {
       position: fixed;
       display: flex;
@@ -111,21 +113,37 @@
     }
 
     &__list {
+      position: relative;
       display: flex;
       align-items: center;
       column-gap: remCalc(56);
+      width: 100%;
+      height: 100%;
 
       @include mq(lg) {
         flex-direction: column;
         align-items: flex-start;
-        justify-content: flex-start;
+        justify-content: center;
+        row-gap: remCalc(16);
         margin-left: responsiveClamp(48, 96, 375, 1024);
 
-        @include mq(sm) {
-          row-gap: remCalc(16);
-        }
-
         .spOnly {
+          display: block;
+        }
+      }
+
+      &__logo {
+        position: absolute;
+        display: none;
+        right: 0;
+        bottom: 0;
+        width: responsiveClamp(96, 144, 375, 1024);
+        height: auto;
+        transform-origin: right bottom;
+        opacity: 0.2;
+        transition: all 0.3s 0.5s;
+
+        @include mq(lg) {
           display: block;
         }
       }
@@ -156,6 +174,10 @@
             scale: 0 1;
             transform-origin: right top;
             transition: scale 0.3s $ease1;
+
+            @include mq(lg) {
+              bottom: remCalc(8);
+            }
           }
 
           &:hover {
@@ -186,7 +208,7 @@
         @include mq(lg) {
           padding: 0;
           border-radius: 0;
-          background-color: none;
+          background: none;
           font-size: responsiveClamp(32, 64, 375, 1024);
           font-weight: 600;
 
