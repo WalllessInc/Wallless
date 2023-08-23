@@ -843,7 +843,7 @@ pageSwitchElements.forEach((element) => {
 		}, 1200);
 	});
 });
-
+console.log(history);
 // ページ読み込みで発火
 window.addEventListener('pageshow', (e) => {
 	if (document.querySelector('.js-main')) {
