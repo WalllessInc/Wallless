@@ -12,9 +12,9 @@ const Header = defineComponent({
 							</a>
 						</h1>
 
-						<div class="header__hamburger js-hamburger">
+						<button class="header__hamburger js-hamburger"  aria-label="メニューを開く">
 							<span></span><span></span><span></span>
-						</div>
+						</button>
 
 						<nav class="header__nav js-headerNav">
 							<ul class="header__nav__list">
@@ -108,9 +108,9 @@ const LowerHeader = defineComponent({
 							</a>
 						</h1>
 
-						<div class="header__hamburger js-hamburger">
+						<button class="header__hamburger js-hamburger"  aria-label="メニューを開く">
 							<span></span><span></span><span></span>
-						</div>
+						</button>
 
 						<nav class="header__nav js-headerNav">
 							<ul class="header__nav__list">
@@ -782,17 +782,29 @@ headerNavLinks.forEach(function (link) {
 const links = document.querySelectorAll(".js-headerNavItem > a");
 
 links.forEach(function (link) {
-	if (link.href === location.href || (location.href.includes("works") && link.href.includes("works.html")) || (location.href.includes("news") && link.href.includes("news.html"))) {
+	let ariaCurrentValue = null;
+
+	if (link.href === location.href) {
+		ariaCurrentValue = "page";
+	} else if (location.href.includes("works") && link.href.includes("works.html")) {
+		ariaCurrentValue = "page";
+	} else if (location.href.includes("news") && link.href.includes("news.html")) {
+		ariaCurrentValue = "page";
+	}
+
+	if (ariaCurrentValue) {
+		link.setAttribute("aria-current", ariaCurrentValue);
 		link.closest(".js-headerNavItem").classList.add("current");
 	}
 });
+
 
 /* --------------------------------
 *  Page Transition
 * -------------------------------- */
 const blindfoldContainer = document.querySelector('.blindfold');
 const blindfoldItem = document.querySelectorAll('.blindfold__item');
-gsap.set(blindfoldContainer, { yPercent: 100 });
+gsap.set(blindfoldContainer, { yPercent: 0 });
 gsap.set(blindfoldItem, { scaleY: 0 });
 
 // 画面遷移 前のアニメーション
@@ -853,31 +865,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
 	};
 });
 
-const userAgent = navigator.userAgent;
-if (userAgent.includes('Safari') && !userAgent.includes('Chrome')) {
-	console.log('This is Safari!');
-	// ページ表示で発火
-	window.addEventListener('pageshow', (e) => {
-		console.log('pageshow!!');
-		if (document.querySelector('.js-main')) {
-			console.log('pageshow if true!!');
-			pageTransitionAfter();
-		};
-	});
-}
-
-if (userAgent.includes('Firefox') && !userAgent.includes('Chrome')) {
-	console.log('This is Firefox!');
-	// ブラウザバックで発火
-	history.pushState(null, null, null);
-	window.addEventListener('popstate', (e) => {
-		console.log('popstate!!');
-		if (document.querySelector('.js-main')) {
-			console.log('popstate if true!!');
-			pageTransitionAfter();
-		}
-	});
-};
+window.addEventListener('pageshow', (e) => {
+	console.log('pageshow!!');
+	if (document.querySelector('.js-main')) {
+		console.log('pageshow if true!!');
+		pageTransitionAfter();
+	};
+});
 
 /* --------------------------------
 *  Scroll Animation
