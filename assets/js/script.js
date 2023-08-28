@@ -730,6 +730,17 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------
+*  Disable Empty a Tag
+* -------------------------------- */
+const anchorElements = document.querySelectorAll('a[href=""]');
+anchorElements.forEach((element) => {
+	element.addEventListener("click", (event) => {
+		event.preventDefault();
+		alert("リンク先がありません");
+	});
+});
+
+/* --------------------------------
 *  Lower Content
 * -------------------------------- */
 const header = document.querySelector('.js-header');
@@ -805,7 +816,7 @@ links.forEach(function (link) {
 const blindfoldContainer = document.querySelector('.blindfold');
 const blindfoldItem = document.querySelectorAll('.blindfold__item');
 gsap.set(blindfoldContainer, { yPercent: 0 });
-gsap.set(blindfoldItem, { scaleY: 0 });
+gsap.set(blindfoldItem, { scaleY: 1 });
 
 // 画面遷移 前のアニメーション
 const pageTransitionBefore = () => {
@@ -857,14 +868,6 @@ pageSwitchElements.forEach((element) => {
 });
 
 // ページ読み込みで発火
-window.addEventListener('DOMContentLoaded', (e) => {
-	console.log('DOMContentLoaded!!');
-	if (document.querySelector('.js-main')) {
-		console.log('DOMContentLoaded if true!!');
-		pageTransitionAfter();
-	};
-});
-
 window.addEventListener('pageshow', (e) => {
 	console.log('pageshow!!');
 	if (document.querySelector('.js-main')) {
