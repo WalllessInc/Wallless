@@ -253,6 +253,7 @@ main {
     }
 
     &__inner {
+      pointer-events: none;
       position: relative;
       height: 100%;
       opacity: 0;
