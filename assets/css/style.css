@@ -500,15 +500,27 @@ main {
 * hero
 * -------------------------------- */
 .hero {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   margin-bottom: clamp(9rem, 7.55rem + 6.19vw, 12.5rem);
-  padding: 13rem clamp(3rem, -0.522rem + 15.03vw, 11.5rem) 0;
+  padding: 0 clamp(3rem, -0.522rem + 15.03vw, 11.5rem) 7rem;
+}
+.hero__globe {
+  position: absolute;
+  height: 100%;
+}
+.hero__globe #globe {
+  position: sticky;
+  top: 0;
+  max-width: none;
+  translate: -9rem 0;
 }
 .hero__content {
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-top: 13rem;
 }
 .hero__content__copy {
   display: flex;
@@ -590,7 +602,7 @@ main {
   position: absolute;
   display: inline-block;
   right: clamp(3.5rem, -6.5rem + 15.63vw, 6rem);
-  bottom: 0;
+  top: 73vh;
   padding: 0 0 4.5rem;
   color: #222;
   font-family: "Poppins", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;

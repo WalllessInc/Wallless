@@ -11,15 +11,29 @@ main {
 * hero
 * -------------------------------- */
 .hero {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   margin-bottom: responsiveClamp(144, 200, 375, 1280);
-  padding: remCalc(208) responsiveClamp(48, 184, 375, 1280) 0;
+  padding: 0 responsiveClamp(48, 184, 375, 1280) remCalc(112);
+
+  &__globe {
+    position: absolute;
+    height: 100%;
+
+    #globe {
+      position: sticky;
+      top: 0;
+      max-width: none;
+      translate: remCalc(-144) 0;
+    }
+  }
 
   &__content {
     position: relative;
     display: flex;
     flex-direction: column;
+    margin-top: remCalc(208);
 
     &__copy {
       display: flex;
@@ -81,7 +95,7 @@ main {
     position: absolute;
     display: inline-block;
     right: responsiveClamp(56, 96, 1024, 1280);
-    bottom: 0;
+    top: 73vh;
     padding: 0 0 remCalc(72);
     color: $black;
     font-family: $en;
