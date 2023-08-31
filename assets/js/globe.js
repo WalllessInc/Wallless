@@ -112,7 +112,7 @@ function init() {
   const blackGlobe = new THREE.Mesh(geom, new THREE.MeshLambertMaterial({
     color: 0x060c14,
     transparent: true,
-    opacity: 0.8,
+    opacity: 0.75,
   }));
   blackGlobe.scale.setScalar(0.99);
   points.add(blackGlobe);

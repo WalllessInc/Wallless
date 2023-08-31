@@ -32,13 +32,13 @@ main {
       }
 
       @include mq(lg) {
-        opacity: 0.4;
+        opacity: 0.5;
       }
 
       @include mq(sm) {
         translate: remCalc(48) 0;
         scale: 1.05;
-        opacity: 0.3;
+        opacity: 0.4;
       }
     }
   }

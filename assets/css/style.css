@@ -523,14 +523,14 @@ main {
 }
 @media (width < 1024px) {
   .hero__globe #globe {
-    opacity: 0.4;
+    opacity: 0.5;
   }
 }
 @media (width < 640px) {
   .hero__globe #globe {
     translate: 3rem 0;
     scale: 1.05;
-    opacity: 0.3;
+    opacity: 0.4;
   }
 }
 .hero__content {
