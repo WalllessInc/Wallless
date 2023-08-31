@@ -869,9 +869,7 @@ pageSwitchElements.forEach((element) => {
 
 // ページ読み込みで発火
 window.addEventListener('pageshow', (e) => {
-	console.log('pageshow!!');
 	if (document.querySelector('.js-main')) {
-		console.log('pageshow if true!!');
 		pageTransitionAfter();
 	};
 });
