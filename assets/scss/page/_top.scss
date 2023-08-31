@@ -15,7 +15,7 @@ main {
   display: flex;
   justify-content: flex-end;
   margin-bottom: responsiveClamp(144, 200, 375, 1280);
-  padding: 0 responsiveClamp(48, 184, 375, 1280) remCalc(112);
+  padding: 0 responsiveClamp(48, 184, 375, 1280) responsiveClamp(80, 112, 375, 1280);
 
   &__globe {
     position: absolute;
@@ -26,6 +26,20 @@ main {
       top: 0;
       max-width: none;
       translate: remCalc(-144) 0;
+
+      @include mq(xl) {
+        opacity: 0.7;
+      }
+
+      @include mq(lg) {
+        opacity: 0.4;
+      }
+
+      @include mq(sm) {
+        translate: remCalc(48) 0;
+        scale: 1.05;
+        opacity: 0.3;
+      }
     }
   }
 

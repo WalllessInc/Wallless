@@ -504,7 +504,7 @@ main {
   display: flex;
   justify-content: flex-end;
   margin-bottom: clamp(9rem, 7.55rem + 6.19vw, 12.5rem);
-  padding: 0 clamp(3rem, -0.522rem + 15.03vw, 11.5rem) 7rem;
+  padding: 0 clamp(3rem, -0.522rem + 15.03vw, 11.5rem) clamp(5rem, 4.171rem + 3.54vw, 7rem);
 }
 .hero__globe {
   position: absolute;
@@ -515,6 +515,23 @@ main {
   top: 0;
   max-width: none;
   translate: -9rem 0;
+}
+@media (width < 1280px) {
+  .hero__globe #globe {
+    opacity: 0.7;
+  }
+}
+@media (width < 1024px) {
+  .hero__globe #globe {
+    opacity: 0.4;
+  }
+}
+@media (width < 640px) {
+  .hero__globe #globe {
+    translate: 3rem 0;
+    scale: 1.05;
+    opacity: 0.3;
+  }
 }
 .hero__content {
   position: relative;
