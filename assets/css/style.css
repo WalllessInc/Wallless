@@ -386,7 +386,7 @@ img {
 @media (width < 640px) {
   .footer__nav__list {
     flex-direction: column;
-    row-gap: 0.25rem;
+    row-gap: 0.5rem;
   }
 }
 .footer__nav__list a {
@@ -394,18 +394,24 @@ img {
   text-transform: capitalize;
   transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
 }
+@media (width < 1024px) {
+  .footer__nav__list a {
+    font-size: 1rem;
+  }
+}
 .footer__nav__list a:hover {
   opacity: 0.6;
 }
 .footer__copyright {
   grid-area: copyright;
   justify-self: end;
-  margin-top: clamp(1rem, 0.133rem + 3.7vw, 2.5rem);
+  margin-top: 2.5rem;
   font-size: 0.75rem;
 }
 @media (width < 1024px) {
   .footer__copyright {
     justify-self: start;
+    margin-top: 1rem;
   }
 }
 
@@ -514,7 +520,7 @@ main {
   position: sticky;
   top: 0;
   max-width: none;
-  translate: -9rem 0;
+  translate: -9rem -2.5rem;
 }
 @media (width < 1280px) {
   .hero__globe #globe {
@@ -523,6 +529,7 @@ main {
 }
 @media (width < 1024px) {
   .hero__globe #globe {
+    translate: -9rem 0;
     opacity: 0.5;
   }
 }
@@ -1019,8 +1026,8 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 33.3333333333%);
   justify-content: center;
-  gap: 3rem;
-  margin-top: 2rem;
+  gap: clamp(4rem, 3.793rem + 0.88vw, 4.5rem) 3rem;
+  margin-top: 2.5rem;
 }
 @media (width < 1280px) {
   .works__grid {
@@ -1952,9 +1959,6 @@ main {
 }
 [data-page=works] .works__title {
   margin-bottom: clamp(3.5rem, 3.086rem + 1.77vw, 4.5rem);
-}
-[data-page=works] .works__grid {
-  gap: clamp(4rem, 3.793rem + 0.88vw, 4.5rem) 3rem;
 }
 [data-page=works] .works__grid__content:nth-child(n+7) {
   display: block;

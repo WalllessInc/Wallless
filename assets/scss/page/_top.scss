@@ -25,13 +25,14 @@ main {
       position: sticky;
       top: 0;
       max-width: none;
-      translate: remCalc(-144) 0;
+      translate: remCalc(-144) remCalc(-40);
 
       @include mq(xl) {
         opacity: 0.7;
       }
 
       @include mq(lg) {
+        translate: remCalc(-144) 0;
         opacity: 0.5;
       }
 
@@ -409,8 +410,8 @@ main {
     display: grid;
     grid-template-columns: repeat(3, calc(100%/3));
     justify-content: center;
-    gap: remCalc(48);
-    margin-top: remCalc(32);
+    gap: responsiveClamp(64, 72, 375, 1280) remCalc(48);
+    margin-top: remCalc(40);
 
     @include mq(xl) {
       grid-template-columns: repeat(2, calc(100%/2));

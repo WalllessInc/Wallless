@@ -74,13 +74,17 @@
 
       @include mq(sm) {
         flex-direction: column;
-        row-gap: remCalc(4);
+        row-gap: remCalc(8);
       }
 
       a {
         font-size: remCalc(14);
         text-transform: capitalize;
         transition: all 0.3s $ease1;
+
+        @include mq(lg) {
+          font-size: remCalc(16);
+        }
 
         &:hover {
           opacity: 0.6;
@@ -92,11 +96,12 @@
   &__copyright {
     grid-area: copyright;
     justify-self: end;
-    margin-top: responsiveClamp(16, 40, 375, 1024);
+    margin-top: remCalc(40);
     font-size: remCalc(12);
 
     @include mq(lg) {
       justify-self: start;
+      margin-top: remCalc(16);
     }
   }
 }

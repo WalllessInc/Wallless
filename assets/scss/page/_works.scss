@@ -11,8 +11,6 @@
     }
 
     &__grid {
-      gap: responsiveClamp(64, 72, 375, 1280) remCalc(48);
-
       &__content {
         &:nth-child(n+7) {
           display: block;
