@@ -30,7 +30,34 @@
   }
 
   &__text {
-    font-size: responsiveClamp(14, 16, 375, 1280);
+    margin: 0 0 remCalc(16) remCalc(64);
+    font-size: responsiveClamp(14, 15, 375, 1280);
+    line-height: 2;
+    letter-spacing: 0.1em;
+
+    a {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background-color: $black;
+        scale: 1 1;
+        transform-origin: left top;
+        transition: scale 0.5s $ease1;
+      }
+
+      &:hover {
+        &::before {
+          scale: 0 1;
+          transform-origin: right top;
+        }
+      }
+    }
   }
 
   &__subheading {

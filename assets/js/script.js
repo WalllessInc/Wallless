@@ -543,6 +543,13 @@ const News = defineComponent({
 		return {
 			items: [
 				{
+					href: "news/230903.html",
+					dateTime: "2023-09-03",
+					date: "2023.09.03",
+					category: "News",
+					title: "自社HPリニューアルしました！"
+				},
+				{
 					href: "news/230527.html",
 					dateTime: "2023-05-27",
 					date: "2023.05.27",
