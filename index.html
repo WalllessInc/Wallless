@@ -192,6 +192,43 @@
 	<script src="assets/js/script.js" type="module"></script>
 	<script src="assets/js/globe.js" type="module"></script>
 	<!-- /script -->
+
+	<!-- Structured data -->
+	<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Wallless",
+  "founder": "直井祐樹",
+  "foundingDate": "2000-04-01", /*企業設立日*/
+  "description": "企業説明文",
+  "url": "トップページのURL",
+  "logo": "ロゴ画像URL",
+  "telephone": "+81-00-0000-0000", /*電話番号*/
+  "faxNumber": "+81-00-0000-0000", /*FAX番号*/
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "区市町村",
+    "addressRegion": "都道府県",
+    "postalCode": "郵便番号",
+    "streetAddress": "番地以降",
+    "addressCountry": "JP"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+81-00-0000-0000", /*問い合わせ電話番号*/
+      "contactType": "customer service"
+    }
+  ]},
+  "sameAs": [ <!-- 関連サイトやSNS -->/**/
+    "https://kanrensite.jp",
+    "https://www.facebook.com/kanren",
+    "https://twitter.com/kanren"
+  ]
+}
+</script>
+	<!-- /Structured data -->
 </body>
 
 </html>
